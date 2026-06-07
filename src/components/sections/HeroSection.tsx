@@ -17,9 +17,10 @@ const HeroSection = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
         <img
-          src="/Users/isakzvegelj/.gemini/antigravity/brain/178b02bf-fb95-4720-b05a-47e064f0ded8/villa_adora_exterior_heritage_1778063780288.png"
-          alt="Villa Adora Lake Bled"
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop&q=80"
+          alt="Villa Adora - Luxury Boutique Hotel at Lake Bled, Slovenia"
           className="w-full h-full object-cover"
+          loading="eager"
         />
       </motion.div>
 

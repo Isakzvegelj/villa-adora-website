@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const galleryImages = [
-  { id: 1, category: 'exterior', src: '/Users/isakzvegelj/.gemini/antigravity/brain/178b02bf-fb95-4720-b05a-47e064f0ded8/villa_adora_exterior_heritage_1778063780288.png', title: 'Historic Heritage Villa' },
-  { id: 2, category: 'suites', src: '/Users/isakzvegelj/.gemini/antigravity/brain/178b02bf-fb95-4720-b05a-47e064f0ded8/princess_suite_adora_1778063803856.png', title: 'Princess Suite' },
-  { id: 3, category: 'suites', src: '/Users/isakzvegelj/.gemini/antigravity/brain/178b02bf-fb95-4720-b05a-47e064f0ded8/prestige_suite_adora_1778063827958.png', title: 'Prestige Suite Terrace' },
+  { id: 1, category: 'exterior', src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&q=80', title: 'Historic Heritage Villa' },
+  { id: 2, category: 'suites', src: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop&q=80', title: 'Princess Suite' },
+  { id: 3, category: 'suites', src: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&h=600&fit=crop&q=80', title: 'Prestige Suite Terrace' },
   { id: 4, category: 'lake', src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop', title: 'Lake Bled Morning' },
   { id: 5, category: 'suites', src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop', title: 'Penthouse View' },
   { id: 6, category: 'exterior', src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop', title: 'Villa Gardens' },

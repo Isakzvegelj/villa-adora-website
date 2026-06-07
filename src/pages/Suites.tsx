@@ -7,7 +7,7 @@ const suites = [
   {
     id: 'princess',
     price: '250',
-    image: '/Users/isakzvegelj/.gemini/antigravity/brain/178b02bf-fb95-4720-b05a-47e064f0ded8/princess_suite_adora_1778063803856.png',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop&q=80',
     amenities: ['Tower View', 'King Size Bed', 'Lake View', '55 sqm', 'Romantic Decor']
   },
   {
@@ -25,7 +25,7 @@ const suites = [
   {
     id: 'prestige',
     price: '420',
-    image: '/Users/isakzvegelj/.gemini/antigravity/brain/178b02bf-fb95-4720-b05a-47e064f0ded8/prestige_suite_adora_1778063827958.png',
+    image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&h=600&fit=crop&q=80',
     amenities: ['72 sqm', 'Large Terrace', 'Artful Decor', 'Ground Floor', 'Panoramic View']
   }
 ]
