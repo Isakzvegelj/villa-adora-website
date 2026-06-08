@@ -34,7 +34,7 @@ const TOUR_SPOTS = [
 ];
 
 export default function VirtualTourSection() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const TOUR_TITLE = language === 'sl' ? 'Virtualni ogled' : 'Virtual Tour';
   const TOUR_SUBTITLE = language === 'sl'
