@@ -253,8 +253,6 @@ const Home = () => {
 
 // Book Direct Benefits section
 const BookDirectBenefits = () => {
-
-const BookDirectBenefits = () => {
   const { t } = useLanguage()
 
   const benefits = [
