@@ -16,6 +16,8 @@ import SpecialOffers from '../components/sections/SpecialOffers';
 import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
+import CulinarySection from '../components/sections/CulinarySection';
+import NewsletterSection from '../components/sections/NewsletterSection';
 
 const Home = () => {
   const { t } = useLanguage()
@@ -60,11 +62,17 @@ const Home = () => {
       {/* Special Offers */}
       <SpecialOffers />
 
+      {/* Culinary & Dining */}
+      <CulinarySection />
+
       {/* Quick Price Calculator */}
       <QuickPriceCalculator />
 
       {/* Nearby Attractions */}
       <NearbyAttractions />
+
+      {/* Newsletter */}
+      <NewsletterSection />
 
       {/* Call to Action */}
       <motion.section

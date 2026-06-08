@@ -195,6 +195,29 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'seasons.autumn.desc': 'Zlatorumena lista, čista vina in mistični megleni jutri. Popoln za romantičen oddih.',
       'seasons.winter.title': 'Zima',
       'seasons.winter.desc': 'Zavito v sneg, Bled postane pravljica. Božična tržnica, smučanje in topli napitki.',
+
+      // Culinary & Dining
+      'culinary.subtitle': 'Kulinarična doživetja',
+      'culinary.title': 'Okusi Bleda',
+      'culinary.description': 'Odkrijte bogastvo lokalnih okusov, ki jih ponujamo v našem hotelu. Od tradicionalne kremne rezine do vrhunskih slovenskih vin.',
+      'culinary.breakfast.title': 'Zajtrk ob jezeru',
+      'culinary.breakfast.description': 'Začnite dan z bogatim samopostrežnim zajtrkom na terasi s pogledom na jezero. Sveže pecivo, lokalni sirji, domači džemi in sezonsko sadje.',
+      'culinary.restaurant.title': 'Gostilna 1878',
+      'culinary.restaurant.description': 'Naša restavracija ponuja sodobno interpretacijo slovenske kuhane z lokalnimi sestavinami. Degustacijski meniji s priporočenimi vini.',
+      'culinary.terrace.title': 'Jezerska terasa',
+      'culinary.terrace.description': 'Pijte kavo ali večerjo na naši ekskluzivni terasi neposredno ob jezeru. Nepozabno doživetje ob sončnem zahodu.',
+      'culinary.experiences.title': 'Kulinarične delavnice',
+      'culinary.experiences.description': 'Pridružite se našim kuharskim delavnicam — naučite se pripravljati kremno rezino, tradicionalno potico ali okusiti najboljša slovenska vina.',
+      'culinary.cta': 'Rezerviraj mizo',
+
+      // Newsletter
+      'newsletter.title': 'Ostanite v stiku',
+      'newsletter.description': 'Prijavite se na naše e-novice in prejmite ekskluzivne ponudbe, sezonske pakete in novice iz Villa Adore.',
+      'newsletter.placeholder': 'Vaš e-naslov',
+      'newsletter.button': 'Prijava',
+      'newsletter.success': 'Hvala za prijavo! Prejeli ste potrditveno e-pošto.',
+      'newsletter.error': 'Prosimo, vnesite veljaven e-naslov.',
+      'newsletter.privacy': 'Vaš e-naslov bo uporabljen izključno za naše novice. Odjavite se lahko kadarkoli.',
     },
     en: {
       // Navigation
@@ -370,6 +393,29 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'seasons.autumn.desc': 'Golden foliage, fine wines, and mystical foggy mornings. Ideal for a romantic retreat.',
       'seasons.winter.title': 'Winter',
       'seasons.winter.desc': 'Blanketed in snow, Bled becomes a fairytale. Christmas market, skiing, and warm drinks.',
+
+      // Culinary & Dining
+      'culinary.subtitle': 'Culinary Experiences',
+      'culinary.title': 'Flavors of Bled',
+      'culinary.description': 'Discover the richness of local flavors offered at our hotel. From traditional cream cake to premium Slovenian wines.',
+      'culinary.breakfast.title': 'Lakeside Breakfast',
+      'culinary.breakfast.description': 'Start your day with a lavish buffet breakfast on the terrace overlooking the lake. Fresh pastries, local cheeses, homemade jams, and seasonal fruits.',
+      'culinary.restaurant.title': 'Restaurant 1878',
+      'culinary.restaurant.description': 'Our restaurant offers a modern interpretation of Slovenian cuisine with local ingredients. Degustation menus with wine pairings.',
+      'culinary.terrace.title': 'Lakeside Terrace',
+      'culinary.terrace.description': 'Enjoy coffee or dinner on our exclusive terrace right on the lake. An unforgettable experience at sunset.',
+      'culinary.experiences.title': 'Cooking Workshops',
+      'culinary.experiences.description': 'Join our cooking workshops — learn to make cream cake, traditional potica, or taste the finest Slovenian wines.',
+      'culinary.cta': 'Book a Table',
+
+      // Newsletter
+      'newsletter.title': 'Stay Connected',
+      'newsletter.description': 'Subscribe to our newsletter and receive exclusive offers, seasonal packages, and news from Villa Adora.',
+      'newsletter.placeholder': 'Your email address',
+      'newsletter.button': 'Subscribe',
+      'newsletter.success': 'Thank you for subscribing! You will receive a confirmation email.',
+      'newsletter.error': 'Please enter a valid email address.',
+      'newsletter.privacy': 'Your email will be used exclusively for our newsletters. You can unsubscribe at any time.',
     },
   }
 
