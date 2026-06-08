@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useSearchParams } from 'react-router-dom';
 import { CalendarIcon, UserGroupIcon, HomeIcon, CheckCircleIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 interface FormData {
@@ -26,6 +27,8 @@ const ROOM_TYPES = [
 
 const Reservation = () => {
   const { t } = useLanguage();
+  const [searchParams] = useSearchParams();
+  
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -40,6 +43,24 @@ const Reservation = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  // Pre-populate form from URL query params (from Hero booking bar)
+  useEffect(() => {
+    const checkIn = searchParams.get('checkIn');
+    const checkOut = searchParams.get('checkOut');
+    const adults = searchParams.get('adults');
+    const roomType = searchParams.get('roomType');
+    
+    if (checkIn || checkOut || adults || roomType) {
+      setFormData(prev => ({
+        ...prev,
+        checkIn: checkIn || prev.checkIn,
+        checkOut: checkOut || prev.checkOut,
+        adults: adults || prev.adults,
+        roomType: roomType || prev.roomType,
+      }));
+    }
+  }, [searchParams]);
 
   const validate = (): boolean => {
     const newErrors: Partial<FormData> = {};

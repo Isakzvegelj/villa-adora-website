@@ -1,14 +1,16 @@
-import { motion } from 'framer-motion'
-import { ArrowRightIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
-import { useLanguage } from '../contexts/LanguageContext'
-import HeroSection from '../components/sections/HeroSection'
-import AboutPreview from '../components/sections/AboutPreview'
-import SuitesPreview from '../components/sections/SuitesPreview'
-import ActivitiesPreview from '../components/sections/ActivitiesPreview'
-import GalleryPreview from '../components/sections/GalleryPreview'
-import ReviewsPreview from '../components/sections/ReviewsPreview'
-import AwardsSection from '../components/sections/AwardsSection'
+import { motion } from 'framer-motion';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
+import HeroSection from '../components/sections/HeroSection';
+import AboutPreview from '../components/sections/AboutPreview';
+import SuitesPreview from '../components/sections/SuitesPreview';
+import ActivitiesPreview from '../components/sections/ActivitiesPreview';
+import GalleryPreview from '../components/sections/GalleryPreview';
+import ReviewsPreview from '../components/sections/ReviewsPreview';
+import AwardsSection from '../components/sections/AwardsSection';
+import NearbyAttractions from '../components/sections/NearbyAttractions';
+import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 
 const Home = () => {
   const { t } = useLanguage()
@@ -40,6 +42,9 @@ const Home = () => {
 
       {/* Awards & Ratings */}
       <AwardsSection />
+
+      {/* Nearby Attractions */}
+      <NearbyAttractions />
 
       {/* Call to Action */}
       <motion.section
@@ -110,8 +115,11 @@ const Home = () => {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* Seasonal Offer Banner */}
+      <SeasonalOfferBanner />
     </motion.div>
-  )
-}
+  );
+};
 
 export default Home

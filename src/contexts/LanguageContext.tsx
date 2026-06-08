@@ -93,6 +93,30 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'reservation.requests': 'Posebne zahtevke',
       'reservation.submit': 'Pošlji rezervacijo',
       
+      // Nearby Attractions
+      'nearby.island.title': 'Blejski otok',
+      'nearby.island.description': 'Slovenska ikona — majhen otok s cerkvico, dostopen s tradicionalnim čolnom "pletna".',
+      'nearby.castle.title': 'Blejski grad',
+      'nearby.castle.description': 'Srednjeveški grad na kotu s panoramskim razgledom na jezero in okolico.',
+      'nearby.vintgar.title': 'Vintgar',
+      'nearby.vintgar.description': 'Čudovita soteska z železniškim mostom in rečnim kanjonom. Priljubljena naravna znamenitost.',
+      'nearby.triglav.title': 'Triglavski narodni park',
+      'nearby.triglav.description': 'Eden najstarejših narodnih parkov v Evropi. Triglav, najvišja gora Slovenije.',
+      'nearby.ljubljana.title': 'Ljubljana',
+      'nearby.ljubljana.description': 'Čudovito glavno mesto Slovenije z baročno arhitekturo in živahno kulturno sceno.',
+      'nearby.planica.title': 'Planica',
+      'nearby.planica.description': 'Svetovno priljubljena skakalnica in center zimskih športov.',
+      
+      // Seasonal Offers
+      'offers.spring.title': 'Pomladanski paket',
+      'offers.spring.desc': '3 nočitve + kajak na jezeru. Od €690.',
+      'offers.summer.title': 'Poletni luksuz',
+      'offers.summer.desc': '5 nočitve, 2. nočitev brezplačna. Velja julij–avgust.',
+      'offers.autumn.title': 'Jesenski oddih',
+      'offers.autumn.desc': '4 nočitve + degustacija vin. Od €890.',
+      'offers.winter.title': 'Zimsko čudo',
+      'offers.winter.desc': '3 nočitve + wellness paket. Od €750.',
+      
       // Common
       'common.book': 'Rezerviraj',
       'common.learn': 'Več',
@@ -184,6 +208,30 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'reservation.roomType': 'Room Type',
       'reservation.requests': 'Special Requests',
       'reservation.submit': 'Submit Reservation',
+      
+      // Nearby Attractions
+      'nearby.island.title': 'Bled Island',
+      'nearby.island.description': 'Slovenia\'s iconic island with a picturesque church, accessible by traditional "pletna" wooden boat.',
+      'nearby.castle.title': 'Bled Castle',
+      'nearby.castle.description': 'Medieval castle on a cliff with panoramic views of the lake and surrounding Alps.',
+      'nearby.vintgar.title': 'Vintgar Gorge',
+      'nearby.vintgar.description': 'Stunning 1.6km gorge with boardwalks, waterfalls, and a historic railway bridge.',
+      'nearby.triglav.title': 'Triglav National Park',
+      'nearby.triglav.description': 'One of Europe\'s oldest national parks. Home to Mount Triglav, Slovenia\'s highest peak.',
+      'nearby.ljubljana.title': 'Ljubljana',
+      'nearby.ljubljana.description': 'Charming capital of Slovenia with baroque architecture, a vibrant café culture, and lively arts scene.',
+      'nearby.planica.title': 'Planica',
+      'nearby.planica.description': 'World-famous ski jumping center and Nordic skiing venue in the heart of the Julian Alps.',
+      
+      // Seasonal Offers
+      'offers.spring.title': 'Spring Package',
+      'offers.spring.desc': '3 nights + kayaking on the lake. From €690.',
+      'offers.summer.title': 'Summer Luxury',
+      'offers.summer.desc': '5 nights, 2nd night free. Valid July–August.',
+      'offers.autumn.title': 'Autumn Retreat',
+      'offers.autumn.desc': '4 nights + wine tasting. From €890.',
+      'offers.winter.title': 'Winter Wonderland',
+      'offers.winter.desc': '3 nights + wellness package. From €750.',
       
       // Common
       'common.book': 'Book',

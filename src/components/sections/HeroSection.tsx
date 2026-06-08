@@ -1,10 +1,39 @@
-import { motion } from 'framer-motion'
-import { ArrowRightIcon, PlayIcon, CalendarIcon, UserIcon, HomeIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRightIcon, PlayIcon, CalendarIcon, UserIcon, HomeIcon, MapPinIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Link, useNavigate } from 'react-router-dom';
+import { useLanguage } from '../../contexts/LanguageContext';
+
+const SUITE_OPTIONS = [
+  { value: 'any', labelEn: 'Any Suite', labelSl: 'Katera koli suite' },
+  { value: 'princess', labelEn: 'Princess Suite', labelSl: 'Princess Suite' },
+  { value: 'luxury', labelEn: 'Luxury Suite', labelSl: 'Luxury Suite' },
+  { value: 'penthouse', labelEn: 'Penthouse Suite', labelSl: 'Penthouse Suite' },
+  { value: 'swan', labelEn: 'Swan Suite', labelSl: 'Swan Suite' },
+  { value: 'island', labelEn: 'Island Suite', labelSl: 'Island Suite' },
+  { value: 'prestige', labelEn: 'Prestige Suite', labelSl: 'Prestige Suite' },
+];
 
 const HeroSection = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage();
+  const navigate = useNavigate();
+  const [checkIn, setCheckIn] = useState('');
+  const [checkOut, setCheckOut] = useState('');
+  const [guests, setGuests] = useState(2);
+  const [suiteType, setSuiteType] = useState('any');
+  const [showGuestDropdown, setShowGuestDropdown] = useState(false);
+
+  const today = new Date().toISOString().split('T')[0];
+  const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+
+  const handleCheckAvailability = () => {
+    const params = new URLSearchParams();
+    if (checkIn) params.set('checkIn', checkIn);
+    if (checkOut) params.set('checkOut', checkOut);
+    params.set('adults', guests.toString());
+    if (suiteType !== 'any') params.set('roomType', suiteType);
+    navigate(`/reservation?${params.toString()}`);
+  };
 
   return (
     <section className="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden">
@@ -35,9 +64,10 @@ const HeroSection = () => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="mb-6 inline-block px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm uppercase tracking-[0.3em] font-medium"
+            className="mb-6 inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm uppercase tracking-[0.3em] font-medium"
           >
-            Built 1878
+            <MapPinIcon className="w-4 h-4" />
+            {language === 'sl' ? 'Bled, Slovenija · Izgrađena 1878' : 'Bled, Slovenia · Est. 1878'}
           </motion.div>
           
           <motion.h1
@@ -89,47 +119,108 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Floating Booking Bar */}
+      {/* Interactive Floating Booking Bar */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-5xl px-4 z-30 hidden lg:block"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-5xl px-4 z-30"
       >
-        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-4 flex items-center justify-between shadow-2xl">
-          <div className="flex-1 border-r border-white/10 px-6">
-            <div className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-1">
-              <CalendarIcon className="w-4 h-4 mr-2" />
-              Check In
+        <div className="bg-white/15 backdrop-blur-xl border border-white/20 rounded-2xl p-3 shadow-2xl">
+          <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-2">
+            {/* Check In */}
+            <div className="flex-1 bg-white/10 rounded-xl px-4 py-2.5 hover:bg-white/15 transition-colors cursor-pointer">
+              <label className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-0.5">
+                <CalendarIcon className="w-3.5 h-3.5 mr-1.5" />
+                {language === 'sl' ? 'Prihod' : 'Check In'}
+              </label>
+              <input
+                type="date"
+                value={checkIn}
+                min={today}
+                onChange={(e) => setCheckIn(e.target.value)}
+                className="w-full bg-transparent text-white font-semibold text-sm outline-none [color-scheme:dark] cursor-pointer"
+              />
             </div>
-            <div className="text-white font-semibold">Select Date</div>
-          </div>
-          <div className="flex-1 border-r border-white/10 px-6">
-            <div className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-1">
-              <CalendarIcon className="w-4 h-4 mr-2" />
-              Check Out
+
+            {/* Check Out */}
+            <div className="flex-1 bg-white/10 rounded-xl px-4 py-2.5 hover:bg-white/15 transition-colors cursor-pointer">
+              <label className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-0.5">
+                <CalendarIcon className="w-3.5 h-3.5 mr-1.5" />
+                {language === 'sl' ? 'Odhod' : 'Check Out'}
+              </label>
+              <input
+                type="date"
+                value={checkOut}
+                min={checkIn || tomorrow}
+                onChange={(e) => setCheckOut(e.target.value)}
+                className="w-full bg-transparent text-white font-semibold text-sm outline-none [color-scheme:dark] cursor-pointer"
+              />
             </div>
-            <div className="text-white font-semibold">Select Date</div>
-          </div>
-          <div className="flex-1 border-r border-white/10 px-6">
-            <div className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-1">
-              <UserIcon className="w-4 h-4 mr-2" />
-              Guests
+
+            {/* Guests */}
+            <div className="relative flex-1 bg-white/10 rounded-xl px-4 py-2.5 hover:bg-white/15 transition-colors">
+              <label className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-0.5">
+                <UserIcon className="w-3.5 h-3.5 mr-1.5" />
+                {language === 'sl' ? 'Gosti' : 'Guests'}
+              </label>
+              <button
+                onClick={() => setShowGuestDropdown(!showGuestDropdown)}
+                className="w-full flex items-center justify-between bg-transparent text-white font-semibold text-sm outline-none"
+              >
+                <span>{guests} {language === 'sl' ? (guests === 1 ? 'gost' : guests === 2 ? 'gosta' : 'gostov') : (guests === 1 ? 'Guest' : 'Guests')}</span>
+                <ChevronDownIcon className={`w-4 h-4 transition-transform ${showGuestDropdown ? 'rotate-180' : ''}`} />
+              </button>
+              {showGuestDropdown && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/10 shadow-xl z-50 overflow-hidden">
+                  {[1, 2, 3, 4].map((n) => (
+                    <button
+                      key={n}
+                      onClick={() => { setGuests(n); setShowGuestDropdown(false); }}
+                      className={`w-full px-4 py-2.5 text-left text-sm hover:bg-white/10 transition-colors ${guests === n ? 'text-indigo-400 font-semibold' : 'text-white'}`}
+                    >
+                      {n} {language === 'sl' ? (n === 1 ? 'gost' : n === 2 ? 'gosta' : 'gostov') : (n === 1 ? 'Guest' : 'Guests')}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="text-white font-semibold">2 Adults, 0 Children</div>
-          </div>
-          <div className="flex-1 px-6">
-            <div className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-1">
-              <HomeIcon className="w-4 h-4 mr-2" />
-              Suite Type
+
+            {/* Suite Type */}
+            <div className="flex-1 bg-white/10 rounded-xl px-4 py-2.5 hover:bg-white/15 transition-colors">
+              <label className="flex items-center text-white/60 text-xs uppercase tracking-wider mb-0.5">
+                <HomeIcon className="w-3.5 h-3.5 mr-1.5" />
+                {language === 'sl' ? 'Suite' : 'Suite Type'}
+              </label>
+              <select
+                value={suiteType}
+                onChange={(e) => setSuiteType(e.target.value)}
+                className="w-full bg-transparent text-white font-semibold text-sm outline-none cursor-pointer appearance-none"
+                style={{ colorScheme: 'dark' }}
+              >
+                {SUITE_OPTIONS.map((opt) => (
+                  <option key={opt.value} value={opt.value} className="bg-slate-900 text-white">
+                    {language === 'sl' ? opt.labelSl : opt.labelEn}
+                  </option>
+                ))}
+              </select>
             </div>
-            <div className="text-white font-semibold">Premium Suite</div>
-          </div>
-          <Link to="/reservation" className="ml-4">
-            <button className="bg-white text-indigo-900 px-8 py-4 rounded-2xl font-bold hover:bg-indigo-50 transition-colors uppercase tracking-wider text-sm">
-              Check
+
+            {/* CTA Button */}
+            <button
+              onClick={handleCheckAvailability}
+              className="bg-white text-indigo-900 px-8 py-3.5 rounded-xl font-bold hover:bg-indigo-50 transition-colors uppercase tracking-wider text-sm whitespace-nowrap shadow-lg"
+            >
+              {language === 'sl' ? 'Preveri' : 'Check'}
             </button>
-          </Link>
+          </div>
+
+          {/* Trust badges below */}
+          <div className="flex items-center justify-center gap-6 mt-2 text-white/40 text-xs">
+            <span>✓ {language === 'sl' ? 'Najboljša cena' : 'Best Price'}</span>
+            <span>✓ {language === 'sl' ? 'Brezplačna odpoved' : 'Free Cancellation'}</span>
+            <span>✓ {language === 'sl' ? 'Potrjeno takoj' : 'Instant Confirmation'}</span>
+          </div>
         </div>
       </motion.div>
 
@@ -138,7 +229,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 lg:hidden"
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden lg:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
@@ -153,7 +244,7 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
