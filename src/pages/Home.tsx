@@ -22,6 +22,7 @@ import NewsletterSection from '../components/sections/NewsletterSection'
 import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
 import LocationMap from '../components/sections/LocationMap'
+import VirtualTourSection from '../components/sections/VirtualTourSection'
 const Home = () => {
   const { t } = useLanguage()
 
@@ -104,6 +105,9 @@ const Home = () => {
 
       {/* Gallery Preview */}
       <GalleryPreview />
+
+      {/* Virtual Tour */}
+      <VirtualTourSection />
 
       {/* Reviews Preview */}
       <ReviewsPreview />
