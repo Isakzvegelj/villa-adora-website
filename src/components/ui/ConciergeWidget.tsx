@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChatBubbleLeftRightIcon, XMarkIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline';
+import { ChatBubbleLeftRightIcon, XMarkIcon, PaperAirplaneIcon, SignalSlashIcon, SignalIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface Message {
@@ -10,24 +10,23 @@ interface Message {
   timestamp: Date;
 }
 
-const INITIAL_MESSAGE = "Hi! I'm Luka, your digital concierge at Villa Adora. How can I help you today?";
+const BOT_API = 'https://villa-adora-bot-r00l.onrender.com/api/chat';
+
+const INITIAL_MESSAGE_EN = "Hi! I'm Luka, your digital concierge at Villa Adora. How can I help you today?";
+const INITIAL_MESSAGE_SL = "Pozdravljeni! Sem Luka, vaš digitalni concierge v Vili Adora. Kako vam lahko pomagam?";
 
 export default function ConciergeWidget() {
   const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: language === 'sl' ? "Pozdravljeni! Sem Luka, vaš digitalni concierge v Vili Adora. Kako vam lahko pomagam?" : INITIAL_MESSAGE,
-      isUser: false,
-      timestamp: new Date(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [sessionId] = useState(() => 'web-' + Math.random().toString(36).substr(2, 9));
+  const [isOnline, setIsOnline] = useState<boolean | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const statusCheckRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const SUGGESTIONS = language === 'sl'
     ? [
@@ -44,6 +43,61 @@ export default function ConciergeWidget() {
         "What is there to do nearby?",
         "I want to book a room",
       ];
+
+  // Check bot connectivity when widget opens
+  const checkStatus = async () => {
+    try {
+      const res = await fetch('https://villa-adora-bot-r00l.onrender.com/', {
+        method: 'GET',
+        signal: AbortSignal.timeout(8000),
+      });
+      setIsOnline(res.ok);
+    } catch {
+      // Render free-tier sleeps after 15min inactivity — first ping wakes it
+      setIsOnline(false);
+      // Try one more time after a short delay (warming up)
+      try {
+        await new Promise(r => setTimeout(r, 3000));
+        const res2 = await fetch('https://villa-adora-bot-r00l.onrender.com/', {
+          method: 'GET',
+          signal: AbortSignal.timeout(15000),
+        });
+        setIsOnline(res2.ok);
+      } catch {
+        setIsOnline(false);
+      }
+    }
+  };
+
+  // Set initial message when language changes or widget first opens
+  useEffect(() => {
+    const initialText = language === 'sl' ? INITIAL_MESSAGE_SL : INITIAL_MESSAGE_EN;
+    setMessages([{
+      id: '1',
+      text: initialText,
+      isUser: false,
+      timestamp: new Date(),
+    }]);
+  }, [language]);
+
+  // Check status when widget opens
+  useEffect(() => {
+    if (isOpen && isOnline === null) {
+      checkStatus();
+    }
+  }, [isOpen]);
+
+  // Periodic status check when open
+  useEffect(() => {
+    if (isOpen) {
+      statusCheckRef.current = setInterval(checkStatus, 60000);
+    } else {
+      if (statusCheckRef.current) clearInterval(statusCheckRef.current);
+    }
+    return () => {
+      if (statusCheckRef.current) clearInterval(statusCheckRef.current);
+    };
+  }, [isOpen]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -74,17 +128,20 @@ export default function ConciergeWidget() {
     setIsTyping(true);
 
     try {
-      const response = await fetch('https://villa-adora-bot-r00l.onrender.com/api/chat', {
+      const response = await fetch(BOT_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           session_id: sessionId,
           message: text.trim(),
         }),
+        signal: AbortSignal.timeout(30000),
       });
 
       const data = await response.json();
       setIsTyping(false);
+      setIsOnline(true);
+      setRetryCount(0);
 
       for (const reply of data.replies) {
         if (reply.type === 'text') {
@@ -99,11 +156,19 @@ export default function ConciergeWidget() {
       }
     } catch (error) {
       setIsTyping(false);
+      setIsOnline(false);
+      const newRetry = retryCount + 1;
+      setRetryCount(newRetry);
+
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: language === 'sl'
-          ? "Oprostim, trenutno imam težave s povezavo. Poskusite znova čez trenutek, ali pokličite +386 51 603 858."
-          : "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or call us at +386 51 603 858.",
+          ? newRetry >= 2
+            ? "Oprostite, trenutno ne morem vzpostaviti povezave. Prosim pokličite +386 51 603 858 ali pošljite e-pošto na evita.vilebled@gmail.com."
+            : "Oprostim, trenutno imam težave s povezavo. Poskusite znova čez trenutek, ali pokličite +386 51 603 858."
+          : newRetry >= 2
+            ? "I'm sorry, I'm unable to connect right now. Please call us at +386 51 603 858 or email evita.vilebled@gmail.com."
+            : "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or call us at +386 51 603 858.",
         isUser: false,
         timestamp: new Date(),
       };
@@ -131,6 +196,7 @@ export default function ConciergeWidget() {
         className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full shadow-2xl flex items-center justify-center text-white hover:shadow-indigo-500/30 transition-shadow duration-300"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
+        aria-label={isOpen ? 'Close chat' : 'Open chat'}
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -176,13 +242,31 @@ export default function ConciergeWidget() {
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-lg">
                   🏔️
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm">Luka — {language === 'sl' ? 'Digitalni Concierge' : 'Digital Concierge'}</h3>
-                  <p className="text-xs text-white/80">Villa Adora Bled</p>
+                  <p className="text-xs text-white/80 truncate">Villa Adora Bled</p>
                 </div>
-                <div className="ml-auto flex items-center gap-1.5">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-xs text-white/80">{language === 'sl' ? 'Dosegljiv' : 'Online'}</span>
+                <div className="flex items-center gap-1.5 flex-shrink-0">
+                  {isOnline === null ? (
+                    <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+                  ) : isOnline ? (
+                    <>
+                      <SignalIcon className="w-3.5 h-3.5 text-green-300" />
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    </>
+                  ) : (
+                    <>
+                      <SignalSlashIcon className="w-3.5 h-3.5 text-red-300" />
+                      <span className="w-2 h-2 bg-red-400 rounded-full" />
+                    </>
+                  )}
+                  <span className="text-xs text-white/80">
+                    {isOnline === null
+                      ? (language === 'sl' ? 'Preverjam...' : 'Checking...')
+                      : isOnline
+                        ? (language === 'sl' ? 'Dosegljiv' : 'Online')
+                        : (language === 'sl' ? 'Odsoten' : 'Offline')}
+                  </span>
                 </div>
               </div>
             </div>

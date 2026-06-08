@@ -92,8 +92,45 @@ const Reservation = () => {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    // Build a structured reservation payload
+    const reservationData = {
+      ...formData,
+      nights,
+      totalPrice,
+      selectedRoom: selectedRoom?.label,
+      submittedAt: new Date().toISOString(),
+    };
+
+    // Store in localStorage for admin dashboard pickup
+    try {
+      const existing = JSON.parse(localStorage.getItem('villa_adora_reservations') || '[]');
+      existing.push(reservationData);
+      localStorage.setItem('villa_adora_reservations', JSON.stringify(existing));
+    } catch {
+      // localStorage unavailable — continue anyway
+    }
+
+    // Send via Formspree (free email form service)
+    // Replace FORM_ID with actual Formspree form ID when configured
+    const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || '';
+    if (FORMSPREE_ID) {
+      try {
+        await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            _subject: `Reservation Request — ${formData.firstName} ${formData.lastName}`,
+            ...reservationData,
+          }),
+        });
+      } catch {
+        // Formspree failed — data is still in localStorage
+      }
+    }
+
+    // Simulate brief processing delay for UX
+    await new Promise((resolve) => setTimeout(resolve, 1200));
     setIsSubmitting(false);
     setIsSubmitted(true);
   };

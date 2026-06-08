@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
-import { 
-  UsersIcon, 
-  CalendarDaysIcon, 
-  CurrencyDollarIcon, 
+import {
+  UsersIcon,
+  CalendarDaysIcon,
+  CurrencyDollarIcon,
   ArrowTrendingUpIcon,
-  CheckCircleIcon,
-  ClockIcon
+  TrashIcon,
+  EnvelopeIcon,
 } from '@heroicons/react/24/outline'
 
 const stats = [
@@ -16,15 +16,39 @@ const stats = [
   { name: 'Occupancy Rate', value: '88%', change: '+14%', icon: <ArrowTrendingUpIcon className="w-6 h-6" /> },
 ]
 
-const recentBookings = [
-  { id: 'BK-001', guest: 'Michael Scott', room: 'Premium Suite', checkIn: 'Oct 12', status: 'Confirmed' },
-  { id: 'BK-002', guest: 'Sarah Connor', room: 'Lake View Suite', checkIn: 'Oct 14', status: 'Pending' },
-  { id: 'BK-003', guest: 'James Bond', room: 'Presidential Suite', checkIn: 'Oct 15', status: 'Confirmed' },
-  { id: 'BK-004', guest: 'Ellen Ripley', room: 'Premium Suite', checkIn: 'Oct 18', status: 'Confirmed' },
-]
+interface Reservation {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  checkIn?: string;
+  checkOut?: string;
+  roomType?: string;
+  selectedRoom?: string;
+  adults?: string;
+  children?: string;
+  nights?: number;
+  totalPrice?: number;
+  requests?: string;
+  submittedAt?: string;
+  id?: string;
+}
 
 const AdminDashboard = () => {
   const { t } = useLanguage()
+
+  // Read real reservations from localStorage
+  let reservations: Reservation[] = []
+  try {
+    reservations = JSON.parse(localStorage.getItem('villa_adora_reservations') || '[]')
+  } catch {
+    reservations = []
+  }
+
+  const clearReservations = () => {
+    localStorage.removeItem('villa_adora_reservations')
+    window.location.reload()
+  }
 
   return (
     <motion.div
@@ -35,13 +59,24 @@ const AdminDashboard = () => {
       className="pt-24 pb-12 bg-slate-50 dark:bg-slate-950 min-h-screen"
     >
       <div className="container-max">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 flex-wrap gap-4">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white font-serif">
             {t('nav.admin')} Dashboard
           </h1>
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium shadow transition-colors">
-            Generate Report
-          </button>
+          <div className="flex gap-3">
+            {reservations.length > 0 && (
+              <button
+                onClick={clearReservations}
+                className="bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 px-4 py-2 rounded-lg font-medium transition-colors text-sm flex items-center gap-1.5"
+              >
+                <TrashIcon className="w-4 h-4" />
+                Clear ({reservations.length})
+              </button>
+            )}
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium shadow transition-colors">
+              Generate Report
+            </button>
+          </div>
         </div>
 
         {/* Stats Grid */}
@@ -69,44 +104,74 @@ const AdminDashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Recent Bookings Table */}
+          {/* Reservations Table */}
           <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
-            <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-800">
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Recent Reservations</h2>
+            <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">
+                Recent Reservations
+                {reservations.length > 0 && (
+                  <span className="ml-2 text-sm font-normal text-slate-500">
+                    ({reservations.length} from website)
+                  </span>
+                )}
+              </h2>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-sm uppercase tracking-wider">
-                    <th className="px-6 py-4 font-medium">ID</th>
-                    <th className="px-6 py-4 font-medium">Guest</th>
-                    <th className="px-6 py-4 font-medium">Room</th>
-                    <th className="px-6 py-4 font-medium">Check-In</th>
-                    <th className="px-6 py-4 font-medium">Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                  {recentBookings.map((booking) => (
-                    <tr key={booking.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                      <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">{booking.id}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">{booking.guest}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">{booking.room}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">{booking.checkIn}</td>
-                      <td className="px-6 py-4 text-sm">
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          booking.status === 'Confirmed' 
-                            ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400' 
-                            : 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400'
-                        }`}>
-                          {booking.status === 'Confirmed' ? <CheckCircleIcon className="w-3 h-3 mr-1" /> : <ClockIcon className="w-3 h-3 mr-1" />}
-                          {booking.status}
-                        </span>
-                      </td>
+
+            {reservations.length === 0 ? (
+              <div className="p-12 text-center">
+                <CalendarDaysIcon className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
+                <p className="text-slate-500 dark:text-slate-400 font-medium">No reservations yet</p>
+                <p className="text-slate-400 dark:text-slate-500 text-sm mt-1">
+                  Reservation requests from the website will appear here.
+                </p>
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-sm uppercase tracking-wider">
+                      <th className="px-6 py-4 font-medium">Guest</th>
+                      <th className="px-6 py-4 font-medium">Contact</th>
+                      <th className="px-6 py-4 font-medium">Suite</th>
+                      <th className="px-6 py-4 font-medium">Dates</th>
+                      <th className="px-6 py-4 font-medium">Total</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                    {reservations.reverse().map((r, i) => (
+                      <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                        <td className="px-6 py-4">
+                          <div className="text-sm font-medium text-slate-900 dark:text-white">
+                            {r.firstName} {r.lastName}
+                          </div>
+                          <div className="text-xs text-slate-500">
+                            {r.adults} adults{r.children && Number(r.children) > 0 ? `, ${r.children} children` : ''}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm text-slate-600 dark:text-slate-300">{r.email}</div>
+                          <div className="text-xs text-slate-500">{r.phone}</div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm text-slate-600 dark:text-slate-300">{r.selectedRoom || r.roomType}</div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm text-slate-600 dark:text-slate-300">
+                            {r.checkIn} → {r.checkOut}
+                          </div>
+                          <div className="text-xs text-slate-500">{r.nights} nights</div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400">
+                            €{r.totalPrice?.toLocaleString()}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
 
           {/* Quick Actions / Activity */}
@@ -123,6 +188,19 @@ const AdminDashboard = () => {
                 <button className="w-full text-left px-4 py-3 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors">
                   View Guest Messages
                 </button>
+              </div>
+            </div>
+
+            {/* Contact info */}
+            <div className="bg-indigo-600 rounded-2xl p-6 text-white">
+              <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
+                <EnvelopeIcon className="w-5 h-5" />
+                Contact
+              </h3>
+              <div className="space-y-2 text-sm text-indigo-100">
+                <p>📞 +386 51 603 858</p>
+                <p>✉️ evita.vilebled@gmail.com</p>
+                <p>📍 Cesta svobode 35, Bled</p>
               </div>
             </div>
           </div>

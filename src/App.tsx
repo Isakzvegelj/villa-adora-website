@@ -4,10 +4,12 @@ import { AnimatePresence } from 'framer-motion'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Home from './pages/Home'
-import { LanguageProvider } from './contexts/LanguageContext'
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext'
 import { ThemeProvider } from './contexts/ThemeContext'
 import LoadingScreen from './components/ui/LoadingScreen'
 import ConciergeWidget from './components/ui/ConciergeWidget'
+import ScrollToTop from './components/ui/ScrollToTop'
+import NotFound from './pages/NotFound'
 import './App.css'
 
 // Lazy-loaded pages for better code splitting
@@ -34,6 +36,7 @@ function AnimatedRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </AnimatePresence>
@@ -51,13 +54,24 @@ function PageLoader() {
   )
 }
 
+// Sets the HTML lang attribute based on selected language
+function HtmlLangUpdater() {
+  const { language } = useLanguage()
+  
+  useEffect(() => {
+    document.documentElement.lang = language === 'sl' ? 'sl' : 'en'
+  }, [language])
+  
+  return null
+}
+
 function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2500)
+    }, 1200)
 
     return () => clearTimeout(timer)
   }, [])
@@ -65,6 +79,7 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
+        <HtmlLangUpdater />
         <AnimatePresence mode="wait">
           {isLoading ? (
             <LoadingScreen key="loading" />
@@ -77,6 +92,7 @@ function App() {
                 </main>
                 <Footer />
                 <ConciergeWidget />
+                <ScrollToTop />
               </div>
             </Router>
           )}
