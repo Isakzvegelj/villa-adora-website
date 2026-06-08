@@ -14,6 +14,7 @@ import BledSeasons from '../components/sections/BledSeasons';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
 import SpecialOffers from '../components/sections/SpecialOffers';
 import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
+import WhyChooseUs from '../components/sections/WhyChooseUs';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 
 const Home = () => {
@@ -31,6 +32,9 @@ const Home = () => {
 
       {/* About Preview */}
       <AboutPreview />
+
+      {/* Why Choose Us */}
+      <WhyChooseUs />
 
       {/* Suites Preview */}
       <SuitesPreview />

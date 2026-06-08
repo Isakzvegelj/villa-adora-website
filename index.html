@@ -85,10 +85,163 @@
         { "@type": "LocationFeatureSpecification", "name": "Lake View", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Concierge Service", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Spa & Wellness", "value": true }
+        { "@type": "LocationFeatureSpecification", "name": "Spa & Wellness", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Room Service", "value": true }
       ],
       "openingHours": "Mo-Su 07:00-22:00",
-      "sameAs": []
+      "sameAs": [],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Room Types",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Princess Suite",
+              "description": "55 m² suite with living area, bedroom, and bathroom. Tower overlooks Lake Bled.",
+              "bedType": "King",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "250",
+              "priceCurrency": "EUR",
+              "unitText": "night"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Luxury Suite",
+              "description": "Luxury suite designed for ultimate comfort and elegance with unforgettable lake views.",
+              "bedType": "King",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "270",
+              "priceCurrency": "EUR",
+              "unitText": "night"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Penthouse Suite",
+              "description": "Two-floor suite (60 m²) with cozy atmosphere and breathtaking views.",
+              "bedType": "King",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 3 }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "300",
+              "priceCurrency": "EUR",
+              "unitText": "night"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Swan Suite",
+              "description": "Elegant and spacious suite providing the perfect sanctuary.",
+              "bedType": "King",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "370",
+              "priceCurrency": "EUR",
+              "unitText": "night"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Island Suite",
+              "description": "65 m² luxury suite with two bedrooms, two balconies, and stunning lake views.",
+              "bedType": "King",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 4 }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "380",
+              "priceCurrency": "EUR",
+              "unitText": "night"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Prestige Suite",
+              "description": "72 m² ground floor suite with artful decor and lake views from every window.",
+              "bedType": "King",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 3 }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "420",
+              "priceCurrency": "EUR",
+              "unitText": "night"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the check-in and check-out times at Villa Adora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check-in is from 15:00 to 22:00. Check-out is by 11:00. Late check-in and late check-out are available on request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Villa Adora pet-friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, pets are allowed on request. Please contact us in advance to arrange."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Villa Adora offer free parking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, free private parking is available on-site for all guests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far is Villa Adora from Lake Bled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Villa Adora is located directly on the shore of Lake Bled, just a 1-minute walk from the lake."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the cancellation policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free cancellation up to 48 hours before arrival. Cancellations within 48 hours are charged for the first night."
+          }
+        }
+      ]
     }
     </script>
   </head>
