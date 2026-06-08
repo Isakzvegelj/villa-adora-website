@@ -10,6 +10,7 @@ import GalleryPreview from '../components/sections/GalleryPreview';
 import ReviewsPreview from '../components/sections/ReviewsPreview';
 import AwardsSection from '../components/sections/AwardsSection';
 import NearbyAttractions from '../components/sections/NearbyAttractions';
+import BledSeasons from '../components/sections/BledSeasons';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 
 const Home = () => {
@@ -42,6 +43,9 @@ const Home = () => {
 
       {/* Awards & Ratings */}
       <AwardsSection />
+
+      {/* Bled Through the Seasons */}
+      <BledSeasons />
 
       {/* Nearby Attractions */}
       <NearbyAttractions />

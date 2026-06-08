@@ -136,6 +136,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'footer.newsletter.placeholder': 'Vaš e-naslov',
       'footer.newsletter.button': 'Prijava',
       'footer.rights': 'Vse pravice pridržane.',
+
+      // Bled Seasons
+      'seasons.title': 'Bled skozi leto',
+      'seasons.subtitle': 'Vsako sezono ponuje svoja čuda',
+      'seasons.spring.title': 'Pomlad',
+      'seasons.spring.desc': 'Cvetoče češnje, tople sončne dni in mirno jezero. Idealno za kajak in pohodništvo.',
+      'seasons.summer.title': 'Poletje',
+      'seasons.summer.desc': 'Topla voda za kopanje, živahna terasa in dolgi večeri. Padajoče cvetje in lokalne specialitete.',
+      'seasons.autumn.title': 'Jesen',
+      'seasons.autumn.desc': 'Zlatorumena lista, čista vina in mistični megleni jutri. Popoln za romantičen oddih.',
+      'seasons.winter.title': 'Zima',
+      'seasons.winter.desc': 'Zavito v sneg, Bled postane pravljica. Božična tržnica, smučanje in topli napitki.',
     },
     en: {
       // Navigation
@@ -252,6 +264,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'footer.newsletter.placeholder': 'Your email',
       'footer.newsletter.button': 'Subscribe',
       'footer.rights': 'All rights reserved.',
+
+      // Bled Seasons
+      'seasons.title': 'Bled Through the Seasons',
+      'seasons.subtitle': 'Every season brings its own magic',
+      'seasons.spring.title': 'Spring',
+      'seasons.spring.desc': 'Cherry blossoms, warm sunny days, and a tranquil lake. Perfect for kayaking and hiking.',
+      'seasons.summer.title': 'Summer',
+      'seasons.summer.desc': 'Warm water for swimming, vibrant terraces, and long evenings. Blooming flowers and local delicacies.',
+      'seasons.autumn.title': 'Autumn',
+      'seasons.autumn.desc': 'Golden foliage, fine wines, and mystical foggy mornings. Ideal for a romantic retreat.',
+      'seasons.winter.title': 'Winter',
+      'seasons.winter.desc': 'Blanketed in snow, Bled becomes a fairytale. Christmas market, skiing, and warm drinks.',
     },
   }
 
