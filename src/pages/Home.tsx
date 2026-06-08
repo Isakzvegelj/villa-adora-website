@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { PageSEO, JsonLd } from '../components/ui/PageSEO';
 import HeroSection from '../components/sections/HeroSection';
 import AboutPreview from '../components/sections/AboutPreview';
 import SuitesPreview from '../components/sections/SuitesPreview';
@@ -30,6 +31,61 @@ const Home = () => {
       transition={{ duration: 0.6 }}
       className="w-full"
     >
+      {/* SEO Meta Tags & Structured Data */}
+      <PageSEO
+        title="Villa Adora — Luxury Hotel on Lake Bled, Slovenia"
+        description="Villa Adora is a luxury boutique hotel on the shores of Lake Bled, Slovenia. Enjoy lake-view suites, fine dining, spa & wellness, and unforgettable Alpine experiences."
+        keywords={['Villa Adora', 'luxury hotel Bled', 'Lake Bled hotel', 'Slovenia boutique hotel', 'lake view suite Bled', 'Bled accommodation']}
+        ogImage="https://villa-adora-bled.si/og-image.jpg"
+        ogType="website"
+        canonicalUrl="https://villa-adora-bled.si/"
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Hotel',
+          name: 'Villa Adora',
+          description: 'Luxury boutique hotel on the shores of Lake Bled, Slovenia. Lake-view suites, fine dining, spa & wellness.',
+          url: 'https://villa-adora-bled.si',
+          image: 'https://villa-adora-bled.si/og-image.jpg',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Cesta svobode 17',
+            addressLocality: 'Bled',
+            postalCode: '4260',
+            addressCountry: 'SI',
+          },
+          telephone: '+386 4 574 10 00',
+          email: 'info@villa-adora-bled.si',
+          priceRange: '€250 - €420',
+          starRating: {
+            '@type': 'Rating',
+            ratingValue: 4,
+            bestRating: 5,
+          },
+          amenityFeature: [
+            { '@type': 'LocationFeatureSpecification', name: 'Free Wi-Fi' },
+            { '@type': 'LocationFeatureSpecification', name: 'Restaurant' },
+            { '@type': 'LocationFeatureSpecification', name: 'Spa & Wellness' },
+            { '@type': 'LocationFeatureSpecification', name: 'Lake View Suites' },
+            { '@type': 'LocationFeatureSpecification', name: 'Free Parking' },
+            { '@type': 'LocationFeatureSpecification', name: 'Concierge Service' },
+            { '@type': 'LocationFeatureSpecification', name: 'Room Service' },
+          ],
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 46.3683,
+            longitude: 14.1144,
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: 4.8,
+            reviewCount: 312,
+            bestRating: 5,
+          },
+        }}
+      />
+
       {/* Hero Section */}
       <HeroSection />
 

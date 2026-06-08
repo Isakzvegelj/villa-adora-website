@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useSearchParams } from 'react-router-dom';
 import { CalendarIcon, UserGroupIcon, HomeIcon, CheckCircleIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import { PageSEO } from '../components/ui/PageSEO';
 
 interface FormData {
   firstName: string;
@@ -222,6 +223,13 @@ const Reservation = () => {
       transition={{ duration: 0.6 }}
       className="pt-20 bg-slate-50 dark:bg-slate-950 min-h-screen"
     >
+      <PageSEO
+        title="Book Your Stay — Villa Adora Reservations"
+        description="Reserve your luxury suite at Villa Adora on Lake Bled. Best rate guarantee, free cancellation, and personalized concierge service."
+        keywords={['Villa Adora booking', 'book hotel Bled', 'luxury suite reservation', 'Lake Bled accommodation', 'hotel reservation Slovenia']}
+        ogType="website"
+        canonicalUrl="https://villa-adora-bled.si/reservation"
+      />
       <section className="section-padding">
         <div className="container-max">
           <div className="max-w-5xl mx-auto">

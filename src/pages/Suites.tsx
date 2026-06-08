@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { PageSEO } from '../components/ui/PageSEO';
 import {
   CheckIcon,
   ArrowRightIcon,
@@ -118,6 +119,13 @@ const Suites = () => {
       transition={{ duration: 0.6 }}
       className="pt-20 bg-slate-50 dark:bg-slate-950 min-h-screen"
     >
+      <PageSEO
+        title="Luxury Suites — Villa Adora, Lake Bled"
+        description="Explore our 6 luxury suites at Villa Adora on Lake Bled. From the intimate Princess Suite to the grand Penthouse, each offers unique elegance and lake views."
+        keywords={['Villa Adora suites', 'luxury hotel rooms Bled', 'lake view suite Slovenia', 'Princess Suite', 'Penthouse Suite', 'boutique hotel accommodation']}
+        ogType="website"
+        canonicalUrl="https://villa-adora-bled.si/suites"
+      />
       {/* Hero Banner */}
       <div className="relative h-[50vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
