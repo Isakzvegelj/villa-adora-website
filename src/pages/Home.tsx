@@ -18,6 +18,7 @@ import WhyChooseUs from '../components/sections/WhyChooseUs';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 import CulinarySection from '../components/sections/CulinarySection';
 import NewsletterSection from '../components/sections/NewsletterSection';
+import FAQSection from '../components/sections/FAQSection';
 
 const Home = () => {
   const { t } = useLanguage()
@@ -73,6 +74,9 @@ const Home = () => {
 
       {/* Newsletter */}
       <NewsletterSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* Call to Action */}
       <motion.section
