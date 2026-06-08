@@ -12,6 +12,8 @@ import AwardsSection from '../components/sections/AwardsSection';
 import NearbyAttractions from '../components/sections/NearbyAttractions';
 import BledSeasons from '../components/sections/BledSeasons';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
+import SpecialOffers from '../components/sections/SpecialOffers';
+import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 
 const Home = () => {
@@ -50,6 +52,12 @@ const Home = () => {
 
       {/* Guest Testimonials */}
       <TestimonialsSection />
+
+      {/* Special Offers */}
+      <SpecialOffers />
+
+      {/* Quick Price Calculator */}
+      <QuickPriceCalculator />
 
       {/* Nearby Attractions */}
       <NearbyAttractions />

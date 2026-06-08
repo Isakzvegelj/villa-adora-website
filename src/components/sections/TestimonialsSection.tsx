@@ -96,7 +96,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialsSection = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);

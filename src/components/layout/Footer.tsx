@@ -178,9 +178,12 @@ const Footer = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-slate-500 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} Villa Adora. {t('footer.rights')}
-          </p>
+          <div className="flex items-center text-slate-500 text-sm space-x-1">
+            <span>&copy; {currentYear} Villa Adora.</span>
+            <Link to="/privacy" className="hover:text-indigo-400 transition-colors ml-1">Privacy Policy</Link>
+            <span className="mx-1">·</span>
+            <span>{t('footer.rights')}</span>
+          </div>
           <div className="flex items-center text-slate-500 text-sm space-x-1">
             <span>Made with</span>
             <HeartIcon className="w-4 h-4 text-pink-500 mx-1" />
