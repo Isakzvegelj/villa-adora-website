@@ -23,6 +23,7 @@ import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
 import LocationMap from '../components/sections/LocationMap'
 import VirtualTourSection from '../components/sections/VirtualTourSection'
+import ConciergeWidget from '../components/ui/ConciergeWidget'
 const Home = () => {
   const { t } = useLanguage()
 
@@ -247,6 +248,9 @@ const Home = () => {
 
       {/* Book Direct Benefits */}
       <BookDirectBenefits />
+
+      {/* Concierge Bot Widget */}
+      <ConciergeWidget />
     </motion.div>
   );
 };
