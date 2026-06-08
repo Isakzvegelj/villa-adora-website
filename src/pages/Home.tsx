@@ -18,10 +18,10 @@ import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 import CulinarySection from '../components/sections/CulinarySection';
-import NewsletterSection from '../components/sections/NewsletterSection';
-import FAQSection from '../components/sections/FAQSection';
-import LocationMap from '../components/sections/LocationMap';
-
+import NewsletterSection from '../components/sections/NewsletterSection'
+import FAQSection from '../components/sections/FAQSection'
+import GuestReviews from '../components/sections/GuestReviews'
+import LocationMap from '../components/sections/LocationMap'
 const Home = () => {
   const { t } = useLanguage()
 
@@ -116,6 +116,9 @@ const Home = () => {
 
       {/* Guest Testimonials */}
       <TestimonialsSection />
+
+      {/* Guest Reviews */}
+      <GuestReviews />
 
       {/* Special Offers */}
       <SpecialOffers />

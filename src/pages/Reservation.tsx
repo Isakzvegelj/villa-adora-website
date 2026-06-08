@@ -52,14 +52,16 @@ const Reservation = () => {
     const checkIn = searchParams.get('checkIn');
     const checkOut = searchParams.get('checkOut');
     const adults = searchParams.get('adults');
+    const children = searchParams.get('children');
     const roomType = searchParams.get('roomType');
     
-    if (checkIn || checkOut || adults || roomType) {
+    if (checkIn || checkOut || adults || children || roomType) {
       setFormData(prev => ({
         ...prev,
         checkIn: checkIn || prev.checkIn,
         checkOut: checkOut || prev.checkOut,
         adults: adults || prev.adults,
+        children: children || prev.children,
         roomType: roomType || prev.roomType,
       }));
     }

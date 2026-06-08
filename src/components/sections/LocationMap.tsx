@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPinIcon, ClockIcon, CameraIcon, MountainIcon, WavesIcon, CastleIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, ClockIcon, SunIcon as MountainIcon, SparklesIcon as WavesIcon, BuildingLibraryIcon as CastleIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const ATTRACTIONS = [
