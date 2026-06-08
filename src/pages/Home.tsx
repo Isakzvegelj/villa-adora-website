@@ -20,6 +20,7 @@ import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 import CulinarySection from '../components/sections/CulinarySection';
 import NewsletterSection from '../components/sections/NewsletterSection';
 import FAQSection from '../components/sections/FAQSection';
+import LocationMap from '../components/sections/LocationMap';
 
 const Home = () => {
   const { t } = useLanguage()
@@ -127,6 +128,9 @@ const Home = () => {
 
       {/* Nearby Attractions */}
       <NearbyAttractions />
+
+      {/* Interactive Location Map */}
+      <LocationMap />
 
       {/* Newsletter */}
       <NewsletterSection />
