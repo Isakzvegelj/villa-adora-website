@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChatBubbleLeftRightIcon, XMarkIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface Message {
   id: string;
@@ -11,20 +12,13 @@ interface Message {
 
 const INITIAL_MESSAGE = "Hi! I'm Luka, your digital concierge at Villa Adora. How can I help you today?";
 
-const SUGGESTIONS = [
-  "What rooms do you have?",
-  "Tell me about the restaurant",
-  "Check-in and check-out times",
-  "What is there to do nearby?",
-  "I want to book a room",
-];
-
 export default function ConciergeWidget() {
+  const { t, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: INITIAL_MESSAGE,
+      text: language === 'sl' ? "Pozdravljeni! Sem Luka, vaš digitalni concierge v Vili Adora. Kako vam lahko pomagam?" : INITIAL_MESSAGE,
       isUser: false,
       timestamp: new Date(),
     },
@@ -34,6 +28,22 @@ export default function ConciergeWidget() {
   const [sessionId] = useState(() => 'web-' + Math.random().toString(36).substr(2, 9));
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const SUGGESTIONS = language === 'sl'
+    ? [
+        "Katere sobe imate?",
+        "Povejte mi o restavraciji",
+        "Check-in in check-out čas",
+        "Kaj je za v okolici narediti?",
+        "Želiti rezervirati sobo",
+      ]
+    : [
+        "What rooms do you have?",
+        "Tell me about the restaurant",
+        "Check-in and check-out times",
+        "What is there to do nearby?",
+        "I want to book a room",
+      ];
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -91,7 +101,9 @@ export default function ConciergeWidget() {
       setIsTyping(false);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or call us at +386 51 603 858.",
+        text: language === 'sl'
+          ? "Oprostim, trenutno imam težave s povezavo. Poskusite znova čez trenutek, ali pokličite +386 51 603 858."
+          : "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or call us at +386 51 603 858.",
         isUser: false,
         timestamp: new Date(),
       };
@@ -165,12 +177,12 @@ export default function ConciergeWidget() {
                   🏔️
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm">Luka — Digital Concierge</h3>
+                  <h3 className="font-semibold text-sm">Luka — {language === 'sl' ? 'Digitalni Concierge' : 'Digital Concierge'}</h3>
                   <p className="text-xs text-white/80">Villa Adora Bled</p>
                 </div>
                 <div className="ml-auto flex items-center gap-1.5">
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-xs text-white/80">Online</span>
+                  <span className="text-xs text-white/80">{language === 'sl' ? 'Dosegljiv' : 'Online'}</span>
                 </div>
               </div>
             </div>
@@ -242,7 +254,7 @@ export default function ConciergeWidget() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Type your message..."
+                  placeholder={language === 'sl' ? 'Napišite sporočilo...' : 'Type your message...'}
                   className="flex-1 px-4 py-2.5 bg-slate-100 dark:bg-slate-800 rounded-xl text-sm text-slate-700 dark:text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-indigo-500"
                 />
                 <button
