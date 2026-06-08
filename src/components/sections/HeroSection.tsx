@@ -20,6 +20,7 @@ const HeroSection = () => {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState(2);
+  const [children, setChildren] = useState(0);
   const [suiteType, setSuiteType] = useState('any');
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
 
@@ -31,6 +32,7 @@ const HeroSection = () => {
     if (checkIn) params.set('checkIn', checkIn);
     if (checkOut) params.set('checkOut', checkOut);
     params.set('adults', guests.toString());
+    params.set('children', children.toString());
     if (suiteType !== 'any') params.set('roomType', suiteType);
     navigate(`/reservation?${params.toString()}`);
   };
@@ -168,20 +170,50 @@ const HeroSection = () => {
                 onClick={() => setShowGuestDropdown(!showGuestDropdown)}
                 className="w-full flex items-center justify-between bg-transparent text-white font-semibold text-sm outline-none"
               >
-                <span>{guests} {language === 'sl' ? (guests === 1 ? 'gost' : guests === 2 ? 'gosta' : 'gostov') : (guests === 1 ? 'Guest' : 'Guests')}</span>
+                <span>
+                  {guests} {language === 'sl' ? (guests === 1 ? 'odrasli' : 'odraslih') : (guests === 1 ? 'Adult' : 'Adults')}
+                  {children > 0 && `, ${children} ${language === 'sl' ? (children === 1 ? 'otrok' : 'otroc') : (children === 1 ? 'Child' : 'Children')}`}
+                </span>
                 <ChevronDownIcon className={`w-4 h-4 transition-transform ${showGuestDropdown ? 'rotate-180' : ''}`} />
               </button>
               {showGuestDropdown && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/10 shadow-xl z-50 overflow-hidden">
-                  {[1, 2, 3, 4].map((n) => (
-                    <button
-                      key={n}
-                      onClick={() => { setGuests(n); setShowGuestDropdown(false); }}
-                      className={`w-full px-4 py-2.5 text-left text-sm hover:bg-white/10 transition-colors ${guests === n ? 'text-indigo-400 font-semibold' : 'text-white'}`}
-                    >
-                      {n} {language === 'sl' ? (n === 1 ? 'gost' : n === 2 ? 'gosta' : 'gostov') : (n === 1 ? 'Guest' : 'Guests')}
-                    </button>
-                  ))}
+                <div className="absolute top-full left-0 right-0 mt-1 bg-slate-900/95 backdrop-blur-xl rounded-xl border border-white/10 shadow-xl z-50 p-4 space-y-3">
+                  {/* Adults */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-white text-sm">{language === 'sl' ? 'Odrasli' : 'Adults'}</span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setGuests(Math.max(1, guests - 1)); }}
+                        className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 text-sm font-bold"
+                      >−</button>
+                      <span className="text-white font-semibold w-4 text-center">{guests}</span>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setGuests(Math.min(4, guests + 1)); }}
+                        className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 text-sm font-bold"
+                      >+</button>
+                    </div>
+                  </div>
+                  {/* Children */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-white text-sm">{language === 'sl' ? 'Otroci (0-17)' : 'Children (0-17)'}</span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setChildren(Math.max(0, children - 1)); }}
+                        className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 text-sm font-bold"
+                      >−</button>
+                      <span className="text-white font-semibold w-4 text-center">{children}</span>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setChildren(Math.min(3, children + 1)); }}
+                        className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 text-sm font-bold"
+                      >+</button>
+                    </div>
+                  </div>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setShowGuestDropdown(false); }}
+                    className="w-full py-1.5 text-center text-indigo-400 text-xs font-semibold hover:text-indigo-300"
+                  >
+                    {language === 'sl' ? 'Končaj' : 'Done'}
+                  </button>
                 </div>
               )}
             </div>

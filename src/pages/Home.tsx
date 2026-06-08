@@ -11,6 +11,7 @@ import ReviewsPreview from '../components/sections/ReviewsPreview';
 import AwardsSection from '../components/sections/AwardsSection';
 import NearbyAttractions from '../components/sections/NearbyAttractions';
 import BledSeasons from '../components/sections/BledSeasons';
+import TestimonialsSection from '../components/sections/TestimonialsSection';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
 
 const Home = () => {
@@ -46,6 +47,9 @@ const Home = () => {
 
       {/* Bled Through the Seasons */}
       <BledSeasons />
+
+      {/* Guest Testimonials */}
+      <TestimonialsSection />
 
       {/* Nearby Attractions */}
       <NearbyAttractions />

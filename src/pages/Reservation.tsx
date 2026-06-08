@@ -12,6 +12,7 @@ interface FormData {
   checkIn: string;
   checkOut: string;
   adults: string;
+  children: string;
   roomType: string;
   requests: string;
 }
@@ -37,6 +38,7 @@ const Reservation = () => {
     checkIn: '',
     checkOut: '',
     adults: '2',
+    children: '0',
     roomType: 'princess',
     requests: '',
   });
@@ -140,6 +142,13 @@ const Reservation = () => {
               <span className="text-slate-900 dark:text-white font-medium">{selectedRoom?.label}</span>
             </div>
             <div className="flex justify-between">
+              <span className="text-slate-500">Guests:</span>
+              <span className="text-slate-900 dark:text-white font-medium">
+                {formData.adults} {Number(formData.adults) === 1 ? 'Adult' : 'Adults'}
+                {Number(formData.children) > 0 && `, ${formData.children} ${Number(formData.children) === 1 ? 'Child' : 'Children'}`}
+              </span>
+            </div>
+            <div className="flex justify-between">
               <span className="text-slate-500">Dates:</span>
               <span className="text-slate-900 dark:text-white font-medium">{formData.checkIn} → {formData.checkOut}</span>
             </div>
@@ -157,7 +166,7 @@ const Reservation = () => {
               setIsSubmitted(false);
               setFormData({
                 firstName: '', lastName: '', email: '', phone: '',
-                checkIn: '', checkOut: '', adults: '2', roomType: 'princess', requests: '',
+                checkIn: '', checkOut: '', adults: '2', children: '0', roomType: 'princess', requests: '',
               });
             }}
             className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline"
@@ -321,6 +330,24 @@ const Reservation = () => {
                     </div>
                     <div className="space-y-1.5">
                       <label className="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+                        <UserGroupIcon className="w-4 h-4" />
+                        Children (0-17)
+                      </label>
+                      <select
+                        name="children"
+                        value={formData.children}
+                        onChange={handleChange}
+                        className="w-full px-5 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-indigo-500 dark:text-white outline-none transition-colors"
+                      >
+                        {[0, 1, 2, 3].map((n) => (
+                          <option key={n} value={n}>
+                            {n} {n === 1 ? 'Child' : 'Children'}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
                         <HomeIcon className="w-4 h-4" />
                         {t('reservation.roomType')}
                       </label>
@@ -416,6 +443,13 @@ const Reservation = () => {
                     <div className="flex justify-between py-3 border-b border-slate-50 dark:border-slate-800">
                       <span className="text-slate-500 dark:text-slate-400">Property</span>
                       <span className="text-slate-900 dark:text-white font-medium">Villa Adora</span>
+                    </div>
+                    <div className="flex justify-between py-3 border-b border-slate-50 dark:border-slate-800">
+                      <span className="text-slate-500 dark:text-slate-400">Guests</span>
+                      <span className="text-slate-900 dark:text-white font-medium">
+                        {formData.adults} {Number(formData.adults) === 1 ? 'Adult' : 'Adults'}
+                        {Number(formData.children) > 0 && `, ${formData.children} ${Number(formData.children) === 1 ? 'Child' : 'Children'}`}
+                      </span>
                     </div>
                     {selectedRoom && (
                       <>
