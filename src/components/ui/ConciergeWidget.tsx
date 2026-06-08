@@ -13,7 +13,7 @@ interface Message {
 const INITIAL_MESSAGE = "Hi! I'm Luka, your digital concierge at Villa Adora. How can I help you today?";
 
 export default function ConciergeWidget() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
