@@ -85,6 +85,33 @@ const Home = () => {
             reviewCount: 312,
             bestRating: 5,
           },
+          openingHoursSpecification: [
+            { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '07:00', closes: '23:00' },
+          ],
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Room Types',
+            itemListElement: [
+              { '@type': 'Offer', itemOffered: { '@type': 'HotelRoom', name: 'Princess Suite', description: '55 m² luxury suite with garden view' }, priceSpecification: { '@type': 'PriceSpecification', price: '250', priceCurrency: 'EUR', unitText: 'NIGHT' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'HotelRoom', name: 'Luxury Suite', description: 'Lake view suite with balcony' }, priceSpecification: { '@type': 'PriceSpecification', price: '270', priceCurrency: 'EUR', unitText: 'NIGHT' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'HotelRoom', name: 'Penthouse Suite', description: '60 m² two-floor penthouse' }, priceSpecification: { '@type': 'PriceSpecification', price: '300', priceCurrency: 'EUR', unitText: 'NIGHT' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'HotelRoom', name: 'Swan Suite', description: 'Premium lake view suite' }, priceSpecification: { '@type': 'PriceSpecification', price: '370', priceCurrency: 'EUR', unitText: 'NIGHT' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'HotelRoom', name: 'Island Suite', description: '65 m² suite sleeping 4, lake view' }, priceSpecification: { '@type': 'PriceSpecification', price: '380', priceCurrency: 'EUR', unitText: 'NIGHT' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'HotelRoom', name: 'Prestige Suite', description: '72 m² ground floor suite with terrace' }, priceSpecification: { '@type': 'PriceSpecification', price: '420', priceCurrency: 'EUR', unitText: 'NIGHT' } },
+            ],
+          },
+        }}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://villa-adora-bled.si/' },
+            { '@type': 'ListItem', position: 2, name: 'Suites', item: 'https://villa-adora-bled.si/suites' },
+            { '@type': 'ListItem', position: 3, name: 'Reservation', item: 'https://villa-adora-bled.si/reservation' },
+            { '@type': 'ListItem', position: 4, name: 'Contact', item: 'https://villa-adora-bled.si/contact' },
+          ],
         }}
       />
 
