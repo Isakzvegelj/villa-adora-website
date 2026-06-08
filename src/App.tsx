@@ -9,6 +9,7 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import LoadingScreen from './components/ui/LoadingScreen'
 import ConciergeWidget from './components/ui/ConciergeWidget'
 import ScrollToTop from './components/ui/ScrollToTop'
+import StickyBookNow from './components/ui/StickyBookNow'
 import NotFound from './pages/NotFound'
 import './App.css'
 
@@ -93,6 +94,7 @@ function App() {
                 <Footer />
                 <ConciergeWidget />
                 <ScrollToTop />
+                <StickyBookNow />
               </div>
             </Router>
           )}

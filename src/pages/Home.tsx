@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, CheckBadgeIcon, CurrencyEuroIcon, WifiIcon, SparklesIcon, PhoneIcon, GiftIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PageSEO, JsonLd } from '../components/ui/PageSEO';
@@ -244,8 +244,110 @@ const Home = () => {
 
       {/* Seasonal Offer Banner */}
       <SeasonalOfferBanner />
+
+      {/* Book Direct Benefits */}
+      <BookDirectBenefits />
     </motion.div>
   );
 };
+
+// Book Direct Benefits section
+const BookDirectBenefits = () => {
+
+const BookDirectBenefits = () => {
+  const { t } = useLanguage()
+
+  const benefits = [
+    {
+      icon: <CurrencyEuroIcon className="w-7 h-7" />,
+      titleKey: 'bookDirect.bestPrice.title',
+      descKey: 'bookDirect.bestPrice.description',
+    },
+    {
+      icon: <GiftIcon className="w-7 h-7" />,
+      titleKey: 'bookDirect.freeBreakfast.title',
+      descKey: 'bookDirect.freeBreakfast.description',
+    },
+    {
+      icon: <WifiIcon className="w-7 h-7" />,
+      titleKey: 'bookDirect.freeWifi.title',
+      descKey: 'bookDirect.freeWifi.description',
+    },
+    {
+      icon: <SparklesIcon className="w-7 h-7" />,
+      titleKey: 'bookDirect.upgrade.title',
+      descKey: 'bookDirect.upgrade.description',
+    },
+    {
+      icon: <PhoneIcon className="w-7 h-7" />,
+      titleKey: 'bookDirect.directSupport.title',
+      descKey: 'bookDirect.directSupport.description',
+    },
+    {
+      icon: <CheckBadgeIcon className="w-7 h-7" />,
+      titleKey: 'bookDirect.flexible.title',
+      descKey: 'bookDirect.flexible.description',
+    },
+  ]
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
+        >
+          <span className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 text-sm font-semibold rounded-full mb-4">
+            {t('bookDirect.badge')}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {t('bookDirect.title')}
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('bookDirect.subtitle')}
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:border-indigo-200"
+            >
+              <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                {benefit.icon}
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">{t(benefit.titleKey)}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{t(benefit.descKey)}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-center mt-12"
+        >
+          <Link
+            to="/reservation"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            {t('bookDirect.cta')}
+            <ArrowRightIcon className="w-5 h-5" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
 
 export default Home

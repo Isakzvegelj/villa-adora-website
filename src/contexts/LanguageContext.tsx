@@ -248,6 +248,24 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.transport.answer': 'Da, ponujamo brezplačno izposojo gorskih koles za vse goste. Ponujamo tudi prevoz z električnim vozilom po Bledu in okolici. Za daljše izlete (Vintgar, Triglavski narodni park) organiziramo prevoz po naroku.',
       'faq.miniBar.question': 'Ali ima suite minibar?',
       'faq.miniBar.answer': 'Da, vsa suite imajo minibar z izbranimi slovenskimi vinami, pijačami in prigrizki. Vsebuje tudi kavo, čaj in vročo čokolado za pripravo.',
+
+      // Book Direct Benefits
+      'bookDirect.badge': 'Rezervirajte direktno in prihranite',
+      'bookDirect.title': 'Zakaj rezervirati direktno pri nas?',
+      'bookDirect.subtitle': 'Preskočite posrednike in pridobite najboljšo vrednost, ko rezervirate direktno prek naše spletne strani.',
+      'bookDirect.bestPrice.title': 'Zagotovljeno najboljša cena',
+      'bookDirect.bestPrice.description': 'Če najdete nižjo ceno drugje, se bomo prilagodili. Plus dodatni 5% popust za direktno rezervacijo.',
+      'bookDirect.freeBreakfast.title': 'Brezplačen zajtrk',
+      'bookDirect.freeBreakfast.description': 'Uživajte v bogatem samopostrežnem zajtrku s pogledom na jezero — brezplačno vključeno pri direktni rezervaciji (vrednost €25 na osebo).',
+      'bookDirect.freeWifi.title': 'Premium WiFi',
+      'bookDirect.freeWifi.description': 'Visokohitrostno fiber internetno omrežje po celotnem objektu, idealno za delo na daljavo ali streaming.',
+      'bookDirect.upgrade.title': 'Brezplačna nadgradnja sobe',
+      'bookDirect.upgrade.description': 'Glede na razpoložljivost imajo direktne rezervacije prednost pri brezplačni nadgradnji sobe.',
+      'bookDirect.directSupport.title': 'Direktna podpora',
+      'bookDirect.directSupport.description': 'Govorite direktno z našo ekipo za osebno storitev, posebne zahteve in lokalna priporočila.',
+      'bookDirect.flexible.title': 'Fleksibilna odpoved',
+      'bookDirect.flexible.description': 'Brezplačna odpoved do 48 ur pred prihodom — bolj fleksibilno kot pri rezervacijah prek tretjih strani.',
+      'bookDirect.cta': 'Preveri razpoložljivost',
     },
     en: {
       // Navigation
@@ -476,6 +494,24 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.transport.answer': 'Yes, we offer complimentary mountain bike rental for all guests. We also provide electric vehicle transport around Bled and the surrounding area. For longer excursions (Vintgar, Triglav National Park), we organize transport on request.',
       'faq.miniBar.question': 'Does the suite have a mini bar?',
       'faq.miniBar.answer': 'Yes, all suites have a mini bar with selected Slovenian wines, beverages, and snacks. It also includes coffee, tea, and hot chocolate for self-service.',
+
+      // Book Direct Benefits
+      'bookDirect.badge': 'Book Direct & Save',
+      'bookDirect.title': 'Why Book Direct With Us?',
+      'bookDirect.subtitle': 'Skip the middleman and get the best value when you book directly through our website.',
+      'bookDirect.bestPrice.title': 'Best Price Guaranteed',
+      'bookDirect.bestPrice.description': 'If you find a lower price elsewhere, we will match it. Plus get an additional 5% discount for booking direct.',
+      'bookDirect.freeBreakfast.title': 'Complimentary Breakfast',
+      'bookDirect.freeBreakfast.description': 'Enjoy a full gourmet breakfast with lake views — included free when you book direct (€25 value per person).',
+      'bookDirect.freeWifi.title': 'Premium WiFi',
+      'bookDirect.freeWifi.description': 'High-speed fiber internet throughout the property, perfect for remote work or streaming.',
+      'bookDirect.upgrade.title': 'Free Room Upgrade',
+      'bookDirect.upgrade.description': 'Subject to availability, direct bookings receive priority for complimentary room upgrades.',
+      'bookDirect.directSupport.title': 'Direct Support',
+      'bookDirect.directSupport.description': 'Speak directly with our team for personalized service, special requests, and local recommendations.',
+      'bookDirect.flexible.title': 'Flexible Cancellation',
+      'bookDirect.flexible.description': 'Free cancellation up to 48 hours before arrival — more flexible than third-party booking sites.',
+      'bookDirect.cta': 'Check Availability',
     },
   }
 
