@@ -41,7 +41,7 @@ interface VoucherFormData {
 }
 
 const GiftVoucher = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const isSl = language === 'sl';
 
   const [formData, setFormData] = useState<VoucherFormData>({

@@ -2,9 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 import {
-  UsersIcon,
   CalendarDaysIcon,
-  CurrencyDollarIcon,
   ArrowTrendingUpIcon,
   TrashIcon,
   EnvelopeIcon,
@@ -12,7 +10,6 @@ import {
   DocumentArrowDownIcon,
   ClipboardDocumentIcon,
   CheckIcon,
-  ChevronDownIcon,
 } from '@heroicons/react/24/outline'
 
 interface Reservation {
@@ -55,7 +52,7 @@ interface ContactMessage {
 }
 
 const AdminDashboard = () => {
-  const { t, language } = useLanguage()
+  const { language } = useLanguage()
   const isSl = language === 'sl'
   const [activeTab, setActiveTab] = useState<'reservations' | 'vouchers' | 'messages'>('reservations')
   const [copiedId, setCopiedId] = useState<string | null>(null)
