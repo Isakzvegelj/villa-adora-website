@@ -15,19 +15,42 @@ interface Message {
 const CHAT_STORAGE_KEY = 'villa-adora-chat-history'
 const BOT_API = 'https://villa-adora-bot-r00l.onrender.com/api/chat'
 
-const createWelcomeMessage = (): Message => ({
-  id: 'welcome',
-  role: 'assistant',
-  content: 'Hello! I\'m the Villa Adora concierge. How can I help you today? I can assist with room bookings, local recommendations, dining reservations, and more.',
-  timestamp: Date.now(),
-})
+function detectLanguage(): string {
+  try {
+    const stored = localStorage.getItem('villa-adora-language')
+    if (stored && ['en', 'sl', 'de', 'it'].includes(stored)) return stored
+  } catch { /* ignore */ }
+  // Try browser language
+  const browserLang = navigator.language?.slice(0, 2)
+  if (['en', 'sl', 'de', 'it'].includes(browserLang)) return browserLang
+  return 'en'
+}
 
-const SUGGESTIONS = [
-  'Tell me about your suites',
-  'What\'s the best time to visit Bled?',
-  'How do I make a reservation?',
-  'What activities are nearby?',
-]
+const createWelcomeMessage = (lang: string = 'en'): Message => {
+  const greetings: Record<string, string> = {
+    en: "Hello! I'm the Villa Adora concierge. How can I help you today? I can assist with room bookings, local recommendations, dining reservations, and more.",
+    sl: "Pozdravljeni! Sem Concierga Vile Adore. Vam lahko priporočam apartmaje, aktivnosti v Bledu, restavracije in še več. Kako vam lahko pomagam?",
+    de: "Guten Tag! Ich bin der Concierge der Villa Adora. Wie kann ich Ihnen helfen? Ich kann Sie bei Zimmerbuchungen, lokalen Empfehlungen und Restaurantreservierungen unterstützen.",
+    it: "Buongiorno! Sono il concierge di Villa Adora. Come posso aiutarla? Posso assisterla con prenotazioni, raccomandazioni locali e molto altro.",
+  }
+  const content = greetings[lang] || greetings['en']
+  return {
+    id: 'welcome',
+    role: 'assistant',
+    content,
+    timestamp: Date.now(),
+  }
+}
+
+const getSuggestions = (lang: string = 'en'): string[] => {
+  const all: Record<string, string[]> = {
+    en: ['Tell me about your suites', "What's the best time to visit Bled?", 'How do I make a reservation?', 'What activities are nearby?'],
+    sl: ['Poveste mi o apartmajih', 'Kdaj je najboljši čas za obisk Bleda?', 'Kako rezerviram?', 'Katere aktivnosti so v bližini?'],
+    de: ['Erzählen Sie mir von den Suiten', 'Wann ist die beste Zeit für Bled?', 'Wie kann ich buchen?', 'Welche Aktivitäten gibt es?'],
+    it: ['Parlami delle suite', 'Qual è il miglior periodo per visitare Bled?', 'Come prenoto?', 'Quali attività ci sono nelle vicinanze?'],
+  }
+  return all[lang] || all['en']
+}
 
 // Check if the bot API is reachable
 async function checkBotHealth(): Promise<boolean> {
@@ -45,7 +68,7 @@ async function checkBotHealth(): Promise<boolean> {
   }
 }
 
-function loadMessages(): Message[] {
+function loadMessages(lang?: string): Message[] {
   try {
     const stored = localStorage.getItem(CHAT_STORAGE_KEY)
     if (stored) {
@@ -57,7 +80,7 @@ function loadMessages(): Message[] {
   } catch {
     // ignore parse errors
   }
-  return [createWelcomeMessage()]
+  return [createWelcomeMessage(lang)]
 }
 
 function saveMessages(messages: Message[]) {
@@ -72,7 +95,7 @@ function saveMessages(messages: Message[]) {
 
 export default function ConciergeWidget() {
   const [isOpen, setIsOpen] = useState(false)
-  const [messages, setMessages] = useState<Message[]>(loadMessages)
+  const [messages, setMessages] = useState<Message[]>(() => loadMessages(detectLanguage()))
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
@@ -114,7 +137,7 @@ export default function ConciergeWidget() {
   }, [isOpen])
 
   const clearChat = useCallback(() => {
-    const welcome = createWelcomeMessage()
+    const welcome = createWelcomeMessage(detectLanguage())
     setMessages([welcome])
     localStorage.removeItem(CHAT_STORAGE_KEY)
     setLastFailedMessage(null)
@@ -143,7 +166,7 @@ export default function ConciergeWidget() {
       const response = await fetch(BOT_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text.trim() }),
+        body: JSON.stringify({ message: text.trim(), language: detectLanguage() }),
         signal: controller.signal,
       })
       clearTimeout(timeout)
@@ -344,7 +367,7 @@ export default function ConciergeWidget() {
               {/* Suggestions */}
               {messages.length <= 1 && !isTyping && (
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {SUGGESTIONS.map((suggestion, idx) => (
+                  {getSuggestions(detectLanguage()).map((suggestion: string, idx: number) => (
                     <button
                       key={idx}
                       onClick={() => handleSuggestion(suggestion)}
