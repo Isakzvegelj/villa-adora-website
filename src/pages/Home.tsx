@@ -23,6 +23,7 @@ import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
 import LocationMap from '../components/sections/LocationMap'
 import VirtualTourSection from '../components/sections/VirtualTourSection'
+import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import ConciergeWidget from '../components/ui/ConciergeWidget'
 const Home = () => {
   const { t } = useLanguage()
@@ -136,6 +137,9 @@ const Home = () => {
 
       {/* Virtual Tour */}
       <VirtualTourSection />
+
+      {/* Availability Checker */}
+      <AvailabilityChecker />
 
       {/* Reviews Preview */}
       <ReviewsPreview />

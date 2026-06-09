@@ -58,6 +58,22 @@ const Suites = () => {
       ],
     },
     {
+      id: 'luxury',
+      price: '270',
+      image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop&q=80',
+      titleKey: 'suites.luxury.title',
+      descKey: 'suites.luxury.description',
+      color: 'from-blue-500 to-cyan-500',
+      amenities: [
+        { labelKey: language === 'sl' ? 'Pogled na jezero' : 'Lake View', icon: IconView },
+        { labelKey: 'King Size Bed', icon: IconBed },
+        { labelKey: language === 'sl' ? 'Balkon' : 'Balcony', icon: IconSun },
+        { labelKey: 'WiFi', icon: IconWifi },
+        { labelKey: language === 'sl' ? 'Masažna kad' : 'Jacuzzi', icon: IconSparkle },
+        { labelKey: '2 ' + (language === 'sl' ? 'osebi' : 'Guests'), icon: IconUsers },
+      ],
+    },
+    {
       id: 'penthouse',
       price: '300',
       image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
@@ -70,6 +86,22 @@ const Suites = () => {
         { labelKey: language === 'sl' ? 'Dih jemajoči razgledi' : 'Breathtaking Views', icon: IconView },
         { labelKey: language === 'sl' ? 'Domače vzdušje' : 'Cozy Atmosphere', icon: IconSparkle },
         { labelKey: 'WiFi', icon: IconWifi },
+        { labelKey: '2 ' + (language === 'sl' ? 'osebi' : 'Guests'), icon: IconUsers },
+      ],
+    },
+    {
+      id: 'swan',
+      price: '370',
+      image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=800&h=600&fit=crop&q=80',
+      titleKey: 'suites.swan.title',
+      descKey: 'suites.swan.description',
+      color: 'from-violet-500 to-fuchsia-500',
+      amenities: [
+        { labelKey: language === 'sl' ? 'Pogled na jezero' : 'Lake View', icon: IconView },
+        { labelKey: 'King Size Bed', icon: IconBed },
+        { labelKey: language === 'sl' ? 'Prostoren' : 'Spacious', icon: IconMaxSize },
+        { labelKey: 'WiFi', icon: IconWifi },
+        { labelKey: language === 'sl' ? 'Balkon' : 'Balcony', icon: IconSun },
         { labelKey: '2 ' + (language === 'sl' ? 'osebi' : 'Guests'), icon: IconUsers },
       ],
     },
@@ -296,13 +328,13 @@ const Suites = () => {
               </thead>
               <tbody>
                 {[
-                  { label: language === 'sl' ? 'Velikost' : 'Size', values: ['55 m²', '60 m²', '65 m²', '72 m²'] },
-                  { label: language === 'sl' ? 'Postelja' : 'Bed', values: ['King', 'King', '2× King', 'King'] },
-                  { label: language === 'sl' ? 'Pogled na jezero' : 'Lake View', values: ['✓', '✓', '✓', '✓'] },
-                  { label: language === 'sl' ? 'WiFi' : 'WiFi', values: ['✓', '✓', '✓', '✓'] },
-                  { label: language === 'sl' ? 'Klima' : 'AC', values: ['✓', '✓', '✓', '✓'] },
-                  { label: language === 'sl' ? 'Masažna kad' : 'Jacuzzi', values: ['✗', '✓', '✓', '✓'] },
-                  { label: language === 'sl' ? 'Balkon' : 'Balcony', values: ['✗', '✓', '2', '✓ (Terrace)'] },
+                  { label: language === 'sl' ? 'Velikost' : 'Size', values: ['55 m²', '55 m²', '60 m²', '58 m²', '65 m²', '72 m²'] },
+                  { label: language === 'sl' ? 'Postelja' : 'Bed', values: ['King', 'King', 'King', 'King', '2× King', 'King'] },
+                  { label: language === 'sl' ? 'Pogled na jezero' : 'Lake View', values: ['✓', '✓', '✓', '✓', '✓', '✓'] },
+                  { label: language === 'sl' ? 'WiFi' : 'WiFi', values: ['✓', '✓', '✓', '✓', '✓', '✓'] },
+                  { label: language === 'sl' ? 'Klima' : 'AC', values: ['✓', '✓', '✓', '✓', '✓', '✓'] },
+                  { label: language === 'sl' ? 'Masažna kad' : 'Jacuzzi', values: ['✗', '✓', '✓', '✗', '✓', '✓'] },
+                  { label: language === 'sl' ? 'Balkon' : 'Balcony', values: ['✗', '✓', '✓', '✓', '2', '✓ (Terrace)'] },
                 ].map((row, i) => (
                   <tr
                     key={i}
