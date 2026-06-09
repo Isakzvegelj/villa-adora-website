@@ -28,6 +28,7 @@ import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import SocialProofNotification from '../components/sections/SocialProofNotification'
 import SuiteComparison from '../components/sections/SuiteComparison'
 import SeasonalHighlights from '../components/sections/SeasonalHighlights'
+import WeatherWidget from '../components/ui/WeatherWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
 
@@ -191,6 +192,39 @@ const Home = () => {
 
       {/* Virtual Tour */}
       <VirtualTourSection />
+
+      {/* Live Weather Widget */}
+      <section className="py-8 px-4 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <WeatherWidget />
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg">
+              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-3">
+                {language === 'sl' ? '🍽️ Dan prijaznih obrokov' : language === 'de' ? '🍽️ Tagesplan der Mahlzeiten' : language === 'it' ? '🍽️ Programma pasti del giorno' : '🍽️ Today\'s Meal Schedule'}
+              </h3>
+              <div className="space-y-3">
+                {[
+                  { time: '7:30 – 10:30', label: language === 'sl' ? 'Zajtrk' : language === 'de' ? 'Frühstück' : language === 'it' ? 'Colazione' : 'Breakfast', desc: language === 'sl' ? 'Samopostrežni zajtrk na terasi' : 'Buffet on the terrace', icon: '🌅' },
+                  { time: '12:00 – 14:00', label: language === 'sl' ? 'Kosilo' : language === 'de' ? 'Mittagessen' : language === 'it' ? 'Pranzo' : 'Lunch', desc: language === 'sl' ? 'Priporočila gostiln v bližini' : 'Nearby restaurant recommendations', icon: '☀️' },
+                  { time: '16:00 – 17:00', label: language === 'sl' ? 'Popoldanski čaj' : language === 'de' ? 'Nachmittagstee' : language === 'it' ? 'Tè del pomeriggio' : 'Afternoon Tea', desc: language === 'sl' ? 'Brezplačen čaj v vrtu' : 'Complimentary tea in the garden', icon: '🍵' },
+                  { time: '18:00 – 21:00', label: language === 'sl' ? 'Večerja' : language === 'de' ? 'Abendessen' : language === 'it' ? 'Cena' : 'Dinner', desc: language === 'sl' ? 'Reervacije restavracij na zahtevo' : 'Restaurant reservations on request', icon: '🌙' },
+                ].map((meal) => (
+                  <div key={meal.time} className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-xl">
+                    <span className="text-2xl">{meal.icon}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{meal.time}</span>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{meal.label}</span>
+                      </div>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">{meal.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Availability Checker */}
       <AvailabilityChecker />
