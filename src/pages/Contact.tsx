@@ -44,6 +44,20 @@ const Contact = () => {
     if (!validate()) return
 
     setIsSubmitting(true)
+
+    // Store message in localStorage for admin dashboard
+    try {
+      const messageData = {
+        ...formData,
+        submittedAt: new Date().toISOString(),
+      }
+      const existing = JSON.parse(localStorage.getItem('villa_adora_messages') || '[]')
+      existing.push(messageData)
+      localStorage.setItem('villa_adora_messages', JSON.stringify(existing))
+    } catch {
+      // localStorage unavailable
+    }
+
     // Simulate API call — in production this would send to a backend
     await new Promise((resolve) => setTimeout(resolve, 1200))
     setIsSubmitting(false)

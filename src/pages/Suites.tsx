@@ -536,7 +536,7 @@ const Suites = () => {
                 </p>
               </div>
             </div>
-            <Link to="/contact">
+            <Link to="/gift-voucher">
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}

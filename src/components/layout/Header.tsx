@@ -28,6 +28,7 @@ const Header = () => {
     { name: t('nav.activities'), href: '/activities' },
     { name: t('nav.gallery'), href: '/gallery' },
     { name: t('nav.contact'), href: '/contact' },
+    { name: t('nav.giftVoucher'), href: '/gift-voucher' },
   ]
 
   const isActive = (path: string) => {

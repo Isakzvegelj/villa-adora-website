@@ -32,7 +32,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.contact': 'Kontakt',
       'nav.reservation': 'Rezervacija',
       'nav.admin': 'Admin',
-      
+      'nav.giftVoucher': 'Darilni bon',
+
+      // Gift Voucher
+      'giftVoucher.title': 'Darilni bon',
+      'giftVoucher.subtitle': 'Podarite nepozabno doživetje ob jezeru Bled',
+      'giftVoucher.howItWorks': 'Kako deluje?',
+      'giftVoucher.step1': 'Izberete znesek in temo bona',
+      'giftVoucher.step2': 'Vnesete podatke o prejemniku',
+      'giftVoucher.step3': 'Prejmete potrdilo, bon pa je dostavljen prejemniku',
+      'giftVoucher.step4': 'Prejemnik rezervira bivanje z vašim bonom',
+      'giftVoucher.validity': 'Darilni boni veljajo 12 mesecev od nakupa.',
+
       // Hero section
       'hero.title': 'Villa Adora',
       'hero.subtitle': 'Luksuzni hotel ob jezeru Bled',
@@ -310,8 +321,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.gallery': 'Gallery',
       'nav.contact': 'Contact',
       'nav.reservation': 'Reservation',
+      'nav.giftVoucher': 'Gift Voucher',
       'nav.admin': 'Admin',
-      
+
+      // Gift Voucher
+      'giftVoucher.title': 'Gift Voucher',
+      'giftVoucher.subtitle': 'Give the gift of an unforgettable experience on Lake Bled',
+      'giftVoucher.howItWorks': 'How It Works',
+      'giftVoucher.step1': 'Choose amount and theme',
+      'giftVoucher.step2': 'Enter recipient details',
+      'giftVoucher.step3': 'You receive confirmation, voucher is delivered to recipient',
+      'giftVoucher.step4': 'Recipient redeems voucher for their stay',
+      'giftVoucher.validity': 'Gift vouchers are valid for 12 months from purchase.',
+
       // Hero section
       'hero.title': 'Villa Adora',
       'hero.subtitle': 'Luxury Boutique Hotel Bled',
