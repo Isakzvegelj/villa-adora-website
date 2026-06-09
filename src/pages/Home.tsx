@@ -16,8 +16,7 @@ import TestimonialsSection from '../components/sections/TestimonialsSection';
 import GuestStories from '../components/sections/GuestStories';
 import SpecialOffers from '../components/sections/SpecialOffers';
 import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
-import WhyChooseUs from '../components/sections/WhyChooseUs';
-import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
+import WhyChooseUs from '../components/sections/WhyChooseUs'
 import CulinarySection from '../components/sections/CulinarySection'
 import CulinaryExperience from '../components/sections/CulinaryExperience'
 import NewsletterSection from '../components/sections/NewsletterSection'
@@ -26,7 +25,6 @@ import GuestReviews from '../components/sections/GuestReviews'
 import LocationMap from '../components/sections/LocationMap'
 import VirtualTourSection from '../components/sections/VirtualTourSection'
 import AvailabilityChecker from '../components/sections/AvailabilityChecker'
-import ConciergeWidget from '../components/ui/ConciergeWidget'
 import SocialProofNotification from '../components/sections/SocialProofNotification'
 import SuiteComparison from '../components/sections/SuiteComparison'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
@@ -305,17 +303,11 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Seasonal Offer Banner */}
-      <SeasonalOfferBanner />
-
-      {/* Social Proof - Live Booking Notifications */}
-      <SocialProofNotification language={language} />
-
       {/* Book Direct Benefits */}
       <BookDirectBenefits />
 
-      {/* Concierge Bot Widget */}
-      <ConciergeWidget />
+      {/* Social Proof - Live Booking Notifications */}
+      <SocialProofNotification language={language} />
     </motion.div>
   );
 };
