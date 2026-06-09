@@ -375,6 +375,104 @@ const Suites = () => {
         </div>
       </section>
 
+      {/* What's Included Section */}
+      <section className="py-20 bg-white dark:bg-slate-900">
+        <div className="container-max">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="inline-block px-4 py-1.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-full text-sm font-semibold mb-4 tracking-wide uppercase">
+              {language === 'sl' ? 'Vključeno v ceno' : 'Included in Every Stay'}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              {language === 'sl' ? 'Kar vse doživite z nami' : 'Everything You Experience With Us'}
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
+              {language === 'sl'
+                ? 'Vsaka rezervacija vključuje celo nabor premium storitev in udobja — brez skritih stroškov.'
+                : 'Every reservation includes a full suite of premium services and comforts — no hidden costs.'}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: '🍳',
+                title: language === 'sl' ? 'Bogat zajtrk' : 'Gourmet Breakfast',
+                desc: language === 'sl'
+                  ? 'Samopostrežni zajtrk na terasi s pogledom na jezero. Sveže pecivo, lokalni sirji, sezonsko sadje.'
+                  : 'Buffet breakfast on the lakeside terrace. Fresh pastries, local cheeses, seasonal fruit.',
+              },
+              {
+                icon: '📶',
+                title: language === 'sl' ? 'Premium WiFi' : 'Premium WiFi',
+                desc: language === 'sl'
+                  ? 'Visokohitrostno omrežje po celotnem objektu in vseh suitah. Idealno za delo na daljavo.'
+                  : 'High-speed fiber internet throughout the property and all suites. Perfect for remote work.',
+              },
+              {
+                icon: '🅿️',
+                title: language === 'sl' ? 'Brezplačno parkiranje' : 'Free Parking',
+                desc: language === 'sl'
+                  ? 'Varovano zasebno parkirišče na lokaciji. Brezplačno za vse goste.'
+                  : 'Secure private parking on-site. Complimentary for all guests.',
+              },
+              {
+                icon: '🧖',
+                title: language === 'sl' ? 'Wellness & Spa' : 'Wellness & Spa',
+                desc: language === 'sl'
+                  ? 'Finska savna, turška kopel in masažne storitve. Brezplen dostop do savne.'
+                  : 'Finnish sauna, Turkish bath, and massage treatments. Complimentary sauna access.',
+              },
+              {
+                icon: '🚲',
+                title: language === 'sl' ? 'Izposoja koles' : 'Bike Rental',
+                desc: language === 'sl'
+                  ? 'Brezplačna gorska kolesa za raziskovanje Bleda in okolice.'
+                  : 'Complimentary mountain bikes to explore Bled and surroundings.',
+              },
+              {
+                icon: '🍷',
+                title: language === 'sl' ? 'Napitek dobrodošlice' : 'Welcome Drink',
+                desc: language === 'sl'
+                  ? 'Obliglasite se s kozarcem slovenskega vina ali svežega sadnega soka ob prihodu.'
+                  : 'Toast your arrival with a glass of Slovenian wine or fresh fruit juice.',
+              },
+              {
+                icon: '🗺️',
+                title: language === 'sl' ? 'Lokalni nasveti' : 'Local Concierge',
+                desc: language === 'sl'
+                  ? 'Osebna priporočila za restavracije, izlete in skrite kotičke Bleda.'
+                  : 'Personal recommendations for restaurants, excursions, and hidden gems of Bled.',
+              },
+              {
+                icon: '🧹',
+                title: language === 'sl' ? 'Dnevno čiščenje' : 'Daily Housekeeping',
+                desc: language === 'sl'
+                  ? 'Dnevno čiščenje in postiljanje. Večerno turno službo na zahtevo.'
+                  : 'Daily cleaning and turndown service. Evening turn-down on request.',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+                className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 hover:shadow-lg hover:border-indigo-200 dark:hover:border-indigo-800 transition-all duration-300 group"
+              >
+                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-2 text-lg">{item.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Experience Section */}
       <section className="py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
@@ -411,6 +509,43 @@ const Suites = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Gift Voucher CTA */}
+      <section className="py-16 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 border-y border-amber-100 dark:border-slate-700">
+        <div className="container-max">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+                🎁
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                  {language === 'sl' ? 'Darilo za nepozabne trenutke' : 'Gift Unforgettable Moments'}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  {language === 'sl'
+                    ? 'Podarite bivanje v Villi Adori — darilni vavčer za različne suite in pakete.'
+                    : 'Give the gift of Villa Adora — gift vouchers for various suites and packages.'}
+                </p>
+              </div>
+            </div>
+            <Link to="/contact">
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-3.5 rounded-full font-semibold shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-shadow whitespace-nowrap"
+              >
+                {language === 'sl' ? 'Naroči darilni vavčer' : 'Order Gift Voucher'}
+              </motion.button>
+            </Link>
+          </motion.div>
         </div>
       </section>
     </motion.div>
