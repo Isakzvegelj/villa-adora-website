@@ -26,8 +26,35 @@ import VirtualTourSection from '../components/sections/VirtualTourSection'
 import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import ConciergeWidget from '../components/ui/ConciergeWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
+import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
 
-// Review data for structured data (extracted from GuestReviews)
+// FAQ data for structured data (English)
+const HOME_FAQS_EN = [
+  { question: 'What are the check-in and check-out times?', answer: 'Check-in is from 15:00 to 22:00. Check-out is by 11:00. Early check-in and late check-out are available on request.' },
+  { question: 'What is the cancellation policy?', answer: 'Free cancellation up to 48 hours before arrival. Cancellations within 48 hours are charged for the first night. For high season (July-August), cancellation is required 72 hours in advance.' },
+  { question: 'Is free parking available?', answer: 'Yes, free private parking is available on-site for all guests. The parking is secured and under camera surveillance.' },
+  { question: 'Are pets allowed?', answer: 'Yes, pets are allowed on request. Please inform us in advance. An additional cleaning fee of €30 per stay applies.' },
+  { question: 'Is breakfast included?', answer: 'Yes, a rich buffet breakfast is included in the room rate. Breakfast is served from 7:30 to 10:30 on the terrace with lake views. Vegan and gluten-free options are available.' },
+  { question: 'How do I get from the airport to Villa Adora?', answer: 'Ljubljana Jože Pučnik Airport is 35 km away (approximately 30 minutes by car). We offer airport transfer on request (€40 one way). Klagenfurt Airport (Austria) is 70 km away.' },
+  { question: 'Is free WiFi available?', answer: 'Yes, free high-speed WiFi is available throughout the hotel and in all suites. The connection is reliable on the terrace and in the garden area.' },
+  { question: 'Do you have a wellness center?', answer: 'Yes, our wellness center includes a Finnish sauna, Turkish bath, and massage services. The wellness area is complimentary for all guests. Massages must be booked in advance.' },
+  { question: 'Do you offer transport or bicycle rental?', answer: 'Yes, we offer complimentary mountain bike rental for all guests. We also provide electric vehicle transport around Bled and the surrounding area. For longer excursions, we can arrange transport on request.' },
+  { question: 'Does the suite have a minibar?', answer: 'Yes, all suites have a minibar with selected Slovenian wines, beverages, and snacks. Each suite also has coffee, tea, and hot chocolate making facilities.' },
+]
+
+// FAQ data for structured data (Slovenian)
+const HOME_FAQS_SL = [
+  { question: 'Kateri so časi prihoda in odhoda?', answer: 'Prihod (check-in) je od 15:00 do 22:00. Odhod (check-out) je do 11:00. Pozen prihod in pozen odhod sta na voljo na zahtevo.' },
+  { question: 'Kakšna je politika odpovedi?', answer: 'Brezplačna odpoved je možna do 48 ur pred prihodom. Odpovedi v roku 48 ur pred prihodom se zaračuna prva nočitev. V visoki sezoni (julij-avgust) velja odpoved do 72 ur.' },
+  { question: 'Ali je na voljo brezplačno parkiranje?', answer: 'Da, brezplačno zasebno parkirišče je na voljo na lokaciji za vse goste. Parkiranje je varovano in pod nadzorom kamere.' },
+  { question: 'Ali so dovoljeni hišni ljubljenčki?', answer: 'Da, hišni ljubljenčki so dovoljeni na zahtevo. Dodatna pristojbina za čiščenje znaša €30 na bivanje.' },
+  { question: 'Ali je zajtrk vključen v ceno?', answer: 'Da, bogat samopostrežni zajtrk je vključen v ceno nočitve. Zajtrk je serviran od 7:30 do 10:30 na terasi s pogledom na jezero.' },
+  { question: 'Kako prletim iz letališča do Villa Adore?', answer: 'Letališče Jože Pučnik Ljubljana je oddaljeno 35 km. Ponujamo prevoz iz letališča po naroku (€40 enosmerno).' },
+  { question: 'Ali je na voljo brezplačen WiFi?', answer: 'Da, brezplačen visokohitrostni WiFi je na voljo v celotnem hotelu in vseh suitah.' },
+  { question: 'Ali imate wellness center?', answer: 'Da, naš wellness center vključuje finsko savno, turško kopel in masažne storitve. Wellness je na voljo brezplačno vsem gostom.' },
+  { question: 'Ali ponujate prevoz ali izposojo koles?', answer: 'Da, ponujamo brezplačno izposojo gorskih koles za vse goste. Ponujamo tudi prevoz z električnim vozilom po Bledu.' },
+  { question: 'Ali ima suite minibar?', answer: 'Da, vsa suite imajo minibar z izbranimi slovenskimi vinami, pijačami in prigrizki.' },
+]
 const HOME_REVIEWS = [
   { author: 'Sarah & James Mitchell', datePublished: '2025-09-15', reviewRating: 5, reviewBody: 'Absolutely magical stay! The Princess Suite had the most incredible view of Lake Bled. Waking up to the sunrise over the lake was unforgettable.' },
   { author: 'Marco Rossi', datePublished: '2025-08-22', reviewRating: 5, reviewBody: 'Villa Adora exceeded all expectations. The Penthouse Suite is a masterpiece of design, and the breakfast on the terrace was divine.' },
@@ -131,6 +158,9 @@ const Home = () => {
 
       {/* Review Structured Data for Rich Snippets */}
       <ReviewStructuredData reviews={HOME_REVIEWS} />
+
+      {/* FAQ Structured Data for Google Rich Snippets */}
+      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : HOME_FAQS_EN} />
 
       {/* Hero Section */}
       <HeroSection />
