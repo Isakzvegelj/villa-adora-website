@@ -27,6 +27,7 @@ import VirtualTourSection from '../components/sections/VirtualTourSection'
 import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import SocialProofNotification from '../components/sections/SocialProofNotification'
 import SuiteComparison from '../components/sections/SuiteComparison'
+import SeasonalHighlights from '../components/sections/SeasonalHighlights'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
 
@@ -166,6 +167,9 @@ const Home = () => {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Seasonal Highlights */}
+      <SeasonalHighlights />
 
       {/* About Preview */}
       <AboutPreview />

@@ -228,6 +228,24 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'whyChoose.stat.established': 'Ustanovljena',
       'whyChoose.stat.returnGuests': 'Gostov se vrača',
 
+      // Seasonal Highlights
+      'seasonal.badge': 'Sezonske ponudbe',
+      'seasonal.title': 'Ta sezona v Vili Adora',
+      'seasonal.subtitle': 'Ekskluzivni paketi za nepozabno bivanje. Rezervirajte direktno za najboljše cene.',
+      'seasonal.spring.title': 'Pomladanski prebujenje',
+      'seasonal.spring.desc': '3 nočitve + kajak na jezeru + voden sprehod. Cvetoče češnje in sveži alpski zrak.',
+      'seasonal.spring.badge': 'Pomlad',
+      'seasonal.summer.title': 'Poletni luksuzni pobeg',
+      'seasonal.summer.desc': '5 nočitev, 2. nočitev brezplačno. Kopanje v jezeru, večerja na terasi in zahod sonca.',
+      'seasonal.summer.badge': 'Poletje',
+      'seasonal.wellness.title': 'Wellness umik',
+      'seasonal.wellness.desc': '3 nočitve + dnevna joga + 2 masaži + zdrav zajtrk. Pomladite telo in dušo.',
+      'seasonal.wellness.badge': 'Wellness',
+      'seasonal.nights': 'nočitev',
+      'seasonal.validUntil': 'Velja do',
+      'seasonal.bookNow': 'Rezerviraj',
+      'seasonal.viewAllOffers': 'Vse ponudbe',
+
       // Bled Seasons
       'seasons.title': 'Bled skozi leto',
       'seasons.subtitle': 'Vsako sezono ponuje svoja čuda',
@@ -524,6 +542,24 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'whyChoose.stat.reviews': 'Guest Reviews',
       'whyChoose.stat.established': 'Established',
       'whyChoose.stat.returnGuests': 'Return Guests',
+
+      // Seasonal Highlights
+      'seasonal.badge': 'Seasonal Offers',
+      'seasonal.title': 'This Season at Villa Adora',
+      'seasonal.subtitle': 'Exclusive packages designed to make your stay unforgettable. Book directly for the best rates.',
+      'seasonal.spring.title': 'Spring Awakening',
+      'seasonal.spring.desc': '3 nights + kayaking on the lake + guided nature walk. Cherry blossoms and fresh Alpine air.',
+      'seasonal.spring.badge': 'Spring',
+      'seasonal.summer.title': 'Summer Luxury Escape',
+      'seasonal.summer.desc': '5 nights with 2nd night free. Lake swimming, terrace dining, and sunset cruises.',
+      'seasonal.summer.badge': 'Summer',
+      'seasonal.wellness.title': 'Wellness Retreat',
+      'seasonal.wellness.desc': '3 nights + daily yoga + 2 massages + healthy breakfast. Rejuvenate body and soul.',
+      'seasonal.wellness.badge': 'Wellness',
+      'seasonal.nights': 'nights',
+      'seasonal.validUntil': 'Valid until',
+      'seasonal.bookNow': 'Book Now',
+      'seasonal.viewAllOffers': 'View All Offers',
 
       // Bled Seasons
       'seasons.title': 'Bled Through the Seasons',
