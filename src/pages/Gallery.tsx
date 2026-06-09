@@ -5,22 +5,22 @@ import { PageSEO } from '../components/ui/PageSEO'
 import Lightbox from '../components/ui/Lightbox'
 
 const galleryImages = [
-  { id: 1, category: 'exterior', src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop&q=80', titleKey: 'gallery.img.villa' },
-  { id: 2, category: 'suites', src: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=800&fit=crop&q=80', titleKey: 'gallery.img.princess' },
-  { id: 3, category: 'suites', src: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200&h=800&fit=crop&q=80', titleKey: 'gallery.img.prestige' },
-  { id: 4, category: 'lake', src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=800&fit=crop', titleKey: 'gallery.img.lakeMorning' },
-  { id: 5, category: 'suites', src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop', titleKey: 'gallery.img.penthouse' },
-  { id: 6, category: 'exterior', src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&h=800&fit=crop', titleKey: 'gallery.img.gardens' },
-  { id: 7, category: 'lake', src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=1500&fit=crop', titleKey: 'gallery.img.alpine' },
-  { id: 8, category: 'suites', src: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&h=800&fit=crop', titleKey: 'gallery.img.luxuryDetails' },
-  { id: 9, category: 'dining', src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=800&fit=crop', titleKey: 'gallery.img.dining' },
-  { id: 10, category: 'dining', src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=800&fit=crop', titleKey: 'gallery.img.cuisine' },
-  { id: 11, category: 'exterior', src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&h=800&fit=crop', titleKey: 'gallery.img.facade' },
-  { id: 12, category: 'lake', src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&h=800&fit=crop', titleKey: 'gallery.img.sunset' },
-  { id: 13, category: 'suites', src: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&h=800&fit=crop', titleKey: 'gallery.img.suiteInterior' },
-  { id: 14, category: 'dining', src: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&h=800&fit=crop', titleKey: 'gallery.img.terrace' },
-  { id: 15, category: 'lake', src: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1200&h=800&fit=crop', titleKey: 'gallery.img.islandView' },
-  { id: 16, category: 'exterior', src: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=1200&h=800&fit=crop', titleKey: 'gallery.img.evening' },
+  { id: 1, category: 'exterior', src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop&q=80', title: 'Villa Adora Exterior', titleKey: 'gallery.img.villa' },
+  { id: 2, category: 'suites', src: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=800&fit=crop&q=80', title: 'Princess Suite', titleKey: 'gallery.img.princess' },
+  { id: 3, category: 'suites', src: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200&h=800&fit=crop&q=80', title: 'Prestige Suite', titleKey: 'gallery.img.prestige' },
+  { id: 4, category: 'lake', src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=800&fit=crop', title: 'Lake Morning View', titleKey: 'gallery.img.lakeMorning' },
+  { id: 5, category: 'suites', src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop', title: 'Penthouse Suite', titleKey: 'gallery.img.penthouse' },
+  { id: 6, category: 'exterior', src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&h=800&fit=crop', title: 'Gardens', titleKey: 'gallery.img.gardens' },
+  { id: 7, category: 'lake', src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=1500&fit=crop', title: 'Alpine Landscape', titleKey: 'gallery.img.alpine' },
+  { id: 8, category: 'suites', src: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&h=800&fit=crop', title: 'Luxury Suite Details', titleKey: 'gallery.img.luxuryDetails' },
+  { id: 9, category: 'dining', src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=800&fit=crop', title: 'Dining Room', titleKey: 'gallery.img.dining' },
+  { id: 10, category: 'dining', src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=800&fit=crop', title: 'Fine Cuisine', titleKey: 'gallery.img.cuisine' },
+  { id: 11, category: 'exterior', src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&h=800&fit=crop', title: 'Villa Facade', titleKey: 'gallery.img.facade' },
+  { id: 12, category: 'lake', src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&h=800&fit=crop', title: 'Lake Sunset', titleKey: 'gallery.img.sunset' },
+  { id: 13, category: 'suites', src: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&h=800&fit=crop', title: 'Suite Interior', titleKey: 'gallery.img.suiteInterior' },
+  { id: 14, category: 'dining', src: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&h=800&fit=crop', title: 'Terrace View', titleKey: 'gallery.img.terrace' },
+  { id: 15, category: 'lake', src: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1200&h=800&fit=crop', title: 'Lake Bled Island View', titleKey: 'gallery.img.islandView' },
+  { id: 16, category: 'exterior', src: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=1200&h=800&fit=crop', title: 'Evening at Villa Adora', titleKey: 'gallery.img.evening' },
 ]
 
 const categories = [
