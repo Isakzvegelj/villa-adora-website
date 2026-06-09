@@ -6,7 +6,6 @@ import {
   CheckIcon,
   XMarkIcon,
   CalendarIcon,
-  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';

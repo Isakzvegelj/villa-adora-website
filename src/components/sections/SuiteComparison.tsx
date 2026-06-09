@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { CheckIcon, XMarkIcon, StarIcon, ArrowsRightLeftIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -122,7 +122,7 @@ const SUITES: SuiteData[] = [
 ];
 
 const SuiteComparison = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [selectedSuites, setSelectedSuites] = useState<string[]>(['luxury', 'swan']);
   const [showAllFeatures, setShowAllFeatures] = useState(false);
   const isSl = language === 'sl';
