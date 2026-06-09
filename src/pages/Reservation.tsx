@@ -395,7 +395,9 @@ const Reservation = () => {
                         ))}
                       </select>
                     </div>
-                    {/* Room Visual Selector */}
+                  </div>
+
+                  {/* Room Visual Selector */}
                   <div className="space-y-3">
                     <label className="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
                       <HomeIcon className="w-4 h-4" />
