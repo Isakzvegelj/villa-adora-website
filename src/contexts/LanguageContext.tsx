@@ -273,6 +273,16 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.miniBar.question': 'Ali ima suite minibar?',
       'faq.miniBar.answer': 'Da, vsa suite imajo minibar z izbranimi slovenskimi vinami, pijačami in prigrizki. Vsebuje tudi kavo, čaj in vročo čokolado za pripravo.',
 
+      // Virtual Tour
+      'virtualTour.lobby.title': 'Lobby & Recepcija',
+      'virtualTour.lobby.description': 'Doživite veličastni vhod Villa Adore z njeno zgodovinskim šarmom in elegantno recepcijo.',
+      'virtualTour.suite.title': 'Ogled luksuzne suite',
+      'virtualTour.suite.description': 'Vstopite v naše signature suite in raziskujte vsak detajl luksuzne notranjosti.',
+      'virtualTour.lake.title': 'Jezerska terasa',
+      'virtualTour.lake.description': 'Uživajte v dih jemajočih panoramskih razgledih na Blejsko jezero z naše ekskluzivne terase.',
+      'virtualTour.dining.title': 'Restavracija & Kulinarika',
+      'virtualTour.dining.description': 'Odkrijte našo elegantno restavracijo in kulinarično doživetje ob jezeru.',
+
       // Book Direct Benefits
       'bookDirect.badge': 'Rezervirajte direktno in prihranite',
       'bookDirect.title': 'Zakaj rezervirati direktno pri nas?',
@@ -542,6 +552,16 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.transport.answer': 'Yes, we offer complimentary mountain bike rental for all guests. We also provide electric vehicle transport around Bled and the surrounding area. For longer excursions (Vintgar, Triglav National Park), we organize transport on request.',
       'faq.miniBar.question': 'Does the suite have a mini bar?',
       'faq.miniBar.answer': 'Yes, all suites have a mini bar with selected Slovenian wines, beverages, and snacks. It also includes coffee, tea, and hot chocolate for self-service.',
+
+      // Virtual Tour
+      'virtualTour.lobby.title': 'Lobby & Reception',
+      'virtualTour.lobby.description': 'Experience the grand entrance of Villa Adora with its historic charm and elegant reception area.',
+      'virtualTour.suite.title': 'Luxury Suite Walkthrough',
+      'virtualTour.suite.description': 'Step inside our signature suites and explore every detail of the luxurious interiors.',
+      'virtualTour.lake.title': 'Lake View Terrace',
+      'virtualTour.lake.description': 'Enjoy the breathtaking panoramic views of Lake Bled from our exclusive terrace.',
+      'virtualTour.dining.title': 'Restaurant & Dining',
+      'virtualTour.dining.description': 'Discover our elegant restaurant and lakeside dining experience.',
 
       // Book Direct Benefits
       'bookDirect.badge': 'Book Direct & Save',

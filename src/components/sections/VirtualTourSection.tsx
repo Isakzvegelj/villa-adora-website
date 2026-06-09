@@ -34,17 +34,20 @@ const TOUR_SPOTS = [
 ];
 
 export default function VirtualTourSection() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage()
 
-  const TOUR_TITLE = language === 'sl' ? 'Virtualni ogled' : 'Virtual Tour';
+  const TOUR_TITLE = language === 'sl' ? 'Virtualni ogled' : 'Virtual Tour'
   const TOUR_SUBTITLE = language === 'sl'
     ? 'Raziskujte Villa Adora od doma'
-    : 'Explore Villa Adora from Home';
+    : 'Explore Villa Adora from Home'
   const TOUR_DESC = language === 'sl'
     ? 'Oglejte si naše luksuzne sobe, restavracijo in čudovit pogled na jezero Bled. Virtualni ogled vam omogoča, da doživite v kar najbolj realnem videzu.'
-    : 'Take a peek into our luxurious suites, restaurant, and stunning Lake Bled views. Our virtual tour lets you experience the villa in the most realistic way possible.';
-  const COMING_SOON = language === 'sl' ? 'Kmalu na voljo' : 'Coming Soon';
-  const WATCH_TOUR = language === 'sl' ? 'Ogled virtualnega ogleda' : 'Watch Virtual Tour';
+    : 'Take a peek into our luxurious suites, restaurant, and stunning Lake Bled views. Our virtual tour lets you experience the villa in the most realistic way possible.'
+  const COMING_SOON = language === 'sl' ? 'Kmalu na voljo' : 'Coming Soon'
+  const WATCH_TOUR = language === 'sl' ? 'Ogled virtualnega ogleda' : 'Watch Virtual Tour'
+  const COMING_SOON_NOTE = language === 'sl'
+    ? '360° virtualni ogled bo na voljo kmalu. Prijavite se na novice za obvestilo.'
+    : '360° virtual tour coming soon. Sign up for our newsletter to be notified.'
 
   return (
     <section className="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 overflow-hidden">
@@ -150,10 +153,10 @@ export default function VirtualTourSection() {
                 </div>
               </div>
               <h4 className="font-semibold text-slate-900 dark:text-white text-sm mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                {spot.titleKey}
+                {t(spot.titleKey)}
               </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">
-                {spot.descKey}
+                {t(spot.descKey)}
               </p>
             </motion.div>
           ))}
@@ -172,9 +175,7 @@ export default function VirtualTourSection() {
             <ChevronRight className="w-5 h-5" />
           </button>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
-            {language === 'sl'
-              ? '360° virtualni ogled bo na voljo kmalu. Prijavite se na novice za obvestilo.'
-              : '360° virtual tour coming soon. Sign up for our newsletter to be notified.'}
+            {COMING_SOON_NOTE}
           </p>
         </motion.div>
       </div>

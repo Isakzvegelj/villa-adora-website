@@ -224,6 +224,21 @@
   @apply transition-transform duration-500 hover:scale-105;
 }
 
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Glassmorphism variations */
 .glass-light {
   @apply bg-white/20 backdrop-blur-lg border border-white/30;
