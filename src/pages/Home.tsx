@@ -13,11 +13,13 @@ import AwardsSection from '../components/sections/AwardsSection';
 import NearbyAttractions from '../components/sections/NearbyAttractions';
 import BledSeasons from '../components/sections/BledSeasons';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
+import GuestStories from '../components/sections/GuestStories';
 import SpecialOffers from '../components/sections/SpecialOffers';
 import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import SeasonalOfferBanner from '../components/ui/SeasonalOfferBanner';
-import CulinarySection from '../components/sections/CulinarySection';
+import CulinarySection from '../components/sections/CulinarySection'
+import CulinaryExperience from '../components/sections/CulinaryExperience'
 import NewsletterSection from '../components/sections/NewsletterSection'
 import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
@@ -206,11 +208,17 @@ const Home = () => {
       {/* Guest Reviews */}
       <GuestReviews />
 
+      {/* Guest Stories - Immersive Testimonials */}
+      <GuestStories />
+
       {/* Special Offers */}
       <SpecialOffers />
 
       {/* Culinary & Dining */}
       <CulinarySection />
+
+      {/* Culinary Experience - Immersive Dining */}
+      <CulinaryExperience />
 
       {/* Quick Price Calculator */}
       <QuickPriceCalculator />
