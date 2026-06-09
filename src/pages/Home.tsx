@@ -33,6 +33,7 @@ import LocalExperiences from '../components/sections/LocalExperiences'
 import WeatherWidget from '../components/ui/WeatherWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
+import { HotelSchema, BreadcrumbSchema } from '../components/ui/HotelSchema'
 
 // FAQ data for structured data (English)
 const HOME_FAQS_EN = [
@@ -167,6 +168,19 @@ const Home = () => {
 
       {/* FAQ Structured Data for Google Rich Snippets */}
       <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : HOME_FAQS_EN} />
+
+      {/* HotelSchema: LodgingBusiness + Room Offers for Rich Snippets */}
+      <HotelSchema />
+
+      {/* BreadcrumbList for site navigation */}
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://villa-adora-bled.si/' },
+          { name: 'Suites', url: 'https://villa-adora-bled.si/suites' },
+          { name: 'Reservation', url: 'https://villa-adora-bled.si/reservation' },
+          { name: 'Contact', url: 'https://villa-adora-bled.si/contact' },
+        ]}
+      />
 
       {/* Hero Section */}
       <HeroSection />
