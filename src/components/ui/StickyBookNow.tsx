@@ -27,7 +27,7 @@ export default function StickyBookNow() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-3"
+          className="fixed bottom-6 left-6 z-50 flex items-center gap-3"
         >
           {/* Dismiss button */}
           <button
