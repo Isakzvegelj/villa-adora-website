@@ -25,6 +25,18 @@ import LocationMap from '../components/sections/LocationMap'
 import VirtualTourSection from '../components/sections/VirtualTourSection'
 import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import ConciergeWidget from '../components/ui/ConciergeWidget'
+import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
+
+// Review data for structured data (extracted from GuestReviews)
+const HOME_REVIEWS = [
+  { author: 'Sarah & James Mitchell', datePublished: '2025-09-15', reviewRating: 5, reviewBody: 'Absolutely magical stay! The Princess Suite had the most incredible view of Lake Bled. Waking up to the sunrise over the lake was unforgettable.' },
+  { author: 'Marco Rossi', datePublished: '2025-08-22', reviewRating: 5, reviewBody: 'Villa Adora exceeded all expectations. The Penthouse Suite is a masterpiece of design, and the breakfast on the terrace was divine.' },
+  { author: 'Anna & Thomas Weber', datePublished: '2025-10-03', reviewRating: 5, reviewBody: 'A perfect blend of historic charm and modern luxury. The wellness center was a highlight. Best hotel experience in Slovenia!' },
+  { author: 'Yuki Tanaka', datePublished: '2025-07-18', reviewRating: 5, reviewBody: 'We traveled all the way from Tokyo and Villa Adora was worth every kilometer. The attention to detail is remarkable.' },
+  { author: 'Pierre Dubois', datePublished: '2025-06-30', reviewRating: 5, reviewBody: 'An extraordinary boutique hotel. The Prestige Suite with lake views from every window was pure bliss.' },
+  { author: 'Elena & Marko Kovač', datePublished: '2025-11-10', reviewRating: 5, reviewBody: 'As locals, we wanted a special weekend getaway and Villa Adora delivered beyond expectations. The Luxury Suite was stunning.' },
+]
+
 const Home = () => {
   const { t } = useLanguage()
 
@@ -116,6 +128,9 @@ const Home = () => {
           ],
         }}
       />
+
+      {/* Review Structured Data for Rich Snippets */}
+      <ReviewStructuredData reviews={HOME_REVIEWS} />
 
       {/* Hero Section */}
       <HeroSection />
