@@ -336,6 +336,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'trust.noPrepayment': 'Brez predplačila',
       'trust.ssl': 'SSL šifriranje',
       'trust.bestPrice': 'Najboljša cena',
+
+      // Wellness Preview
+      'wellness.sauna.title': 'Finska savna',
+      'wellness.sauna.desc': 'Topla savna z lesnim pridihom in pogledom na jezero. Pripravite se na popolno relaksacijo v naši ekskluzivni finski savni.',
+      'wellness.turkish.title': 'Turška kopel',
+      'wellness.turkish.desc': 'Tradicionalna turška kopel za popolno relaksacijo. Topla para in čiščenje kože v udobju galerije s pogledom na jezero.',
+      'wellness.massage.title': 'Masaže',
+      'wellness.massage.desc': 'Profesionalne masaže pri terapeutu — aromaterapevtske, športne in relaksacijske. Vsaka masaža je prilagojena vašim potrebam.',
+      'wellness.relaxation.title': 'Sprostitvenacona',
+      'wellness.relaxation.desc': 'Mirna cona za branje, meditacijo in sprostitev s pogledom na jezero. Na voljo so tudi relaksacijske sedežne prevleke in zvodna terapija.',
+      'wellness.infinity.title': 'Infinity bazen',
+      'wellness.infinity.desc': 'Zunanji bazen s pogledom na jezero in navezavo na zvezde. Topla voda skozi celotno leto.',
     },
     en: {
       // Navigation
@@ -651,6 +663,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'trust.noPrepayment': 'No Prepayment',
       'trust.ssl': 'SSL Encrypted',
       'trust.bestPrice': 'Best Price',
+
+      // Wellness Preview
+      'wellness.sauna.title': 'Finnish Sauna',
+      'wellness.sauna.desc': 'Warm sauna with wood aromas and lake views. Prepare for complete relaxation in our exclusive Finnish sauna.',
+      'wellness.turkish.title': 'Turkish Bath',
+      'wellness.turkish.desc': 'Traditional Turkish bath for complete relaxation. Warm steam and skin purification in the comfort of a gallery with lake views.',
+      'wellness.massage.title': 'Massages',
+      'wellness.massage.desc': 'Professional massages by a therapist — aromatherapy, sports, and relaxation. Each massage is tailored to your needs.',
+      'wellness.relaxation.title': 'Relaxation Zone',
+      'wellness.relaxation.desc': 'A peaceful zone for reading, meditation, and relaxation with lake views. Relaxation wraps and sound therapy are also available.',
+      'wellness.infinity.title': 'Infinity Pool',
+      'wellness.infinity.desc': 'Outdoor pool with lake views and a star-deck. Warm water throughout the year.',
     },
     de: {
       // Navigation
@@ -933,6 +957,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'trust.noPrepayment': 'Keine Vorauszahlung',
       'trust.ssl': 'SSL-verschlüsselt',
       'trust.bestPrice': 'Bester Preis',
+
+      // Wellness Preview
+      'wellness.sauna.title': 'Finnisch Sauna',
+      'wellness.sauna.desc': 'Warme Sauna mit Holzaromen und Seeblick. Bereiten Sie sich auf vollständige Entspannung vor.',
+      'wellness.turkish.title': 'Schwimmbad',
+      'wellness.turkish.desc': 'Traditionelles türkisches Bad. Warme Dampf und Hautreinigung mit Blick auf den See.',
+      'wellness.massage.title': 'Massage',
+      'wellness.massage.desc': 'Professionelle Massagen durch einen Therapeuten. Aromatherapie, Sport- und Entspannungsmassagen.',
+      'wellness.relaxation.title': 'Entspannungszone',
+      'wellness.relaxation.desc': 'Ein ruhiger Ort für Lesen, Meditation und Entspannung mit Blick auf den See.',
+      'wellness.infinity.title': 'Infinity-Pool',
+      'wellness.infinity.desc': 'Außenpool mit Seeblick und Sonnendeck. Warmes Wasser das ganze Jahr.',
     },
     it: {
       // Navigation
@@ -1215,6 +1251,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'trust.noPrepayment': 'Nessun pagamento anticipato',
       'trust.ssl': 'Crittografia SSL',
       'trust.bestPrice': 'Miglior prezzo',
+
+      // Wellness Preview
+      'wellness.sauna.title': 'Sauna finlandese',
+      'wellness.sauna.desc': 'Sauna calda con aromi di legno e vista sul lago. Preparatevi per un completo relax.',
+      'wellness.turkish.title': 'Bagno turco',
+      'wellness.turkish.desc': 'Tradizionale bagno turco. Vapore caldo e purificazione della pelle con vista sul lago.',
+      'wellness.massage.title': 'Massaggi',
+      'wellness.massage.desc': 'Massaggi professionali — aromaterapia, sportivi e rilassanti. Ogni massaggio è personalizzato.',
+      'wellness.relaxation.title': 'Zona relax',
+      'wellness.relaxation.desc': 'Uno spazio tranquillo per leggere, meditare e rilassarsi con vista sul lago.',
+      'wellness.infinity.title': 'Piscina infinity',
+      'wellness.infinity.desc': 'Piscina esterna con vista sul lago e solettaio. Acqua calda tutto l\'anno.',
     },
   }
 

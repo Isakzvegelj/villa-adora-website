@@ -8,6 +8,7 @@ import AboutPreview from '../components/sections/AboutPreview';
 import SuitesPreview from '../components/sections/SuitesPreview';
 import ActivitiesPreview from '../components/sections/ActivitiesPreview';
 import GalleryPreview from '../components/sections/GalleryPreview';
+import WellnessPreview from '../components/sections/WellnessPreview';
 import ReviewsPreview from '../components/sections/ReviewsPreview';
 import AwardsSection from '../components/sections/AwardsSection';
 import NearbyAttractions from '../components/sections/NearbyAttractions';
@@ -189,6 +190,9 @@ const Home = () => {
 
       {/* Gallery Preview */}
       <GalleryPreview />
+
+      {/* Wellness & Spa Preview */}
+      <WellnessPreview />
 
       {/* Virtual Tour */}
       <VirtualTourSection />
