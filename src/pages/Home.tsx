@@ -25,6 +25,8 @@ import LocationMap from '../components/sections/LocationMap'
 import VirtualTourSection from '../components/sections/VirtualTourSection'
 import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import ConciergeWidget from '../components/ui/ConciergeWidget'
+import SocialProofNotification from '../components/sections/SocialProofNotification'
+import SuiteComparison from '../components/sections/SuiteComparison'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
 
@@ -174,6 +176,9 @@ const Home = () => {
       {/* Suites Preview */}
       <SuitesPreview />
 
+      {/* Suite Comparison Tool */}
+      <SuiteComparison />
+
       {/* Activities Preview */}
       <ActivitiesPreview />
 
@@ -294,6 +299,9 @@ const Home = () => {
 
       {/* Seasonal Offer Banner */}
       <SeasonalOfferBanner />
+
+      {/* Social Proof - Live Booking Notifications */}
+      <SocialProofNotification language={language} />
 
       {/* Book Direct Benefits */}
       <BookDirectBenefits />
