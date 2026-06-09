@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PageSEO } from '../components/ui/PageSEO';
+import SuiteGallery, { SUITE_GALLERY_IMAGES } from '../components/ui/SuiteGallery';
 import {
   CheckIcon,
   ArrowRightIcon,
@@ -39,6 +41,7 @@ const IconSun = <SunIcon className="w-5 h-5 text-indigo-500" />;
 
 const Suites = () => {
   const { t, language } = useLanguage();
+  const [gallerySuite, setGallerySuite] = useState<string | null>(null);
 
   const suites: Suite[] = [
     {
@@ -224,15 +227,15 @@ const Suites = () => {
                       {t('common.perNight')}
                     </span>
                   </div>
-                  {/* Gallery hint */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    className="absolute bottom-6 right-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300 shadow-lg"
+                  {/* Gallery button */}
+                  <button
+                    onClick={() => setGallerySuite(suite.id)}
+                    className="absolute bottom-6 right-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300 shadow-lg hover:bg-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
                   >
                     <PhotoIcon className="w-4 h-4" />
                     {language === 'sl' ? 'Oglej si galerijo' : 'View gallery'}
-                  </motion.div>
+                    <span className="text-xs text-indigo-500 font-medium">+{SUITE_GALLERY_IMAGES[suite.id]?.length || 0}</span>
+                  </button>
                 </div>
 
                 {/* Content Container */}
@@ -548,6 +551,15 @@ const Suites = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Suite Gallery Modal */}
+      {gallerySuite && SUITE_GALLERY_IMAGES[gallerySuite] && (
+        <SuiteGallery
+          images={SUITE_GALLERY_IMAGES[gallerySuite]}
+          isOpen={!!gallerySuite}
+          onClose={() => setGallerySuite(null)}
+        />
+      )}
     </motion.div>
   );
 };

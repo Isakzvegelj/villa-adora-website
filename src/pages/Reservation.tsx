@@ -4,6 +4,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useSearchParams } from 'react-router-dom';
 import { CalendarIcon, UserGroupIcon, HomeIcon, CheckCircleIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { PageSEO } from '../components/ui/PageSEO';
+import TrustBadges from '../components/ui/TrustBadges';
+import SeasonalPricing from '../components/sections/SeasonalPricing';
 
 interface FormData {
   firstName: string;
@@ -478,6 +480,14 @@ const Reservation = () => {
                 animate={{ opacity: 1, x: 0 }}
                 className="space-y-6"
               >
+                {/* Seasonal Pricing */}
+                {selectedRoom && (
+                  <SeasonalPricing
+                    basePrice={parseInt(selectedRoom.price.replace(/[^0-9]/g, ''))}
+                    
+                  />
+                )}
+
                 <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-xl p-8 border border-slate-100 dark:border-slate-800 sticky top-24">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider">
                     Your Stay
@@ -533,6 +543,9 @@ const Reservation = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Trust Badges */}
+                <TrustBadges />
 
                 <div className="bg-indigo-600 rounded-3xl p-8 text-white">
                   <h3 className="text-xl font-bold mb-4">Why Book Direct?</h3>

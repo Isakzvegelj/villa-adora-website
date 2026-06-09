@@ -311,6 +311,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'bookDirect.flexible.title': 'Fleksibilna odpoved',
       'bookDirect.flexible.description': 'Brezplačna odpoved do 48 ur pred prihodom — bolj fleksibilno kot pri rezervacijah prek tretjih strani.',
       'bookDirect.cta': 'Preveri razpoložljivost',
+
+      // Trust Badges
+      'trust.secureBooking': 'Varna rezervacija',
+      'trust.noPrepayment': 'Brez predplačila',
+      'trust.ssl': 'SSL šifriranje',
+      'trust.bestPrice': 'Najboljša cena',
     },
     en: {
       // Navigation
@@ -602,6 +608,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'bookDirect.flexible.title': 'Flexible Cancellation',
       'bookDirect.flexible.description': 'Free cancellation up to 48 hours before arrival — more flexible than third-party booking sites.',
       'bookDirect.cta': 'Check Availability',
+
+      // Trust Badges
+      'trust.secureBooking': 'Secure Booking',
+      'trust.noPrepayment': 'No Prepayment',
+      'trust.ssl': 'SSL Encrypted',
+      'trust.bestPrice': 'Best Price',
     },
   }
 
