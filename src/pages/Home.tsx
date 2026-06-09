@@ -65,7 +65,7 @@ const HOME_REVIEWS = [
 ]
 
 const Home = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <motion.div
