@@ -1,17 +1,19 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Send, Bot, User, Trash2 } from 'lucide-react'
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, X, Send, Bot, User, Trash2, Wifi, WifiOff, RotateCcw } from 'lucide-react';
 
 interface Message {
-  id: string
-  role: 'user' | 'assistant'
-  content: string
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
   timestamp: number // store as number for JSON serialization
+  failed?: boolean
 }
 
 const CHAT_STORAGE_KEY = 'villa-adora-chat-history'
+const BOT_API = 'https://villa-adora-bot-r00l.onrender.com/api/chat'
 
 const createWelcomeMessage = (): Message => ({
   id: 'welcome',
@@ -26,6 +28,22 @@ const SUGGESTIONS = [
   'How do I make a reservation?',
   'What activities are nearby?',
 ]
+
+// Check if the bot API is reachable
+async function checkBotHealth(): Promise<boolean> {
+  try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 5000)
+    const res = await fetch('https://villa-adora-bot-r00l.onrender.com/', {
+      method: 'HEAD',
+      signal: controller.signal,
+    })
+    clearTimeout(timeout)
+    return res.ok || res.status < 500
+  } catch {
+    return false
+  }
+}
 
 function loadMessages(): Message[] {
   try {
@@ -58,6 +76,8 @@ export default function ConciergeWidget() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
+  const [isOnline, setIsOnline] = useState(true)
+  const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -80,10 +100,24 @@ export default function ConciergeWidget() {
     }
   }, [isOpen])
 
+  // Check bot health periodically and on open
+  useEffect(() => {
+    if (!isOpen) return
+    let cancelled = false
+    const check = async () => {
+      const healthy = await checkBotHealth()
+      if (!cancelled) setIsOnline(healthy)
+    }
+    check()
+    const interval = setInterval(check, 30000) // check every 30s
+    return () => { cancelled = true; clearInterval(interval) }
+  }, [isOpen])
+
   const clearChat = useCallback(() => {
     const welcome = createWelcomeMessage()
     setMessages([welcome])
     localStorage.removeItem(CHAT_STORAGE_KEY)
+    setLastFailedMessage(null)
   }, [])
 
   const sendMessage = async (text: string) => {
@@ -100,13 +134,21 @@ export default function ConciergeWidget() {
     setInput('')
     setIsLoading(true)
     setIsTyping(true)
+    setLastFailedMessage(null)
 
     try {
-      const response = await fetch('https://villa-adora-bot-r00l.onrender.com/api/chat', {
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), 15000) // 15s timeout
+
+      const response = await fetch(BOT_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text.trim() }),
+        signal: controller.signal,
       })
+      clearTimeout(timeout)
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
 
       const data = await response.json()
 
@@ -119,16 +161,26 @@ export default function ConciergeWidget() {
 
       setMessages(prev => [...prev, assistantMessage])
     } catch (error) {
+      setLastFailedMessage(text.trim())
       const errorMessage: Message = {
         id: `error-${Date.now()}`,
         role: 'assistant',
         content: 'I\'m sorry, I\'m having trouble connecting right now. Please try again later or contact us directly at info@villa-adora-bled.si.',
         timestamp: Date.now(),
+        failed: true,
       }
       setMessages(prev => [...prev, errorMessage])
     } finally {
       setIsLoading(false)
       setIsTyping(false)
+    }
+  }
+
+  const retryLastMessage = () => {
+    if (lastFailedMessage) {
+      // Remove the last error message
+      setMessages(prev => prev.slice(0, -1))
+      sendMessage(lastFailedMessage)
     }
   }
 
@@ -181,8 +233,12 @@ export default function ConciergeWidget() {
                 <div>
                   <h3 className="text-white font-semibold text-sm">Villa Adora Concierge</h3>
                   <p className="text-white/70 text-xs flex items-center gap-1">
-                    <span className={`w-2 h-2 rounded-full inline-block ${isTyping ? 'bg-yellow-400 animate-pulse' : 'bg-green-400'}`} />
-                    {isTyping ? 'Typing...' : 'Online'}
+                    {isOnline ? (
+                      <><Wifi className="w-3 h-3" /><span className="w-2 h-2 rounded-full inline-block bg-green-400" />Online</>
+                    ) : (
+                      <><WifiOff className="w-3 h-3" /><span className="w-2 h-2 rounded-full inline-block bg-yellow-400" />Connecting...</>
+                    )}
+                    {isTyping && <span className="ml-1 animate-pulse">· Typing...</span>}
                   </p>
                 </div>
               </div>
@@ -209,6 +265,17 @@ export default function ConciergeWidget() {
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+              {/* Offline warning banner */}
+              {!isOnline && (
+                <motion.div
+                  initial={{ opacity:0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 flex items-center gap-2 text-xs text-amber-700"
+                >
+                  <WifiOff className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>Bot may be offline. Messages will be retried automatically.</span>
+                </motion.div>
+              )}
               {messages.map((message) => (
                 <motion.div
                   key={message.id}
@@ -226,14 +293,27 @@ export default function ConciergeWidget() {
                       className={`px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
                         message.role === 'user'
                           ? 'bg-indigo-600 text-white rounded-br-md'
-                          : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md'
+                          : message.failed
+                            ? 'bg-red-50 text-red-800 shadow-sm border border-red-200 rounded-bl-md'
+                            : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md'
                       }`}
                     >
                       {message.content}
                     </div>
-                    <span className={`text-[10px] text-gray-400 px-1 ${message.role === 'user' ? 'text-right' : 'text-left'}`}>
-                      {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className={`text-[10px] text-gray-400 px-1 ${message.role === 'user' ? 'text-right' : 'text-left'}`}>
+                        {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      </span>
+                      {message.failed && (
+                        <button
+                          onClick={retryLastMessage}
+                          className="text-[10px] text-red-500 hover:text-red-700 flex items-center gap-0.5 px-1"
+                          title="Retry"
+                        >
+                          <RotateCcw className="w-3 h-3" /> Retry
+                        </button>
+                      )}
+                    </div>
                   </div>
                   {message.role === 'user' && (
                     <div className="w-7 h-7 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">

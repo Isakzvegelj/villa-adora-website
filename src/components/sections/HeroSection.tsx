@@ -52,6 +52,7 @@ const HeroSection = () => {
           alt="Villa Adora - Luxury Boutique Hotel at Lake Bled, Slovenia"
           className="w-full h-full object-cover"
           loading="eager"
+          fetchPriority="high"
         />
       </motion.div>
 
