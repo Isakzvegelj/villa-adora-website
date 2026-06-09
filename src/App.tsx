@@ -11,6 +11,7 @@ import ConciergeWidget from './components/ui/ConciergeWidget'
 import ScrollToTop from './components/ui/ScrollToTop'
 import ScrollProgressBar from './components/ui/ScrollProgressBar'
 import StickyBookNow from './components/ui/StickyBookNow'
+import CallNowFAB from './components/ui/CallNowFAB'
 import NotFound from './pages/NotFound'
 import './App.css'
 
@@ -105,6 +106,7 @@ function App() {
                 <Footer />
                 <ScrollProgressBar />
                 <ConciergeWidget />
+                <CallNowFAB />
                 <ScrollToTop />
                 <StickyBookNow />
               </div>

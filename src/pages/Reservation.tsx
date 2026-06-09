@@ -395,45 +395,96 @@ const Reservation = () => {
                         ))}
                       </select>
                     </div>
-                    <div className="space-y-1.5">
-                      <label className="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                        <HomeIcon className="w-4 h-4" />
-                        {t('reservation.roomType')}
-                      </label>
-                      <select
-                        name="roomType"
-                        value={formData.roomType}
-                        onChange={handleChange}
-                        className="w-full px-5 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-indigo-500 dark:text-white outline-none transition-colors"
-                      >
-                        {ROOM_TYPES.map((room) => (
-                          <option key={room.value} value={room.value}>
-                            {room.label} — {room.price}
-                          </option>
-                        ))}
-                      </select>
+                    {/* Room Visual Selector */}
+                  <div className="space-y-3">
+                    <label className="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+                      <HomeIcon className="w-4 h-4" />
+                      {t('reservation.roomType')}
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {ROOM_TYPES.map((room) => {
+                        const isActive = formData.roomType === room.value
+                        return (
+                          <button
+                            key={room.value}
+                            type="button"
+                            onClick={() => setFormData(prev => ({ ...prev, roomType: room.value }))}
+                            className={`relative text-left rounded-xl border-2 p-3 transition-all ${
+                              isActive
+                                ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20 shadow-md'
+                                : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-indigo-300'
+                            }`}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div>
+                                <p className={`font-semibold text-sm ${isActive ? 'text-indigo-700 dark:text-indigo-300' : 'text-slate-900 dark:text-white'}`}>
+                                  {room.label}
+                                </p>
+                                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{room.size}</p>
+                              </div>
+                              <div className="text-right ml-2">
+                                <span className={`font-bold text-sm ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-900 dark:text-white'}`}>
+                                  {room.price}
+                                </span>
+                              </div>
+                            </div>
+                            {isActive && (
+                              <motion.div
+                                layoutId="room-selected"
+                                className="absolute top-2 right-2 w-5 h-5 bg-indigo-600 rounded-full flex items-center justify-center"
+                                initial={false}
+                              >
+                                <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                              </motion.div>
+                            )}
+                          </button>
+                        )
+                      })}
                     </div>
                   </div>
 
-                  {/* Room Preview */}
+                  {/* Hidden native select for form compatibility */}
+                  <input type="hidden" name="roomType" value={formData.roomType} />
+
+                  {/* Selected Room Detail Preview */}
                   <AnimatePresence mode="wait">
                     {selectedRoom && (
                       <motion.div
                         key={selectedRoom.value}
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-4 border border-indigo-100 dark:border-indigo-800"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.25 }}
+                        className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-2xl p-5 border border-indigo-100 dark:border-indigo-800/50"
                       >
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between mb-3">
                           <div>
-                            <h4 className="font-semibold text-indigo-900 dark:text-indigo-300">{selectedRoom.label}</h4>
-                            <p className="text-sm text-indigo-600 dark:text-indigo-400">{selectedRoom.size}</p>
+                            <h4 className="font-bold text-indigo-900 dark:text-indigo-200">{selectedRoom.label}</h4>
+                            <p className="text-sm text-indigo-600 dark:text-indigo-400">{selectedRoom.size} · {selectedRoom.price}</p>
                           </div>
-                          <div className="text-right">
-                            <span className="text-lg font-bold text-indigo-700 dark:text-indigo-300">{selectedRoom.price}</span>
-                          </div>
+                          <span className="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Selected
+                          </span>
                         </div>
+                        <div className="flex flex-wrap gap-2">
+                          {['Free WiFi', 'AC', 'Minibar', selectedRoom.size.includes('view') || selectedRoom.size.includes('Lake') ? 'Lake View' : 'Garden View', 'King Bed'].map(a => (
+                            <span key={a} className="bg-white dark:bg-slate-800 text-indigo-700 dark:text-indigo-300 text-xs px-2.5 py-1 rounded-full border border-indigo-200 dark:border-indigo-700">
+                              {a}
+                            </span>
+                          ))}
+                        </div>
+                        {nights > 0 && (
+                          <div className="mt-3 pt-3 border-t border-indigo-200 dark:border-indigo-800 flex justify-between items-center">
+                            <span className="text-sm text-indigo-600 dark:text-indigo-400">
+                              {nights} night{nights > 1 ? 's' : ''} × {selectedRoom.price.replace('/night', '').trim()}
+                            </span>
+                            <span className="font-bold text-lg text-indigo-700 dark:text-indigo-300">
+                              €{(nights * parseInt(selectedRoom.price.replace(/[^0-9]/g, ''))).toLocaleString()}
+                            </span>
+                          </div>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -484,7 +535,6 @@ const Reservation = () => {
                 {selectedRoom && (
                   <SeasonalPricing
                     basePrice={parseInt(selectedRoom.price.replace(/[^0-9]/g, ''))}
-                    
                   />
                 )}
 
