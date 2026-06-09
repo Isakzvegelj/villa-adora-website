@@ -1,22 +1,24 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Send, Bot, User, Loader2 } from 'lucide-react'
+import { MessageCircle, X, Send, Bot, User, Trash2 } from 'lucide-react'
 
 interface Message {
   id: string
   role: 'user' | 'assistant'
   content: string
-  timestamp: Date
+  timestamp: number // store as number for JSON serialization
 }
 
-const INITIAL_MESSAGE: Message = {
+const CHAT_STORAGE_KEY = 'villa-adora-chat-history'
+
+const createWelcomeMessage = (): Message => ({
   id: 'welcome',
   role: 'assistant',
   content: 'Hello! I\'m the Villa Adora concierge. How can I help you today? I can assist with room bookings, local recommendations, dining reservations, and more.',
-  timestamp: new Date(),
-}
+  timestamp: Date.now(),
+})
 
 const SUGGESTIONS = [
   'Tell me about your suites',
@@ -25,27 +27,64 @@ const SUGGESTIONS = [
   'What activities are nearby?',
 ]
 
+function loadMessages(): Message[] {
+  try {
+    const stored = localStorage.getItem(CHAT_STORAGE_KEY)
+    if (stored) {
+      const parsed: Message[] = JSON.parse(stored)
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed
+      }
+    }
+  } catch {
+    // ignore parse errors
+  }
+  return [createWelcomeMessage()]
+}
+
+function saveMessages(messages: Message[]) {
+  try {
+    // Keep last 50 messages to avoid localStorage bloat
+    const toStore = messages.slice(-50)
+    localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(toStore))
+  } catch {
+    // ignore storage errors
+  }
+}
+
 export default function ConciergeWidget() {
   const [isOpen, setIsOpen] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE])
+  const [messages, setMessages] = useState<Message[]>(loadMessages)
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const scrollToBottom = () => {
+  const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
+  }, [])
+
+  // Persist messages to localStorage whenever they change
+  useEffect(() => {
+    saveMessages(messages)
+  }, [messages])
 
   useEffect(() => {
     scrollToBottom()
-  }, [messages])
+  }, [messages, scrollToBottom])
 
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 300)
     }
   }, [isOpen])
+
+  const clearChat = useCallback(() => {
+    const welcome = createWelcomeMessage()
+    setMessages([welcome])
+    localStorage.removeItem(CHAT_STORAGE_KEY)
+  }, [])
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return
@@ -54,12 +93,13 @@ export default function ConciergeWidget() {
       id: `user-${Date.now()}`,
       role: 'user',
       content: text.trim(),
-      timestamp: new Date(),
+      timestamp: Date.now(),
     }
 
     setMessages(prev => [...prev, userMessage])
     setInput('')
     setIsLoading(true)
+    setIsTyping(true)
 
     try {
       const response = await fetch('https://villa-adora-bot-r00l.onrender.com/api/chat', {
@@ -74,7 +114,7 @@ export default function ConciergeWidget() {
         id: `assistant-${Date.now()}`,
         role: 'assistant',
         content: data.response || data.message || 'I apologize, but I\'m having trouble connecting right now. Please try again or contact us directly at +386 4 574 10 00.',
-        timestamp: new Date(),
+        timestamp: Date.now(),
       }
 
       setMessages(prev => [...prev, assistantMessage])
@@ -83,11 +123,12 @@ export default function ConciergeWidget() {
         id: `error-${Date.now()}`,
         role: 'assistant',
         content: 'I\'m sorry, I\'m having trouble connecting right now. Please try again later or contact us directly at info@villa-adora-bled.si.',
-        timestamp: new Date(),
+        timestamp: Date.now(),
       }
       setMessages(prev => [...prev, errorMessage])
     } finally {
       setIsLoading(false)
+      setIsTyping(false)
     }
   }
 
@@ -140,18 +181,30 @@ export default function ConciergeWidget() {
                 <div>
                   <h3 className="text-white font-semibold text-sm">Villa Adora Concierge</h3>
                   <p className="text-white/70 text-xs flex items-center gap-1">
-                    <span className="w-2 h-2 bg-green-400 rounded-full inline-block" />
-                    Online
+                    <span className={`w-2 h-2 rounded-full inline-block ${isTyping ? 'bg-yellow-400 animate-pulse' : 'bg-green-400'}`} />
+                    {isTyping ? 'Typing...' : 'Online'}
                   </p>
                 </div>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full hover:bg-white/20 flex items-center justify-center transition-colors"
-                aria-label="Close chat"
-              >
-                <X className="h-5 w-5 text-white" />
-              </button>
+              <div className="flex items-center gap-1">
+                {messages.length > 1 && (
+                  <button
+                    onClick={clearChat}
+                    className="w-8 h-8 rounded-full hover:bg-white/20 flex items-center justify-center transition-colors"
+                    aria-label="Clear chat history"
+                    title="Clear chat"
+                  >
+                    <Trash2 className="h-4 w-4 text-white/70 hover:text-white" />
+                  </button>
+                )}
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-8 h-8 rounded-full hover:bg-white/20 flex items-center justify-center transition-colors"
+                  aria-label="Close chat"
+                >
+                  <X className="h-5 w-5 text-white" />
+                </button>
+              </div>
             </div>
 
             {/* Messages */}
@@ -168,14 +221,19 @@ export default function ConciergeWidget() {
                       <Bot className="h-4 w-4 text-indigo-600" />
                     </div>
                   )}
-                  <div
-                    className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
-                      message.role === 'user'
-                        ? 'bg-indigo-600 text-white rounded-br-md'
-                        : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md'
-                    }`}
-                  >
-                    {message.content}
+                  <div className={`max-w-[80%] ${message.role === 'user' ? 'items-end' : 'items-start'} flex flex-col gap-1`}>
+                    <div
+                      className={`px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                        message.role === 'user'
+                          ? 'bg-indigo-600 text-white rounded-br-md'
+                          : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md'
+                      }`}
+                    >
+                      {message.content}
+                    </div>
+                    <span className={`text-[10px] text-gray-400 px-1 ${message.role === 'user' ? 'text-right' : 'text-left'}`}>
+                      {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </span>
                   </div>
                   {message.role === 'user' && (
                     <div className="w-7 h-7 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -185,23 +243,26 @@ export default function ConciergeWidget() {
                 </motion.div>
               ))}
 
-              {isLoading && (
+              {/* Typing indicator with animated dots */}
+              {isTyping && (
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
                   className="flex gap-2 items-start"
                 >
                   <div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <Bot className="h-4 w-4 text-indigo-600" />
                   </div>
-                  <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-md shadow-sm border border-gray-100">
-                    <Loader2 className="h-4 w-4 text-indigo-600 animate-spin" />
+                  <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-md shadow-sm border border-gray-100 flex items-center gap-1">
+                    <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                 </motion.div>
               )}
 
               {/* Suggestions */}
-              {messages.length <= 1 && (
+              {messages.length <= 1 && !isTyping && (
                 <div className="flex flex-wrap gap-2 pt-2">
                   {SUGGESTIONS.map((suggestion, idx) => (
                     <button
