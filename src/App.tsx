@@ -9,6 +9,7 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import LoadingScreen from './components/ui/LoadingScreen'
 import ConciergeWidget from './components/ui/ConciergeWidget'
 import ScrollToTop from './components/ui/ScrollToTop'
+import ScrollProgressBar from './components/ui/ScrollProgressBar'
 import StickyBookNow from './components/ui/StickyBookNow'
 import NotFound from './pages/NotFound'
 import './App.css'
@@ -102,6 +103,7 @@ function App() {
                   <AnimatedRoutes />
                 </main>
                 <Footer />
+                <ScrollProgressBar />
                 <ConciergeWidget />
                 <ScrollToTop />
                 <StickyBookNow />

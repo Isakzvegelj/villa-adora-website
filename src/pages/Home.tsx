@@ -29,6 +29,7 @@ import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import SocialProofNotification from '../components/sections/SocialProofNotification'
 import SuiteComparison from '../components/sections/SuiteComparison'
 import SeasonalHighlights from '../components/sections/SeasonalHighlights'
+import LocalExperiences from '../components/sections/LocalExperiences'
 import WeatherWidget from '../components/ui/WeatherWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
@@ -241,6 +242,9 @@ const Home = () => {
 
       {/* Bled Through the Seasons */}
       <BledSeasons />
+
+      {/* Local Experiences & Day Trips */}
+      <LocalExperiences />
 
       {/* Guest Testimonials */}
       <TestimonialsSection />
