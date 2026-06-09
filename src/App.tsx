@@ -22,6 +22,7 @@ const Contact = lazy(() => import('./pages/Contact'))
 const Reservation = lazy(() => import('./pages/Reservation'))
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'))
 const GiftVoucher = lazy(() => import('./pages/GiftVoucher'))
+const Wellness = lazy(() => import('./pages/Wellness'))
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -39,6 +40,7 @@ function AnimatedRoutes() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/gift-voucher" element={<GiftVoucher />} />
+          <Route path="/wellness" element={<Wellness />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
@@ -62,7 +64,13 @@ function HtmlLangUpdater() {
   const { language } = useLanguage()
   
   useEffect(() => {
-    document.documentElement.lang = language === 'sl' ? 'sl' : 'en'
+    const langMap: Record<string, string> = {
+      sl: 'sl',
+      en: 'en',
+      de: 'de',
+      it: 'it',
+    }
+    document.documentElement.lang = langMap[language] || 'en'
   }, [language])
   
   return null

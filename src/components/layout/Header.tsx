@@ -29,6 +29,7 @@ const Header = () => {
     { name: t('nav.gallery'), href: '/gallery' },
     { name: t('nav.contact'), href: '/contact' },
     { name: t('nav.giftVoucher'), href: '/gift-voucher' },
+    { name: t('nav.wellness'), href: '/wellness' },
   ]
 
   const isActive = (path: string) => {
@@ -117,6 +118,30 @@ const Header = () => {
                 }`}
               >
                 EN
+              </button>
+              <button
+                onClick={() => setLanguage('de')}
+                className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                  language === 'de'
+                    ? 'bg-indigo-600 text-white shadow-lg'
+                    : isScrolled
+                    ? 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                    : 'text-white hover:text-indigo-200 dark:text-slate-200 dark:hover:text-indigo-400'
+                }`}
+              >
+                DE
+              </button>
+              <button
+                onClick={() => setLanguage('it')}
+                className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                  language === 'it'
+                    ? 'bg-indigo-600 text-white shadow-lg'
+                    : isScrolled
+                    ? 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                    : 'text-white hover:text-indigo-200 dark:text-slate-200 dark:hover:text-indigo-400'
+                }`}
+              >
+                IT
               </button>
             </div>
 
