@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CalendarIcon, UserGroupIcon, ChevronDownIcon, CheckIcon, XIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon, UserGroupIcon, ChevronDownIcon, CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -188,7 +188,7 @@ const AvailabilityChecker = () => {
                           </div>
                         ) : (
                           <div className="flex items-center gap-1 text-red-500 dark:text-red-400">
-                            <XIcon className="w-5 h-5" />
+                            <XMarkIcon className="w-5 h-5" />
                             <span className="text-xs font-semibold hidden sm:inline">
                               {language === 'sl' ? 'Zasedeno' : 'Booked'}
                             </span>
