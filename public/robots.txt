@@ -1,8 +1,27 @@
+# robots.txt for Villa Adora — Luxury Boutique Hotel, Lake Bled, Slovenia
+# https://villa-adora-bled.si
+
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://villa-adora.si/sitemap.xml
+# Disallow admin pages from indexing
+Disallow: /admin
+Disallow: /admin/*
 
-# Crawl-delay for respectful crawling
+# Sitemap location
+Sitemap: https://villa-adora-bled.si/sitemap.xml
+
+# Crawl-delay for polite crawling
 Crawl-delay: 1
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+
+# Block AI scrapers from non-public pages
+User-agent: GPTBot
+Disallow: /admin
+
+User-agent: ChatGPT-User
+Disallow: /admin
