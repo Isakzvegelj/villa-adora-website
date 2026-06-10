@@ -30,6 +30,7 @@ import AvailabilityChecker from '../components/sections/AvailabilityChecker'
 import SocialProofNotification from '../components/sections/SocialProofNotification'
 import SuiteComparison from '../components/sections/SuiteComparison'
 import SeasonalHighlights from '../components/sections/SeasonalHighlights'
+import SummerExperiences from '../components/sections/SummerExperiences'
 import LocalExperiences from '../components/sections/LocalExperiences'
 import WeatherWidget from '../components/ui/WeatherWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
@@ -185,6 +186,9 @@ const Home = () => {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Summer 2026 Experiences */}
+      <SummerExperiences />
 
       {/* Seasonal Highlights */}
       <SeasonalHighlights />

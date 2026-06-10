@@ -12,6 +12,32 @@ interface Message {
   failed?: boolean
 }
 
+// Simple markdown renderer for chat messages
+function ChatMarkdown({ content }: { content: string }) {
+  // Convert **bold** and *italic* and [text](url) links
+  const parts: React.ReactNode[] = [];
+  const regex = /(\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(([^)]+)\)|([^*\[\]]+))/g;
+  let match;
+  let key = 0;
+  while ((match = regex.exec(content)) !== null) {
+    if (match[2]) {
+      parts.push(<strong key={key++} className="font-semibold">{match[2]}</strong>);
+    } else if (match[3]) {
+      parts.push(<em key={key++} className="italic">{match[3]}</em>);
+    } else if (match[4] && match[5]) {
+      parts.push(
+        <a key={key++} href={match[5]} target="_blank" rel="noopener noreferrer"
+          className="text-indigo-600 dark:text-indigo-400 underline hover:text-indigo-800">
+          {match[4]}
+        </a>
+      );
+    } else if (match[6]) {
+      parts.push(<span key={key++}>{match[6]}</span>);
+    }
+  }
+  return <>{parts}</>;
+}
+
 const CHAT_STORAGE_KEY = 'villa-adora-chat-history'
 const BOT_API = 'https://villa-adora-bot-r00l.onrender.com/api/chat'
 
@@ -175,10 +201,23 @@ export default function ConciergeWidget() {
 
       const data = await response.json()
 
+      // Bot returns { replies: [{ content, type }] }
+      let botText = ''
+      if (Array.isArray(data.replies) && data.replies.length > 0) {
+        botText = data.replies
+          .filter((r: { type?: string; content?: string }) => r.type === 'text' && r.content)
+          .map((r: { content: string }) => r.content)
+          .join('\n\n')
+      } else if (data.response) {
+        botText = data.response
+      } else if (data.message) {
+        botText = data.message
+      }
+
       const assistantMessage: Message = {
         id: `assistant-${Date.now()}`,
         role: 'assistant',
-        content: data.response || data.message || 'I apologize, but I\'m having trouble connecting right now. Please try again or contact us directly at +386 4 574 10 00.',
+        content: botText || 'I apologize, but I\'m having trouble connecting right now. Please try again or contact us directly at +386 4 574 10 00.',
         timestamp: Date.now(),
       }
 
@@ -317,11 +356,15 @@ export default function ConciergeWidget() {
                         message.role === 'user'
                           ? 'bg-indigo-600 text-white rounded-br-md'
                           : message.failed
-                            ? 'bg-red-50 text-red-800 shadow-sm border border-red-200 rounded-bl-md'
+                            ? 'bg-red-50 text-red-800 shadow-sm border border-red-200 rounded-bl-md whitespace-pre-wrap'
                             : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md'
                       }`}
                     >
-                      {message.content}
+                      {message.role === 'assistant' ? (
+                        <ChatMarkdown content={message.content} />
+                      ) : (
+                        message.content
+                      )}
                     </div>
                     <div className="flex items-center gap-2">
                       <span className={`text-[10px] text-gray-400 px-1 ${message.role === 'user' ? 'text-right' : 'text-left'}`}>
