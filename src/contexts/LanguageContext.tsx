@@ -34,6 +34,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.admin': 'Admin',
       'nav.giftVoucher': 'Darilni bon',
       'nav.wellness': 'Wellness',
+      'nav.offers': 'Ponudbe',
 
       // Gift Voucher
       'giftVoucher.title': 'Darilni bon',
@@ -190,7 +191,22 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'offers.lastMinute.description': 'Rezervirajte v zadnjih 7 dneh in prejmite 15% popust (odvisno od razpoložljivosti).',
       'offers.lastMinute.price': '15% popust',
       'offers.lastMinute.tag': 'Hitra ponudba',
-      
+
+      // Offer Includes
+      'offers.includes.breakfast': 'Bogat zajtrk',
+      'offers.includes.wifi': 'Premium WiFi',
+      'offers.includes.parking': 'Brezplačno parkiranje',
+      'offers.includes.latecheckout': 'Pozen odhod',
+      'offers.includes.champagne': 'Šampanjec',
+      'offers.includes.massage': 'Masaža za par',
+      'offers.includes.dinner': 'Večerja ob sončnem zahodu',
+      'offers.includes.sauna': 'Dostop do savne',
+      'offers.includes.yoga': 'Dnevna joga',
+      'offers.includes.tea': 'Popoldanski čaj',
+      'offers.includes.upgrade': 'Brezplačna nadgradnja',
+      'offers.includes.welcome': 'Napitek dobrodošlice',
+      'offers.includes.bikes': 'Izposoja koles',
+
       // Common
       'common.book': 'Rezerviraj',
       'common.learn': 'Več',
@@ -363,6 +379,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.contact': 'Contact',
       'nav.reservation': 'Reservation',
       'nav.giftVoucher': 'Gift Voucher',
+      'nav.wellness': 'Wellness',
+      'nav.offers': 'Offers',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -521,7 +539,22 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'offers.lastMinute.description': 'Book within 7 days and get 15% off (subject to availability).',
       'offers.lastMinute.price': '15% off',
       'offers.lastMinute.tag': 'Hot Deal',
-      
+
+      // Offer Includes
+      'offers.includes.breakfast': 'Gourmet breakfast',
+      'offers.includes.wifi': 'Premium WiFi',
+      'offers.includes.parking': 'Free parking',
+      'offers.includes.latecheckout': 'Late check-out',
+      'offers.includes.champagne': 'Champagne',
+      'offers.includes.massage': 'Couples massage',
+      'offers.includes.dinner': 'Sunset dinner',
+      'offers.includes.sauna': 'Sauna access',
+      'offers.includes.yoga': 'Daily yoga',
+      'offers.includes.tea': 'Afternoon tea',
+      'offers.includes.upgrade': 'Free room upgrade',
+      'offers.includes.welcome': 'Welcome drink',
+      'offers.includes.bikes': 'Bike rental',
+
       // Common
       'common.book': 'Book',
       'common.learn': 'Learn More',
@@ -695,6 +728,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.reservation': 'Reservierung',
       'nav.giftVoucher': 'Geschenkgutschein',
       'nav.wellness': 'Wellness',
+      'nav.offers': 'Angebote',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -837,6 +871,21 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'offers.lastMinute.description': 'Buchen Sie innerhalb von 7 Tagen und erhalten 15% Rabatt (vorbehaltlich Verfügbarkeit).',
       'offers.lastMinute.price': '15% Rabatt',
       'offers.lastMinute.tag': 'Hot Deal',
+
+      // Offer Includes
+      'offers.includes.breakfast': 'Frühstücksbuffet',
+      'offers.includes.wifi': 'Premium WiFi',
+      'offers.includes.parking': 'Kostenlose Parkplätze',
+      'offers.includes.latecheckout': 'Später Check-out',
+      'offers.includes.champagne': 'Champagner',
+      'offers.includes.massage': 'Paarmassage',
+      'offers.includes.dinner': 'Sonnenuntergang-Dinner',
+      'offers.includes.sauna': 'Sauna-Zugang',
+      'offers.includes.yoga': 'Tägliches Yoga',
+      'offers.includes.tea': 'Nachmittagstee',
+      'offers.includes.upgrade': 'Kostenloses Upgrade',
+      'offers.includes.welcome': 'Willkommensgetränk',
+      'offers.includes.bikes': 'Fahrradverleih',
 
       // Common
       'common.book': 'Buchen',
@@ -993,6 +1042,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.reservation': 'Prenotazione',
       'nav.giftVoucher': 'Buono regalo',
       'nav.wellness': 'Wellness',
+      'nav.offers': 'Offerte',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -1135,6 +1185,21 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'offers.lastMinute.description': 'Prenota entro 7 giorni e ottieni il 15% di sconto (soggetto a disponibilità).',
       'offers.lastMinute.price': '15% di sconto',
       'offers.lastMinute.tag': 'Offerta speciale',
+
+      // Offer Includes
+      'offers.includes.breakfast': 'Colazione gourmet',
+      'offers.includes.wifi': 'Premium WiFi',
+      'offers.includes.parking': 'Parcheggio gratuito',
+      'offers.includes.latecheckout': 'Check-out tardivo',
+      'offers.includes.champagne': 'Champagne',
+      'offers.includes.massage': 'Massaggio per coppie',
+      'offers.includes.dinner': 'Cena al tramonto',
+      'offers.includes.sauna': 'Accesso sauna',
+      'offers.includes.yoga': 'Yoga quotidiano',
+      'offers.includes.tea': 'Tè pomeridiano',
+      'offers.includes.upgrade': 'Upgrade gratuito',
+      'offers.includes.welcome': 'Drink di benvenuto',
+      'offers.includes.bikes': 'Noleggio biciclette',
 
       // Common
       'common.book': 'Prenota',

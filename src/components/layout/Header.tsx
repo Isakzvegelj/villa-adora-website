@@ -30,6 +30,7 @@ const Header = () => {
     { name: t('nav.contact'), href: '/contact' },
     { name: t('nav.giftVoucher'), href: '/gift-voucher' },
     { name: t('nav.wellness'), href: '/wellness' },
+    { name: t('nav.offers'), href: '/offers' },
   ]
 
   const isActive = (path: string) => {
