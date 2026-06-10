@@ -55,6 +55,25 @@ export function PageSEO({
       link.setAttribute('href', canonicalUrl)
     }
 
+    // Hreflang tags for multilingual SEO
+    const hreflangLinks = [
+      { lang: 'en', url: canonicalUrl || 'https://villa-adora-bled.si/' },
+      { lang: 'sl', url: (canonicalUrl || 'https://villa-adora-bled.si/').replace('/en/', '/sl/') },
+      { lang: 'de', url: (canonicalUrl || 'https://villa-adora-bled.si/').replace('/en/', '/de/') },
+      { lang: 'it', url: (canonicalUrl || 'https://villa-adora-bled.si/').replace('/en/', '/it/') },
+      { lang: 'x-default', url: canonicalUrl || 'https://villa-adora-bled.si/' },
+    ]
+    hreflangLinks.forEach(({ lang, url }) => {
+      let link = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`) as HTMLLinkElement | null
+      if (!link) {
+        link = document.createElement('link')
+        link.setAttribute('rel', 'alternate')
+        link.setAttribute('hreflang', lang)
+        document.head.appendChild(link)
+      }
+      link.setAttribute('href', url)
+    })
+
     return () => {
       document.title = 'Villa Adora'
     }
