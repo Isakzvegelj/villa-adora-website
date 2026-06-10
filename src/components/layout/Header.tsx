@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { useTheme } from '../../contexts/ThemeContext'
 
@@ -166,6 +166,25 @@ const Header = () => {
               )}
             </motion.button>
 
+            {/* Concierge Chat Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const event = new CustomEvent('open-concierge')
+                window.dispatchEvent(event)
+              }}
+              className={`hidden md:flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                isScrolled
+                  ? 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-400'
+                  : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-md border border-white/30'
+              }`}
+              aria-label="Open concierge chat"
+            >
+              <ChatBubbleLeftRightIcon className="w-4 h-4" />
+              <span className="hidden lg:inline">Concierge</span>
+            </motion.button>
+
             {/* Reservation Button */}
             <Link to="/reservation">
               <motion.button
@@ -231,6 +250,19 @@ const Header = () => {
                     {t('nav.reservation')}
                   </button>
                 </Link>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    setTimeout(() => {
+                      const event = new CustomEvent('open-concierge')
+                      window.dispatchEvent(event)
+                    }, 100)
+                  }}
+                  className="flex items-center gap-2 w-full px-4 py-3 text-base font-medium rounded-xl text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 transition-colors duration-200"
+                >
+                  <ChatBubbleLeftRightIcon className="w-5 h-5" />
+                  Ask Concierge
+                </button>
               </div>
             </motion.div>
           )}

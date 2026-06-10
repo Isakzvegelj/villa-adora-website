@@ -162,6 +162,13 @@ export default function ConciergeWidget() {
     return () => { cancelled = true; clearInterval(interval) }
   }, [isOpen])
 
+  // Listen for external open event (e.g. from ConciergeCTA section)
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true)
+    window.addEventListener('open-concierge', handleOpen)
+    return () => window.removeEventListener('open-concierge', handleOpen)
+  }, [])
+
   const clearChat = useCallback(() => {
     const welcome = createWelcomeMessage(detectLanguage())
     setMessages([welcome])
