@@ -119,6 +119,32 @@ const SUITES: SuiteData[] = [
     rating: 4.9,
     reviewCount: 31,
   },
+  {
+    id: 'deluxe',
+    name: 'Deluxe Suite',
+    nameSl: 'Deluxe Suite',
+    price: 350,
+    size: '52 m²',
+    sizeSl: '52 m²',
+    description: 'Luxurious suite with lake views and elegant furnishings.',
+    descriptionSl: 'Luksuzna soba s pogledom na jezero in elegantnim pohištvom.',
+    features: ['Lake View', 'Balcony', 'King Bed', 'Rain Shower', 'Bathtub', 'Minibar', 'Nespresso', 'Smart TV'],
+    rating: 4.8,
+    reviewCount: 45,
+  },
+  {
+    id: 'superior',
+    name: 'Superior Suite',
+    nameSl: 'Superior Suite',
+    price: 380,
+    size: '62 m²',
+    sizeSl: '62 m²',
+    description: 'Two bedrooms, sleeps 4 — perfect for families and groups.',
+    descriptionSl: 'Dve spalnici, 4 ležišča — idealno za družine in skupine.',
+    features: ['Lake View', 'Balcony', '55+ m²', 'King Bed', 'Rain Shower', 'Bathtub', 'Minibar', 'Nespresso', 'Smart TV', 'Sleeps 4'],
+    rating: 4.7,
+    reviewCount: 29,
+  },
 ];
 
 const SuiteComparison = () => {
