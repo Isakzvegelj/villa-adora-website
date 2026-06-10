@@ -41,7 +41,7 @@ import { HotelSchema, BreadcrumbSchema } from '../components/ui/HotelSchema'
 
 // FAQ data for structured data (English)
 const HOME_FAQS_EN = [
-  { question: 'What are the check-in and check-out times?', answer: 'Check-in is from 15:00 to 22:00. Check-out is by 11:00. Early check-in and late check-out are available on request.' },
+  { question: 'What are the check-in and check-out times?', answer: 'Check-in is from 14:00 to 22:00. Check-out is by 11:00. Early check-in and late check-out are available on request.' },
   { question: 'What is the cancellation policy?', answer: 'Free cancellation up to 48 hours before arrival. Cancellations within 48 hours are charged for the first night. For high season (July-August), cancellation is required 72 hours in advance.' },
   { question: 'Is free parking available?', answer: 'Yes, free private parking is available on-site for all guests. The parking is secured and under camera surveillance.' },
   { question: 'Are pets allowed?', answer: 'Yes, pets are allowed on request. Please inform us in advance. An additional cleaning fee of €30 per stay applies.' },
@@ -55,7 +55,7 @@ const HOME_FAQS_EN = [
 
 // FAQ data for structured data (Slovenian)
 const HOME_FAQS_SL = [
-  { question: 'Kateri so časi prihoda in odhoda?', answer: 'Prihod (check-in) je od 15:00 do 22:00. Odhod (check-out) je do 11:00. Pozen prihod in pozen odhod sta na voljo na zahtevo.' },
+  { question: 'Kateri so časi prihoda in odhoda?', answer: 'Prihod (check-in) je od 14:00 do 22:00. Odhod (check-out) je do 11:00. Pozen prihod in pozen odhod sta na voljo na zahtevo.' },
   { question: 'Kakšna je politika odpovedi?', answer: 'Brezplačna odpoved je možna do 48 ur pred prihodom. Odpovedi v roku 48 ur pred prihodom se zaračuna prva nočitev. V visoki sezoni (julij-avgust) velja odpoved do 72 ur.' },
   { question: 'Ali je na voljo brezplačno parkiranje?', answer: 'Da, brezplačno zasebno parkirišče je na voljo na lokaciji za vse goste. Parkiranje je varovano in pod nadzorom kamere.' },
   { question: 'Ali so dovoljeni hišni ljubljenčki?', answer: 'Da, hišni ljubljenčki so dovoljeni na zahtevo. Dodatna pristojbina za čiščenje znaša €30 na bivanje.' },
