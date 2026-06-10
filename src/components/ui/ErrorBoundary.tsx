@@ -1,10 +1,10 @@
-import { Component, ErrorInfo, ReactNode } from 'react';
+import React, { Component } from 'react';
 import { motion } from 'framer-motion';
 import { ExclamationTriangleIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 
 interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
 }
 
 interface State {
@@ -22,7 +22,7 @@ class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error };
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  public componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('Uncaught error:', error, errorInfo);
   }
 
@@ -68,16 +68,6 @@ class ErrorBoundary extends Component<Props, State> {
                 Go to Homepage
               </button>
             </div>
-            {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="mt-8 text-left">
-                <summary className="text-xs text-slate-400 cursor-pointer hover:text-slate-600">
-                  Error details (development only)
-                </summary>
-                <pre className="mt-2 p-4 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-400 overflow-auto max-h-48">
-                  {this.state.error.toString()}
-                </pre>
-              </details>
-            )}
           </motion.div>
         </div>
       );
