@@ -22,6 +22,20 @@ Disallow: /admin
 # Block AI scrapers from non-public pages
 User-agent: GPTBot
 Disallow: /admin
+Allow: /
 
 User-agent: ChatGPT-User
 Disallow: /admin
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /admin
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /admin
+Allow: /
+
+User-agent: PerplexityBot
+Disallow: /admin
+Allow: /
