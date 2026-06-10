@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRightIcon, SparklesIcon, HeartIcon, FireIcon, BeakerIcon, SunIcon } from '@heroicons/react/24/outline'
+import { ArrowRightIcon, SparklesIcon, HeartIcon, FireIcon, CloudIcon, SunIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../contexts/LanguageContext'
 
@@ -16,7 +16,7 @@ const WellnessPreview = () => {
       textColor: 'text-orange-600',
     },
     {
-      icon: <DropletIcon className="w-6 h-6" />,
+      icon: <CloudIcon className="w-6 h-6" />,
       titleKey: 'wellness.turkish.title',
       descKey: 'wellness.turkish.desc',
       gradient: 'from-blue-500 to-cyan-500',

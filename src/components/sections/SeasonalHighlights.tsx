@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { CalendarIcon, MapPinIcon, ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon, ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const SEASONAL_HIGHLIGHTS = [

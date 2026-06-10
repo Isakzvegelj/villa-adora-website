@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPinIcon, ClockIcon, StarIcon, ChevronDownIcon, ChevronUpIcon, SparklesIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, ClockIcon, StarIcon, ChevronDownIcon, ChevronUpIcon, SparklesIcon, SunIcon, CalendarIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface Experience {
@@ -195,7 +195,7 @@ function getTranslation(key: string, language: string): string {
 }
 
 const LocalExperiences = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
