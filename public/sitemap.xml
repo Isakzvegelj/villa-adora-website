@@ -91,4 +91,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://villa-adora-bled.si/reviews</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reviews"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/reviews"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/reviews"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/reviews"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

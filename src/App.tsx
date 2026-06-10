@@ -29,6 +29,7 @@ const GiftVoucher = lazy(() => import('./pages/GiftVoucher'))
 const Wellness = lazy(() => import('./pages/Wellness'))
 const Offers = lazy(() => import('./pages/Offers'))
 const Weddings = lazy(() => import('./pages/Weddings'))
+const Reviews = lazy(() => import('./pages/Reviews'))
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -49,6 +50,7 @@ function AnimatedRoutes() {
           <Route path="/wellness" element={<Wellness />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/weddings" element={<Weddings />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

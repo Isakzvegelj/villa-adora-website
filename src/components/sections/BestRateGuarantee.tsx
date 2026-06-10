@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, BadgeCheck, Clock, Phone, MapPin, Mail, CreditCard, Lock } from 'lucide-react';
+import { ShieldCheck, BadgeCheck, Clock, Phone, MapPin, Mail, Lock } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const BestRateGuarantee = () => {
