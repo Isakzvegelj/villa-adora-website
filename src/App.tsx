@@ -1,18 +1,19 @@
-import { useState, useEffect, Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
-import Header from './components/layout/Header'
-import Footer from './components/layout/Footer'
-import Home from './pages/Home'
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext'
-import { ThemeProvider } from './contexts/ThemeContext'
-import LoadingScreen from './components/ui/LoadingScreen'
-import ConciergeWidget from './components/ui/ConciergeWidget'
-import ScrollToTop from './components/ui/ScrollToTop'
-import ScrollProgressBar from './components/ui/ScrollProgressBar'
-import StickyBookNow from './components/ui/StickyBookNow'
-import CallNowFAB from './components/ui/CallNowFAB'
-import NotFound from './pages/NotFound'
+import { useState, useEffect, Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Home from './pages/Home';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import LoadingScreen from './components/ui/LoadingScreen';
+import ConciergeWidget from './components/ui/ConciergeWidget';
+import ScrollToTop from './components/ui/ScrollToTop';
+import ScrollProgressBar from './components/ui/ScrollProgressBar';
+import StickyBookNow from './components/ui/StickyBookNow';
+import CallNowFAB from './components/ui/CallNowFAB';
+import NotFound from './pages/NotFound';
+import ErrorBoundary from './components/ui/ErrorBoundary';
 import './App.css'
 
 // Lazy-loaded pages for better code splitting
@@ -98,18 +99,20 @@ function App() {
             <LoadingScreen key="loading" />
           ) : (
             <Router key="router">
-              <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 flex flex-col">
-                <Header />
-                <main className="flex-grow">
-                  <AnimatedRoutes />
-                </main>
-                <Footer />
-                <ScrollProgressBar />
-                <ConciergeWidget />
-                <CallNowFAB />
-                <ScrollToTop />
-                <StickyBookNow />
-              </div>
+              <ErrorBoundary>
+                <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 flex flex-col">
+                  <Header />
+                  <main className="flex-grow">
+                    <AnimatedRoutes />
+                  </main>
+                  <Footer />
+                  <ScrollProgressBar />
+                  <ConciergeWidget />
+                  <CallNowFAB />
+                  <ScrollToTop />
+                  <StickyBookNow />
+                </div>
+              </ErrorBoundary>
             </Router>
           )}
         </AnimatePresence>
