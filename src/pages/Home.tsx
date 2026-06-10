@@ -27,6 +27,7 @@ import BestRateGuarantee from '../components/sections/BestRateGuarantee'
 import LocationMap from '../components/sections/LocationMap'
 import VirtualTourSection from '../components/sections/VirtualTourSection'
 import AvailabilityChecker from '../components/sections/AvailabilityChecker'
+import LiveAvailability from '../components/sections/LiveAvailability'
 import SocialProofNotification from '../components/sections/SocialProofNotification'
 import SuiteComparison from '../components/sections/SuiteComparison'
 import SeasonalHighlights from '../components/sections/SeasonalHighlights'
@@ -252,6 +253,9 @@ const Home = () => {
 
       {/* Availability Checker */}
       <AvailabilityChecker />
+
+      {/* Live Room Availability */}
+      <LiveAvailability />
 
       {/* Reviews Preview */}
       <ReviewsPreview />
