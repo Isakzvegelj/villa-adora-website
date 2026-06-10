@@ -20,6 +20,7 @@ import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
 import WhyChooseUs from '../components/sections/WhyChooseUs'
 import CulinarySection from '../components/sections/CulinarySection'
 import CulinaryExperience from '../components/sections/CulinaryExperience'
+import NearbyRestaurants from '../components/sections/NearbyRestaurants'
 import NewsletterSection from '../components/sections/NewsletterSection'
 import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
@@ -295,6 +296,9 @@ const Home = () => {
 
       {/* Culinary Experience - Immersive Dining */}
       <CulinaryExperience />
+
+      {/* Nearby Restaurants */}
+      <NearbyRestaurants />
 
       {/* Quick Price Calculator */}
       <QuickPriceCalculator />
