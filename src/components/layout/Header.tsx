@@ -31,6 +31,7 @@ const Header = () => {
     { name: t('nav.giftVoucher'), href: '/gift-voucher' },
     { name: t('nav.wellness'), href: '/wellness' },
     { name: t('nav.offers'), href: '/offers' },
+    { name: t('nav.weddings'), href: '/weddings' },
   ]
 
   const isActive = (path: string) => {

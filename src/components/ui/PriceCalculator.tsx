@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CalendarDaysIcon, UserGroupIcon, SparklesIcon, XMarkIcon, CheckIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, SparklesIcon, XMarkIcon, CheckIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 interface PriceCalculatorProps {
@@ -41,7 +41,7 @@ function getSeasonColor(mult: number): string {
   return 'text-blue-500 bg-blue-50 dark:bg-blue-900/20';
 }
 
-export default function PriceCalculator({ suitePrice, suiteId, suiteName, suiteColor, t, language }: PriceCalculatorProps) {
+export default function PriceCalculator({ suitePrice, suiteId, suiteName, suiteColor, t: _t, language }: PriceCalculatorProps) {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [adults, setAdults] = useState(2);

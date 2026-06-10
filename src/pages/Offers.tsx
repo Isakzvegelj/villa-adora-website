@@ -11,8 +11,6 @@ import {
   MoonIcon,
   GiftIcon,
   ClockIcon,
-  LeafIcon,
-  SnowflakeIcon,
   CheckCircleIcon,
   PhoneIcon,
 } from '@heroicons/react/24/outline';
@@ -116,7 +114,7 @@ const Offers = () => {
 
   const springOffer: Offer = {
     id: 'spring',
-    icon: <LeafIcon className="w-7 h-7" />,
+    icon: <GiftIcon className="w-7 h-7" />,
     titleKey: 'offers.spring.title',
     descKey: 'offers.spring.desc',
     priceNoteKey: '',
@@ -129,7 +127,7 @@ const Offers = () => {
 
   const winterOffer: Offer = {
     id: 'winter',
-    icon: <SnowflakeIcon className="w-7 h-7" />,
+    icon: <ClockIcon className="w-7 h-7" />,
     titleKey: 'offers.winter.title',
     descKey: 'offers.winter.desc',
     priceNoteKey: '',

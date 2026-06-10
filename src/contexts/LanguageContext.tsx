@@ -35,6 +35,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.giftVoucher': 'Darilni bon',
       'nav.wellness': 'Wellness',
       'nav.offers': 'Ponudbe',
+      'nav.weddings': 'Poroke',
 
       // Gift Voucher
       'giftVoucher.title': 'Darilni bon',
@@ -381,6 +382,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.giftVoucher': 'Gift Voucher',
       'nav.wellness': 'Wellness',
       'nav.offers': 'Offers',
+      'nav.weddings': 'Weddings',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -729,6 +731,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.giftVoucher': 'Geschenkgutschein',
       'nav.wellness': 'Wellness',
       'nav.offers': 'Angebote',
+      'nav.weddings': 'Hochzeiten',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -1043,6 +1046,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.giftVoucher': 'Buono regalo',
       'nav.wellness': 'Wellness',
       'nav.offers': 'Offerte',
+      'nav.weddings': 'Matrimoni',
       'nav.admin': 'Admin',
 
       // Gift Voucher
