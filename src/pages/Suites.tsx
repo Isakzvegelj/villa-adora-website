@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PageSEO } from '../components/ui/PageSEO';
@@ -16,6 +16,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import PriceCalculator from '../components/ui/PriceCalculator';
+import { trackSuiteView } from '../components/ui/RecentlyViewedSuites';
 
 interface Amenity {
   labelKey: string;
@@ -159,10 +160,18 @@ const Suites = () => {
     },
   ];
 
-  const handleBookNow = (_suiteId: string) => {
-    // Scroll to top and navigate
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  // Track suite views for "Recently Viewed" feature
+  useEffect(() => {
+    // Track all suites that are visible on this page
+    suites.forEach(suite => {
+      trackSuiteView({
+        id: suite.id,
+        name: t(suite.titleKey),
+        image: suite.image,
+        price: suite.price !== '0' ? `€${suite.price}/night` : 'Price on Request',
+      })
+    })
+  }, [])
 
   return (
     <motion.div
@@ -217,6 +226,7 @@ const Suites = () => {
             {suites.map((suite, index) => (
               <motion.div
                 key={suite.id}
+                id={suite.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
@@ -292,7 +302,6 @@ const Suites = () => {
                   <div className="pt-4 flex flex-wrap gap-4">
                     <Link
                       to={`/reservation?roomType=${suite.id}`}
-                      onClick={() => handleBookNow(suite.id)}
                     >
                       <motion.button
                         whileHover={{ scale: 1.02 }}

@@ -15,6 +15,8 @@ import CallNowFAB from './components/ui/CallNowFAB';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SummerPromoBanner from './components/ui/SummerPromoBanner';
+import CookieConsent from './components/ui/CookieConsent';
+import RecentlyViewedSuites from './components/ui/RecentlyViewedSuites';
 import './App.css';
 
 // Lazy-loaded pages for better code splitting
@@ -119,6 +121,8 @@ function App() {
                   <CallNowFAB />
                   <ScrollToTop />
                   <StickyBookNow />
+                  <CookieConsent />
+                  <RecentlyViewedSuites />
                 </div>
               </ErrorBoundary>
             </Router>
