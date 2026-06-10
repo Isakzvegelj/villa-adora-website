@@ -15,6 +15,7 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
+import PriceCalculator from '../components/ui/PriceCalculator';
 
 interface Amenity {
   labelKey: string;
@@ -46,7 +47,7 @@ const Suites = () => {
   const suites: Suite[] = [
     {
       id: 'princess',
-      price: '250',
+      price: '440',
       image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop&q=80',
       titleKey: 'suites.princess.title',
       descKey: 'suites.princess.description',
@@ -62,7 +63,7 @@ const Suites = () => {
     },
     {
       id: 'luxury',
-      price: '270',
+      price: '480',
       image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop&q=80',
       titleKey: 'suites.luxury.title',
       descKey: 'suites.luxury.description',
@@ -78,7 +79,7 @@ const Suites = () => {
     },
     {
       id: 'penthouse',
-      price: '300',
+      price: '430',
       image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
       titleKey: 'suites.penthouse.title',
       descKey: 'suites.penthouse.description',
@@ -93,11 +94,11 @@ const Suites = () => {
       ],
     },
     {
-      id: 'swan',
-      price: '370',
+      id: 'deluxe',
+      price: '570',
       image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=800&h=600&fit=crop&q=80',
-      titleKey: 'suites.swan.title',
-      descKey: 'suites.swan.description',
+      titleKey: 'suites.deluxe.title',
+      descKey: 'suites.deluxe.description',
       color: 'from-violet-500 to-fuchsia-500',
       amenities: [
         { labelKey: language === 'sl' ? 'Pogled na jezero' : 'Lake View', icon: IconView },
@@ -109,8 +110,24 @@ const Suites = () => {
       ],
     },
     {
+      id: 'superior',
+      price: '570',
+      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
+      titleKey: 'suites.superior.title',
+      descKey: 'suites.superior.description',
+      color: 'from-emerald-500 to-teal-500',
+      amenities: [
+        { labelKey: language === 'sl' ? '2 Spalnici' : '2 Bedrooms', icon: IconBed },
+        { labelKey: '4 ' + (language === 'sl' ? 'osebe' : 'Guests'), icon: IconUsers },
+        { labelKey: language === 'sl' ? 'Pogled na grad' : 'Castle View', icon: IconView },
+        { labelKey: 'WiFi', icon: IconWifi },
+        { labelKey: language === 'sl' ? 'Prostorna' : 'Spacious', icon: IconMaxSize },
+        { labelKey: language === 'sl' ? 'Otročji prijazno' : 'Child Friendly', icon: IconSparkle },
+      ],
+    },
+    {
       id: 'island',
-      price: '380',
+      price: '620',
       image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
       titleKey: 'suites.island.title',
       descKey: 'suites.island.description',
@@ -126,7 +143,7 @@ const Suites = () => {
     },
     {
       id: 'prestige',
-      price: '420',
+      price: '0',
       image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&h=600&fit=crop&q=80',
       titleKey: 'suites.prestige.title',
       descKey: 'suites.prestige.description',
@@ -222,10 +239,18 @@ const Suites = () => {
                   </div>
                   {/* Price Badge */}
                   <div className={`absolute top-6 left-6 bg-gradient-to-r ${suite.color} text-white px-5 py-2.5 rounded-full shadow-lg`}>
-                    <span className="font-bold text-lg">€{suite.price}</span>
-                    <span className="text-xs text-white/80 ml-1 uppercase tracking-wider">
-                      {t('common.perNight')}
-                    </span>
+                    {suite.price !== '0' ? (
+                      <>
+                        <span className="font-bold text-lg">€{suite.price}</span>
+                        <span className="text-xs text-white/80 ml-1 uppercase tracking-wider">
+                          {t('common.perNight')}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="font-bold text-sm">
+                        {language === 'sl' ? 'Cena na vprašanje' : 'Price on Request'}
+                      </span>
+                    )}
                   </div>
                   {/* Gallery button */}
                   <button
@@ -288,6 +313,16 @@ const Suites = () => {
                       </motion.button>
                     </Link>
                   </div>
+
+                  {/* Price Calculator */}
+                  <PriceCalculator
+                    suitePrice={parseInt(suite.price)}
+                    suiteId={suite.id}
+                    suiteName={t(suite.titleKey)}
+                    suiteColor={suite.color}
+                    t={t}
+                    language={language}
+                  />
                 </div>
               </motion.div>
             ))}
@@ -331,13 +366,14 @@ const Suites = () => {
               </thead>
               <tbody>
                 {[
-                  { label: language === 'sl' ? 'Velikost' : 'Size', values: ['55 m²', '55 m²', '60 m²', '58 m²', '65 m²', '72 m²'] },
-                  { label: language === 'sl' ? 'Postelja' : 'Bed', values: ['King', 'King', 'King', 'King', '2× King', 'King'] },
-                  { label: language === 'sl' ? 'Pogled na jezero' : 'Lake View', values: ['✓', '✓', '✓', '✓', '✓', '✓'] },
-                  { label: language === 'sl' ? 'WiFi' : 'WiFi', values: ['✓', '✓', '✓', '✓', '✓', '✓'] },
-                  { label: language === 'sl' ? 'Klima' : 'AC', values: ['✓', '✓', '✓', '✓', '✓', '✓'] },
-                  { label: language === 'sl' ? 'Masažna kad' : 'Jacuzzi', values: ['✗', '✓', '✓', '✗', '✓', '✓'] },
-                  { label: language === 'sl' ? 'Balkon' : 'Balcony', values: ['✗', '✓', '✓', '✓', '2', '✓ (Terrace)'] },
+                  { label: language === 'sl' ? 'Velikost' : 'Size', values: ['55 m²', '55 m²', '60 m²', '58 m²', '65 m²', '65 m²', '72 m²'] },
+                  { label: language === 'sl' ? 'Postelja' : 'Bed', values: ['King', 'King', 'King', 'King', '2× King', '2× King', 'King'] },
+                  { label: language === 'sl' ? 'Pogled na jezero' : 'Lake View', values: ['✓', '✓', '✓', '✓', '✓', '✓', '✓'] },
+                  { label: language === 'sl' ? 'WiFi' : 'WiFi', values: ['✓', '✓', '✓', '✓', '✓', '✓', '✓'] },
+                  { label: language === 'sl' ? 'Klima' : 'AC', values: ['✓', '✓', '✓', '✓', '✓', '✓', '✓'] },
+                  { label: language === 'sl' ? 'Masažna kad' : 'Jacuzzi', values: ['✗', '✓', '✓', '✗', '✗', '✓', '✓'] },
+                  { label: language === 'sl' ? 'Balkon' : 'Balcony', values: ['✗', '✓', '✓', '✓', '✗', '2', '✓ (Terrace)'] },
+                  { label: language === 'sl' ? 'Gostje' : 'Guests', values: ['2', '2', '2', '2', '4', '4', '2'] },
                 ].map((row, i) => (
                   <tr
                     key={i}

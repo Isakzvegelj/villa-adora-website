@@ -21,12 +21,13 @@ interface FormData {
 }
 
 const ROOM_TYPES = [
-  { value: 'princess', label: 'Princess Suite', price: '€250/night', size: '55 m²' },
-  { value: 'luxury', label: 'Luxury Suite', price: '€270/night', size: 'Lake view' },
-  { value: 'penthouse', label: 'Penthouse Suite', price: '€300/night', size: '60 m², 2 floors' },
-  { value: 'swan', label: 'Swan Suite', price: '€370/night', size: 'Lake view' },
-  { value: 'island', label: 'Island Suite', price: '€380/night', size: '65 m², sleeps 4' },
-  { value: 'prestige', label: 'Prestige Suite', price: '€420/night', size: '72 m², ground floor' },
+  { value: 'princess', label: 'Princess Suite', price: '€440/night', size: '55 m²' },
+  { value: 'luxury', label: 'Luxury Suite', price: '€480/night', size: 'Lake view' },
+  { value: 'penthouse', label: 'Penthouse Suite', price: '€430/night', size: '60 m², 2 floors' },
+  { value: 'deluxe', label: 'Deluxe Suite', price: '€570/night', size: 'Lake view' },
+  { value: 'superior', label: 'Superior Suite', price: '€570/night', size: 'Sleeps 4, 2 bedrooms' },
+  { value: 'island', label: 'Island Suite', price: '€620/night', size: '65 m², sleeps 4' },
+  { value: 'prestige', label: 'Prestige Suite', price: 'Price on request', size: '72 m², ground floor' },
 ];
 
 const Reservation = () => {
