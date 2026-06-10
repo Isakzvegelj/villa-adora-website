@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
@@ -148,6 +148,15 @@ const GuestReviews = () => {
   const reviewsPerPage = 3;
   const totalPages = Math.ceil(REVIEWS.length / reviewsPerPage);
   const visibleReviews = REVIEWS.slice(currentPage * reviewsPerPage, (currentPage + 1) * reviewsPerPage);
+
+  // Auto-advance reviews every 6 seconds
+  useEffect(() => {
+    if (totalPages <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentPage(p => (p + 1) % totalPages);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [totalPages]);
 
   return (
     <section className="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">

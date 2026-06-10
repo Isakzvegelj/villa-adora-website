@@ -23,6 +23,7 @@ import CulinaryExperience from '../components/sections/CulinaryExperience'
 import NewsletterSection from '../components/sections/NewsletterSection'
 import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
+import BestRateGuarantee from '../components/sections/BestRateGuarantee'
 import LocationMap from '../components/sections/LocationMap'
 import VirtualTourSection from '../components/sections/VirtualTourSection'
 import AvailabilityChecker from '../components/sections/AvailabilityChecker'
@@ -265,6 +266,9 @@ const Home = () => {
 
       {/* Guest Reviews */}
       <GuestReviews />
+
+      {/* Best Rate Guarantee */}
+      <BestRateGuarantee />
 
       {/* Guest Stories - Immersive Testimonials */}
       <GuestStories />
