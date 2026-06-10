@@ -14,7 +14,8 @@ import StickyBookNow from './components/ui/StickyBookNow';
 import CallNowFAB from './components/ui/CallNowFAB';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ui/ErrorBoundary';
-import './App.css'
+import SummerPromoBanner from './components/ui/SummerPromoBanner';
+import './App.css';
 
 // Lazy-loaded pages for better code splitting
 const About = lazy(() => import('./pages/About'))
@@ -57,7 +58,7 @@ function PageLoader() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-10 h-10 border-3 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
+        <div className="w-10 h-10 border-[3px] border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
         <p className="text-sm text-gray-500 animate-pulse">Loading...</p>
       </div>
     </div>
@@ -103,6 +104,7 @@ function App() {
             <Router key="router">
               <ErrorBoundary>
                 <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 flex flex-col">
+                  <SummerPromoBanner />
                   <Header />
                   <main className="flex-grow">
                     <AnimatedRoutes />
