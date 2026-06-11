@@ -82,6 +82,25 @@ const content = {
       { icon: Calendar, name: 'Serate in Giardino', schedule: 'Settimanale vino e formaggio' },
     ],
   },
+  fr: {
+    badge: 'Été 2026',
+    title: 'Un été inoubliable au lac de Bled',
+    subtitle: 'Forfaits exclusifs, apéritifs au coucher du soleil et expériences organisées de juin à septembre.',
+    cta: 'Découvrir les forfaits',
+    ctaSecondary: 'Vérifier la disponibilité',
+    packages: [
+      { icon: Heart, name: 'Forfait Romantique', desc: '2 nuits, champagne, massage en couple, dîner terrasse', price: 'dès €950' },
+      { icon: Sparkles, name: 'Retraite Bien-être', desc: '3 nuits, yoga quotidien, 2 massages', price: 'dès €1 200' },
+      { icon: Mountain, name: 'Forfait Aventure', desc: 'Vintgar, kayak, vélos, déjeuner', price: 'dès €850' },
+      { icon: ChefHat, name: 'Expérience Culinaire', desc: 'Menu dégustation 4 plats avec vins, cours de cuisine', price: 'dès €1 050' },
+    ],
+    events: [
+      { icon: Wine, name: 'Sunset Aperitivo', schedule: 'Chaque soir sur la terrasse' },
+      { icon: Music, name: 'Festival de Bled', schedule: 'Juillet — Musique classique au château' },
+      { icon: Umbrella, name: 'Okarina World Music', schedule: 'Juillet–août' },
+      { icon: Calendar, name: 'Soirées au Jardin', schedule: 'Vin et fromage hebdomadaires' },
+    ],
+  },
 }
 
 export default function Summer2026Section() {
