@@ -86,6 +86,7 @@ function HtmlLangUpdater() {
       en: 'en',
       de: 'de',
       it: 'it',
+      fr: 'fr',
     }
     document.documentElement.lang = langMap[language] || 'en'
   }, [language])

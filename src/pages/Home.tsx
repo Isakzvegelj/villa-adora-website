@@ -95,6 +95,42 @@ const HOME_FAQS_SL = [
   { question: 'Ali so v bližini dobri restorani?', answer: 'Da! Restoran Adora v objektu ponuja kreativno slovensko-francosko kuhinjo. V bližini: Restoran Pletna (tradicionalna slovenska), Gostilna Murka (domača hrana) in Fizz (craft beer). Fine dining: Vila Podvin (Michelin, 15 min vožnje) in EK Bled (8 min). Naš concierge lahko rezervira mize.' },
   { question: 'Kateri dogodki potekajo v Bledu poleti?', answer: 'Poleti v Bledu: Bled Festival (klasična glasba na gradu), Mednarodno veslačko regato, kinematograf na prostem in Festival kremšnite avgusta. Božični trg v decembru je čudežen. Vprašajte našega concierga za točne datume.' },
 ]
+
+// FAQ data for structured data (German)
+const HOME_FAQS_DE = [
+  { question: 'Was sind die Ein- und Ausschzeiten?', answer: 'Der Check-in ist von 14:00 bis 22:00. Der Check-out ist bis 11:00. Früher Check-in und später Check-out sind auf Anfrage möglich.' },
+  { question: 'Wie lautet die Stornierungsrichtlinie?', answer: 'Kostenlose Stornierung bis 48 Stunden vor Ankunft. Stornierungen innerhalb von 48 Stunden werden für die erste Nacht berechnet. In der Hochsaison (Juli-August) ist eine Stornierung 72 Stunden im Voraus erforderlich.' },
+  { question: 'Ist kostenloses Parken verfügbar?', answer: 'Ja, kostenloses privaten Parkplatz steht allen Gästen zur Verfügung. Der Parkplatz ist gesichert und überwacht.' },
+  { question: 'Sind Haustiere erlaubt?', answer: 'Ja, Haustiere sind auf Anfrage erlaubt. Bitte informieren Sie uns im Voraus. Eine zusätzliche Reinigungsgebühr von €30 pro Aufenthalt fällt an.' },
+  { question: 'Ist Frühstück inklusive?', answer: 'Ja, ein reichhaltiges Büfett-Frühstück ist im Zimmerpreis inbegriffen. Das Frühstück wird von 7:30 bis 10:30 auf der Terrasse mit Seeblick serviert. Vegane und glutenfreie Optionen sind verfügbar.' },
+  { question: 'Wie komme ich vom Flughafen zur Villa Adora?', answer: 'Der Flughafen Ljubljana Jože Pučnik ist 35 km entfernt (ca. 30 Minuten mit dem Auto). Wir bieten einen Flughafentransfer auf Anfrage (€40 einfach). Flughafen Klagenfurt (Österreich) ist 70 km entfernt.' },
+  { question: 'Ist kostenloses WLAN verfügbar?', answer: 'Ja, kostenloses Highspeed-WLAN (WiFi 6) ist im gesamten Hotel und in allen Suiten verfügbar.' },
+  { question: 'Haben Sie ein Wellnesscenter?', answer: 'Ja, unser Wellnesscenter umfasst eine finnische Sauna, ein Kaltwasserbecken und Massagedienste. Der Wellnessbereich ist für alle Gäste kostenlos. Massagen müssen im Voraus gebucht werden.' },
+  { question: 'Bieten Sie Fahrradverleih an?', answer: 'Ja, wir bieten kostenlose Mountainbike- und E-Bike-Vermietung für alle Gäste an. Flughafentransfer ist auf Anfrage verfügbar (€40 einfach).' },
+  { question: 'Hat die Suite eine Minibar?', answer: 'Ja, alle Suiten haben eine Minibar mit ausgewählten slowenischen Weinen, Getränken und Snacks.' },
+  { question: 'Welche slowenischen Weine empfehlen Sie?', answer: 'Wir empfehlen Šipon (Furmint) aus Podravje für einen trockenen Weißwein, Pinela für etwas Leichtes und Aromatisches, und Teran aus der Karstregion für einen kräftigen Rotwein. Unsere Bar bietet eine kuratierte Auswahl.' },
+  { question: 'Gibt es gute Restaurants in der Nähe?', answer: 'Ja! Restaurant Adora vor Ort bietet kreative slowenisch-französische Küche. Zu Fuß erreichbar: Pletna Restaurant (traditionell slowenisch), Gostilna Murka (hausgemachte Küche) und Fizz (Craft Beer). Feine Küche: Vila Podvin (Michelin-empfohlen, 15 Min.) und EK Bled (8 Min.).' },
+  { question: 'Welche Veranstaltungen gibt es im Sommer in Bled?', answer: 'Der Sommer in Bled: Bled Festival (klassische Musik auf der Burg), Internationale Ruderregatta, Open-Air-Kino am See und das Bled Cream Cake Festival im August. Der Weihnachtsmarkt im Dezember ist magisch.' },
+  { question: 'Kann ich einen Gutschein für Villa Adora kaufen?', answer: 'Ja! Gutscheine sind in beliebiger Höhe erhältlich und machen ein perfektes Geschenk. Gutscheine sind 12 Monate gültig und können für jede Suite oder Paket verwendet werden.' },
+]
+
+// FAQ data for structured data (Italian)
+const HOME_FAQS_IT = [
+  { question: 'Quali sono gli orari di check-in e check-out?', answer: 'Il check-in è dalle 14:00 alle 22:00. Il check-out è entro le 11:00. Check-in anticipato e check-out tardivo sono disponibili su richiesta.' },
+  { question: 'Qual è la politica di cancellazione?', answer: 'Cancellazione gratuita fino a 48 ore prima dell\'arrivo. Le cancellazioni entro 48 ore vengono addebitate per la notte. In alta stagione (luglio-agosto), è richiesta la cancellazione 72 ore in anticipo.' },
+  { question: 'Il parcheggio è gratuito?', answer: 'Sì, un parcheggio privato gratuito è disponibile sul posto per tutti gli ospiti.' },
+  { question: 'Gli animali sono ammessi?', answer: 'Sì, gli animali sono ammessi su richiesta. Si prega di informarci in anticipo. Si applica una pulizia aggiuntiva di €30 per soggiorno.' },
+  { question: 'La colazione è inclusa?', answer: 'Sì, una ricca colazione a buffet è inclusa nel prezzo della camera. Servita dalle 7:30 alle 10:30 in terrazza con vista sul lago.' },
+  { question: 'Come arrivare dall\'aeroporto?', answer: 'L\'aeroporto di Ljubljana Jože Pučnik è a 35 km. Offriamo trasferimento aeroportuale su richiesta (€40 solo andata).' },
+  { question: 'Il WiFi è gratuito?', answer: 'Sì, WiFi ad alta velocità gratuito (WiFi 6) è disponibile in tutto l\'hotel e in tutte le suite.' },
+  { question: 'Avete un centro benessere?', answer: 'Sì, il nostro centro benessere include una sauna finlandese, una piscina fredda e servizi di massaggio. L\'accesso è gratuito per tutti gli ospiti.' },
+  { question: 'Offrite noleggio biciclette?', answer: 'Sì, offriamo noleggio gratuito di mountain bike e e-bike per tutti gli ospiti. Trasferimento aeroportuale disponibile su richiesta.' },
+  { question: 'La suite ha un minibar?', answer: 'Sì, tutte le suite hanno un minibar con vini sloveni selezionati, bevande e snack.' },
+  { question: 'Quali vini sloveni consigliate?', answer: 'Consigliamo Šipon (Furmint) dal Podravje per un bianco secco, Pinela per qualcosa di leggero e aromatico, e Teran dalla regione del Karst per un rosso corposo.' },
+  { question: 'Ci sono buoni ristoranti nelle vicinanze?', answer: 'Sì! Ristorante Adora in loco offre cucina creativa sloveno-francese. A piedi: Pletna Restaurant (tradizionale), Gostilna Murka (cucina locale) e Fizz (craft beer). Alta cucina: Vila Podvin (Michelin, 15 min) e EK Bled (8 min).' },
+  { question: 'Quali eventi ci sono a Bled in estate?', answer: 'L\'estate a Bled: Bled Festival (musica classica al castello), Regata internazionale di canottaggio, cinema all\'aperto e il Festival della Crema di Bled in agosto. Il mercato di Natale a dicembre è magico.' },
+  { question: 'Posso acquistare un buono regalo per Villa Adora?', answer: 'Sì! I buoni regalo sono disponibili per qualsiasi importo e sono un regalo perfetto. Validi per 12 mesi e utilizzabili per qualsiasi suite o pacchetto.' },
+]
 const HOME_REVIEWS = [
   { author: 'Sarah & James Mitchell', datePublished: '2025-09-15', reviewRating: 5, reviewBody: 'Absolutely magical stay! The Princess Suite had the most incredible view of Lake Bled. Waking up to the sunrise over the lake was unforgettable.' },
   { author: 'Marco Rossi', datePublished: '2025-08-22', reviewRating: 5, reviewBody: 'Villa Adora exceeded all expectations. The Penthouse Suite is a masterpiece of design, and the breakfast on the terrace was divine.' },
@@ -202,7 +238,7 @@ const Home = () => {
       <ReviewStructuredData reviews={HOME_REVIEWS} />
 
       {/* FAQ Structured Data for Google Rich Snippets */}
-      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : language === 'fr' ? HOME_FAQS_FR : HOME_FAQS_EN} />
+      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : language === 'fr' ? HOME_FAQS_FR : language === 'de' ? HOME_FAQS_DE : language === 'it' ? HOME_FAQS_IT : HOME_FAQS_EN} />
 
       {/* HotelSchema: LodgingBusiness + Room Offers for Rich Snippets */}
       <HotelSchema />
