@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PageSEO } from '../components/ui/PageSEO';
+import { Link } from 'react-router-dom';
 import {
   StarIcon,
   ChevronDownIcon,
@@ -9,6 +10,7 @@ import {
   CheckBadgeIcon,
   ChatBubbleBottomCenterTextIcon,
   GlobeAltIcon,
+  PencilIcon,
 } from '@heroicons/react/24/outline';
 
 interface Review {
@@ -474,6 +476,40 @@ const Reviews = () => {
               </p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Write a Review CTA */}
+      <section className="py-16 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-sm font-semibold rounded-full mb-4">
+              <PencilIcon className="w-4 h-4" />
+              {language === 'sl' ? 'Delite svojo izkušnjo' : 'Share Your Experience'}
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+              {language === 'sl' ? 'Ste bili naši gost?' : language === 'de' ? 'Waren Sie unser Gast?' : language === 'it' ? 'Siete stati nostri ospiti?' : 'Have You Stayed With Us?'}
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">
+              {language === 'sl'
+                ? 'Vaše mnenje nam pomaga izboljšati storitve in gostom odkriti Villa Adoro. Zajame le nekaj minut.'
+                : 'Your feedback helps us improve and helps future guests discover Villa Adora. It only takes a few minutes.'}
+            </p>
+            <Link to="/write-review">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+              >
+                <PencilIcon className="w-5 h-5" />
+                {language === 'sl' ? 'Napišite mnenje' : 'Write a Review'}
+              </motion.button>
+            </Link>
+          </motion.div>
         </div>
       </section>
     </motion.div>

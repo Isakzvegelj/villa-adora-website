@@ -33,6 +33,7 @@ const Header = () => {
     { name: t('nav.offers'), href: '/offers' },
     { name: t('nav.weddings'), href: '/weddings' },
     { name: t('nav.reviews'), href: '/reviews' },
+    { name: t('nav.writeReview') || 'Write Review', href: '/write-review', highlight: true },
   ]
 
   const isActive = (path: string) => {
@@ -74,7 +75,9 @@ const Header = () => {
                 key={item.name}
                 to={item.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                  isActive(item.href)
+                  item.highlight
+                    ? 'bg-white/10 dark:bg-slate-800/40 rounded-full border border-white/20 dark:border-slate-700'
+                    : isActive(item.href)
                     ? 'text-indigo-600 dark:text-indigo-400'
                     : isScrolled
                     ? 'text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400'
@@ -82,7 +85,7 @@ const Header = () => {
                 }`}
               >
                 {item.name}
-                {isActive(item.href) && (
+                {isActive(item.href) && !item.highlight && (
                   <motion.div
                     layoutId="activeTab"
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600"

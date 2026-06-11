@@ -3,122 +3,574 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://villa-adora-bled.si/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/about</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/about"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/about"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/about"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/about"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/about"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/about</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/about"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/about"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/about</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/about"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/about"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/about</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/about"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/about"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/about"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/suites</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/suites"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/suites"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/suites"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/suites"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/suites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/suites"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/suites"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/suites"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/suites</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/suites"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/suites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/suites"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/suites"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/suites"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/suites</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/suites"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/suites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/suites"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/suites"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/suites"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/suites</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/suites"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/suites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/suites"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/suites"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/suites"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/activities</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/activities"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/activities"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/activities"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/activities"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/activities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/activities"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/activities"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/activities</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/activities"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/activities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/activities"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/activities"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/activities</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/activities"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/activities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/activities"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/activities"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/activities</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/activities"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/activities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/activities"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/activities"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/gallery</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gallery"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/gallery"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/gallery"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/gallery"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gallery"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gallery"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gallery"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/gallery</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gallery"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gallery"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gallery"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gallery"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/gallery</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gallery"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gallery"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gallery"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gallery"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/gallery</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gallery"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gallery"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gallery"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gallery"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/wellness</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/wellness"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/wellness"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/wellness"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/wellness"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/wellness"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/wellness"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/wellness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/wellness"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/wellness</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/wellness"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/wellness"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/wellness"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/wellness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/wellness"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/wellness</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/wellness"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/wellness"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/wellness"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/wellness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/wellness"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/wellness</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/wellness"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/wellness"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/wellness"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/wellness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/wellness"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/weddings</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/weddings"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/weddings"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/weddings"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/weddings"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/weddings"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/weddings"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/weddings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/weddings"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/weddings</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/weddings"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/weddings"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/weddings"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/weddings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/weddings"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/weddings</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/weddings"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/weddings"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/weddings"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/weddings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/weddings"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/weddings</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/weddings"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/weddings"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/weddings"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/weddings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/weddings"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/offers</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/offers"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/offers"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/offers"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/offers"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/offers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/offers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/offers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/offers"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/offers</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/offers"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/offers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/offers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/offers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/offers"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/offers</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/offers"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/offers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/offers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/offers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/offers"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/offers</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/offers"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/offers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/offers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/offers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/offers"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/reviews</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reviews"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/reviews"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/reviews"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/reviews"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reviews"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reviews"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reviews"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reviews"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/reviews</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reviews"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reviews"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reviews"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reviews"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reviews"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/reviews</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reviews"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reviews"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reviews"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reviews"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reviews"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/reviews</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reviews"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reviews"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reviews"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reviews"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reviews"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/write-review</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/write-review"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/write-review"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/write-review"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/write-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/write-review"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/write-review</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/write-review"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/write-review"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/write-review"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/write-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/write-review"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/write-review</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/write-review"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/write-review"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/write-review"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/write-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/write-review"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/write-review</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/write-review"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/write-review"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/write-review"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/write-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/write-review"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/reservation</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reservation"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/reservation"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/reservation"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/reservation"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reservation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reservation"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reservation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reservation"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/reservation</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reservation"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reservation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reservation"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reservation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reservation"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/reservation</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reservation"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reservation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reservation"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reservation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reservation"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/reservation</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/reservation"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/reservation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/reservation"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/reservation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/reservation"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/gift-voucher</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gift-voucher"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/gift-voucher"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/gift-voucher"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gift-voucher"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/gift-voucher</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gift-voucher"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/gift-voucher</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gift-voucher"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/gift-voucher</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/gift-voucher"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/gift-voucher"/>
   </url>
   <url>
     <loc>https://villa-adora-bled.si/contact</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/contact"/>
-    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/contact"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/contact"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/contact"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/contact"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/sl/contact</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/contact"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/contact"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/de/contact</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/contact"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/contact"/>
+  </url>
+  <url>
+    <loc>https://villa-adora-bled.si/it/contact</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villa-adora-bled.si/contact"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://villa-adora-bled.si/sl/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://villa-adora-bled.si/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villa-adora-bled.si/it/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villa-adora-bled.si/contact"/>
   </url>
 </urlset>
