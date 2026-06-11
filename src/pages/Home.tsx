@@ -38,6 +38,7 @@ import SummerPackages from '../components/sections/SummerPackages'
 import ItineraryPlanner from '../components/sections/ItineraryPlanner'
 import LocalExperiences from '../components/sections/LocalExperiences'
 import Summer2026 from '../components/sections/Summer2026'
+import Winter2026 from '../components/sections/Winter2026'
 import WeatherWidget from '../components/ui/WeatherWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
@@ -58,10 +59,11 @@ const HOME_FAQS_EN = [
   { question: 'What Slovenian wines do you recommend?', answer: 'We recommend Šipon (Furmint) from Podravje for a crisp dry white, Pinela for something light and aromatic, and Teran from the Karst region for a bold red. Our bar stocks a curated selection — ask our sommelier for pairing recommendations with your meal.' },
   { question: 'Are there good restaurants nearby?', answer: 'Yes! Restaurant Adora on-site serves creative Slovenian-French cuisine by Chef Domen Demšar. Within walking distance: Pletna Restaurant (traditional Slovenian), Gostilna Murka (hearty local food), and Fizz (craft beer). Fine dining at Vila Podvin (Michelin-recommended, 15 min drive) and EK Bled (8 min drive). Our concierge can make reservations.' },
   { question: 'What events happen in Bled during summer?', answer: 'Summer in Bled features the Bled Festival (classical music at the castle), the International Rowing Regatta, open-air cinema by the lake, and the Bled Cream Cake Festival in August. The Christmas Market in December is magical. Ask our concierge for specific dates during your stay.' },
+  { question: 'Can I buy a gift voucher for Villa Adora?', answer: 'Yes! Gift vouchers are available for any amount and make a perfect present for loved ones. Vouchers are valid for 12 months and can be used for any suite or package. Visit our Gift Voucher page or contact us to purchase.' },
 ]
 
-// FAQ data for structured data (French)
-const HOME_FAQS_FR = [
+// FAQ data for structured data (French) — kept for future use when French language is added
+export const HOME_FAQS_FR = [
   { question: 'Quelles sont les heures d\'arrivée et de départ?', answer: 'L\'enregistrement est de 14h00 à 22h00. Le départ est à 11h00. L\'enregistrement anticipé et le départ tardif sont disponibles sur demande.' },
   { question: 'Quelle est la politique d\'annulation?', answer: 'Annulation gratuite jusqu\'à 48 heures avant l\'arrivée. Les annulations dans les 48 heures sont facturées pour la première nuit. En haute saison (juillet-août), l\'annulation est requise 72 heures à l\'avance.' },
   { question: 'Le parking est-il gratuit?', answer: 'Oui, un parking privé gratuit est disponible sur place pour tous les clients.' },
@@ -200,7 +202,7 @@ const Home = () => {
       <ReviewStructuredData reviews={HOME_REVIEWS} />
 
       {/* FAQ Structured Data for Google Rich Snippets */}
-      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : language === 'fr' ? HOME_FAQS_FR : HOME_FAQS_EN} />
+      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : HOME_FAQS_EN} />
 
       {/* HotelSchema: LodgingBusiness + Room Offers for Rich Snippets */}
       <HotelSchema />
@@ -229,6 +231,9 @@ const Home = () => {
 
       {/* Summer 2026 Events & Packages */}
       <Summer2026 />
+
+      {/* Winter 2026/27 Season */}
+      <Winter2026 />
 
       {/* Itinerary Planner */}
       <ItineraryPlanner />

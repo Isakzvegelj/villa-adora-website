@@ -324,6 +324,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.transport.answer': 'Da, ponujamo brezplačno izposojo gorskih koles za vse goste. Ponujamo tudi prevoz z električnim vozilom po Bledu in okolici. Za daljše izlete (Vintgar, Triglavski narodni park) organiziramo prevoz po naroku.',
       'faq.miniBar.question': 'Ali ima suite minibar?',
       'faq.miniBar.answer': 'Da, vsa suite imajo minibar z izbranimi slovenskimi vinami, pijačami in prigrizki. Vsebuje tudi kavo, čaj in vročo čokolado za pripravo.',
+      'faq.wine.question': 'Katera slovenska vina priporočate?',
+      'faq.wine.answer': 'Priporočamo Šipon (Furmint) iz Podravja za suho belo vino, Pinelo za nekaj lahkega in aromatičnega, ter Teran iz Kraškega za močno rdeče. Naš bar ponuja kurirano izbiro — vprašajte sommeljera za priporočila o združljivosti z vašim obrokom.',
+      'faq.dining.question': 'Ali so dobri restavraciji v bližini?',
+      'faq.dining.answer': 'Da! Restavracija Adora v hotelu ponuja kreativno slovensko-francosko kuhinjo pod vodstvom chef Domena Demšara. V hoje našave: Restavracija Pletna (tradicionalna slovenska), Gostilna Murka (domača hrana) in Fizz (craft pivo). Vrhunska kulinarija v Vila Podvin (Michelin, 15 min vožnje) in EK Bled (8 min vožnje). Naš concierge lahko naredi rezervacijo.',
+      'faq.events.question': 'Kateri dogodki se odvijajo v Bledu poleti?',
+      'faq.events.answer': 'Poletje v Bledu vključuje Blejski festival (klasična glasba na gradu), Mednarodno veslačko regato, kino na prostem ob jezeru in Festival blejske kremne rezine v avgustu. Božična tržnica v decembru je čudovita. Vprašajte našega concierga za točne datume med vašim bivanjem.',
+      'faq.giftVoucher.question': 'Ali lahko kupim darilni bon za Villa Adoro?',
+      'faq.giftVoucher.answer': 'Da! Darilni boni so na voljo za kateri koli znesek in so popoln darilo za najdražje. Boni veljajo 12 mesecev in jih lahko uporabite za katero koli suite ali paket. Obiščite našo stran za darilne bonte ali nas kontaktirajte za nakup.',
 
       // Virtual Tour
       'virtualTour.lobby.title': 'Lobby & Recepcija',
@@ -706,6 +714,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.transport.answer': 'Yes, we offer complimentary mountain bike rental for all guests. We also provide electric vehicle transport around Bled and the surrounding area. For longer excursions (Vintgar, Triglav National Park), we organize transport on request.',
       'faq.miniBar.question': 'Does the suite have a mini bar?',
       'faq.miniBar.answer': 'Yes, all suites have a mini bar with selected Slovenian wines, beverages, and snacks. It also includes coffee, tea, and hot chocolate for self-service.',
+      'faq.wine.question': 'What Slovenian wines do you recommend?',
+      'faq.wine.answer': 'We recommend Šipon (Furmint) from Podravje for a crisp dry white, Pinela for something light and aromatic, and Teran from the Karst region for a bold red. Our bar stocks a curated selection — ask our sommelier for pairing recommendations with your meal.',
+      'faq.dining.question': 'Are there good restaurants nearby?',
+      'faq.dining.answer': 'Yes! Restaurant Adora on-site serves creative Slovenian-French cuisine by Chef Domen Demšar. Within walking distance: Pletna Restaurant (traditional Slovenian), Gostilna Murka (hearty local food), and Fizz (craft beer). Fine dining at Vila Podvin (Michelin-recommended, 15 min drive) and EK Bled (8 min drive). Our concierge can make reservations.',
+      'faq.events.question': 'What events happen in Bled during summer?',
+      'faq.events.answer': 'Summer in Bled features the Bled Festival (classical music at the castle), the International Rowing Regatta, open-air cinema by the lake, and the Bled Cream Cake Festival in August. The Christmas Market in December is magical. Ask our concierge for specific dates during your stay.',
+      'faq.giftVoucher.question': 'Can I buy a gift voucher for Villa Adora?',
+      'faq.giftVoucher.answer': 'Yes! Gift vouchers are available for any amount and make a perfect present for loved ones. Vouchers are valid for 12 months and can be used for any suite or package. Visit our Gift Voucher page or contact us to purchase.',
 
       // Virtual Tour
       'virtualTour.lobby.title': 'Lobby & Reception',
@@ -1103,6 +1119,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.transport.answer': 'Ja, wir bieten kostenlose Mountainbike-Vermietung für alle Gäste.',
       'faq.miniBar.question': 'Hat die Suite eine Minibar?',
       'faq.miniBar.answer': 'Ja, alle Suiten haben eine Minibar mit ausgewählten slowenischen Weinen, Getränken und Snacks.',
+      'faq.wine.question': 'Welche slowenischen Weine empfehlen Sie?',
+      'faq.wine.answer': 'Wir empfehlen Šipon (Furmint) aus Podravje für einen trockenen Weißwein, Pinela für etwas Leichtes und Aromatisches, und Teran aus dem Karst für einen kräftigen Roten. Unsere Bar bietet eine kuratierte Auswahl — fragen Sie unseren Sommelier nach Empfehlungen.',
+      'faq.dining.question': 'Gibt es gute Restaurants in der Nähe?',
+      'faq.dining.answer': 'Ja! Restaurant Adora im Hotel bietet kreative slowenisch-französische Küche von Küchenchef Domen Demšar. Zu Fuß erreichbar: Pletna Restaurant (traditionell slowenisch), Gostilna Murka und Feines Essen in Vila Podvin (Michelin-empfohlen, 15 Min. Fahrt). Unser Concierge kann Reservierungen vornehmen.',
+      'faq.events.question': 'Welche Veranstaltungen finden im Sommer in Bled statt?',
+      'faq.events.answer': 'Der Sommer in Bled bietet das Bled-Festival (klassische Musik auf der Burg), die Internationalen Ruderregatta, Open-Air-Kino am See und das Bleder Cremeschnitten-Festival im August. Der Weihnachtsmarkt im Dezember ist magisch.',
+      'faq.giftVoucher.question': 'Kann ich einen Geschenkgutschein für Villa Adora kaufen?',
+      'faq.giftVoucher.answer': 'Ja! Geschenkgutscheine sind in jedem Betrag erhältlich und ein perfektes Geschenk. Gutscheine sind 12 Monate gültig und können für jede Suite oder Paket eingelöst werden.',
 
       // Virtual Tour
       'virtualTour.lobby.title': 'Lobby & Rezeption',
@@ -1451,6 +1475,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'faq.transport.answer': 'Sì, offriamo noleggio gratuito di mountain bike per tutti gli ospiti.',
       'faq.miniBar.question': 'La suite ha un minibar?',
       'faq.miniBar.answer': 'Sì, tutte le suite hanno un minibar con vini sloveni selezionati, bevande e snack.',
+      'faq.wine.question': 'Quali vini sloveni consigliate?',
+      'faq.wine.answer': 'Consigliamo Šipon (Furmint) del Podravje per un bianco secco, Pinela per qualcosa di leggero e aromatico, e Teran del Carso per un rosso corposo. Il nostro bar offre una selezione curata — chiedete al sommelier per abbinamenti con i pasti.',
+      'faq.dining.question': 'Ci sono buoni ristoranti nelle vicinanze?',
+      'faq.dining.answer': 'Sì! Il ristorante Adora in hotel propone cucina creativa slovena-francese dallo Chef Domen Demšar. A pochi passi: Ristorante Pletna (tradizionale sloveno), Gostilna Murka e Fizz (artigianale). Alta cucina a Vila Podvin (consigliato Michelin, 15 min di auto). Il nostro concierge può prenotare.',
+      'faq.events.question': 'Quali eventi si svolgono a Bled in estate?',
+      'faq.events.answer': "L'estate a Bled include il Festival di Bled (musica classica al castello), la Regata Internazionale, cinema all'aperto sul lago e la Festa della Crema di Bled ad agosto. Il Mercatino di Natale a dicembre è magico.",
+      'faq.giftVoucher.question': 'Posso comprare un buono regalo per Villa Adora?',
+      'faq.giftVoucher.answer': 'Sì! I buoni regalo sono disponibili per qualsiasi importo e sono un regalo perfetto. Sono validi 12 mesi e utilizzabili per qualsiasi suite o pacchetto.',
 
       // Virtual Tour
       'virtualTour.lobby.title': 'Lobby e Reception',

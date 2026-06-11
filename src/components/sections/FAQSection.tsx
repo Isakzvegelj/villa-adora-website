@@ -53,6 +53,22 @@ const FAQSection = () => {
       questionKey: 'faq.miniBar.question',
       answerKey: 'faq.miniBar.answer',
     },
+    {
+      questionKey: 'faq.wine.question',
+      answerKey: 'faq.wine.answer',
+    },
+    {
+      questionKey: 'faq.dining.question',
+      answerKey: 'faq.dining.answer',
+    },
+    {
+      questionKey: 'faq.events.question',
+      answerKey: 'faq.events.answer',
+    },
+    {
+      questionKey: 'faq.giftVoucher.question',
+      answerKey: 'faq.giftVoucher.answer',
+    },
   ];
 
   const toggle = (index: number) => {
