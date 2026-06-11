@@ -412,6 +412,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'packages.culinaryDelight.highlight2': 'Slovenian wine tasting experience',
       'packages.culinaryDelight.highlight3': 'Cooking class with local chef',
       'packages.culinaryDelight.highlight4': 'Dinner at a Michelin-recommended restaurant',
+
+      // Sister Property - Villa Pomona
+      'sisterProperty.badge': 'Sestrska lastnina',
+      'sisterProperty.title': 'Odkrijte Villa Pomona',
+      'sisterProperty.subtitle': 'Naša razkošna butična vila z zasebnim bazenom, botaničnim vrtom in personaliziranimi storitvami — le 3 minute od jezera Bled.',
+      'sisterProperty.pool.title': 'Zasebni bazen & savna',
+      'sisterProperty.pool.desc': 'Ekskluziven bazen z pool house in savno — vaša zasebna wellness oaza.',
+      'sisterProperty.garden.title': 'Botanični vrt',
+      'sisterProperty.garden.desc': 'Razprostiran vrt z sadnimi drevesi, popoln za yoga, meditacijo in sprostitev.',
+      'sisterProperty.chef.title': 'Zasebni kuhar & concierge',
+      'sisterProperty.chef.desc': 'Personalizirana kulinarična doživetja z zasebnim kuharjem z lokalnimi, seznaminimi sestavinami.',
+      'sisterProperty.cta': 'Raziščite Villa Pomono',
     },
     en: {
       // Navigation
@@ -854,6 +866,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'workation.stay14.perk5': 'Meeting room access (5 hours)',
       'workation.ctaTitle': 'Ready to Work From Bled?',
       'workation.ctaDesc': 'Contact our team to customize your workation package. We can arrange meeting rooms, team retreats, and special requests.',
+
+      // Sister Property - Villa Pomona
+      'sisterProperty.badge': 'Sister Property',
+      'sisterProperty.title': 'Discover Villa Pomona',
+      'sisterProperty.subtitle': 'Our luxurious boutique villa with private pool, botanical garden, and personalized services — just 3 minutes from Lake Bled.',
+      'sisterProperty.pool.title': 'Private Pool & Sauna',
+      'sisterProperty.pool.desc': 'Exclusive swimming pool with pool house and sauna — your private wellness oasis.',
+      'sisterProperty.garden.title': 'Botanical Garden',
+      'sisterProperty.garden.desc': 'A sprawling garden with fruit trees, perfect for yoga, meditation, and relaxation.',
+      'sisterProperty.chef.title': 'Private Chef & Concierge',
+      'sisterProperty.chef.desc': 'Personalized dining experiences with a private chef using local, seasonal ingredients.',
+      'sisterProperty.cta': 'Explore Villa Pomona',
     },
     de: {
       // Navigation
@@ -1213,6 +1237,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'packages.culinaryDelight.highlight2': 'Slowenische Weinprobe',
       'packages.culinaryDelight.highlight3': 'Kochkurs mit lokalem Koch',
       'packages.culinaryDelight.highlight4': 'Dinner in einem Michelin-empfohlenen Restaurant',
+
+      // Schwester-Eigenschaft - Villa Pomona
+      'sisterProperty.badge': 'Schwester-Eigenschaft',
+      'sisterProperty.title': 'Entdecken Sie Villa Pomona',
+      'sisterProperty.subtitle': 'Unser luxuriöse Boutique-Villa mit privatem Pool, botanischem Garten und personalisierten Services — nur 3 Minuten vom Bleder See entfernt.',
+      'sisterProperty.pool.title': 'Privater Pool & Sauna',
+      'sisterProperty.pool.desc': 'Exklusiver Swimmingpool mit Poolhaus und Sauna — Ihre private Wellness-Oase.',
+      'sisterProperty.garden.title': 'Botanischer Garten',
+      'sisterProperty.garden.desc': 'Ein weitläufiger Garten mit Obstbäumen, perfekt für Yoga, Meditation und Entspannung.',
+      'sisterProperty.chef.title': 'Privatkoch & Concierge',
+      'sisterProperty.chef.desc': 'Personalisierte kulinarische Erlebnisse mit einem Privatkoch mit lokalen, saisonalen Zutaten.',
+      'sisterProperty.cta': 'Villa Pomona entdecken',
     },
     it: {
       // Navigation
@@ -1572,6 +1608,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'packages.culinaryDelight.highlight2': 'Esperienza di degustazione di vini sloveni',
       'packages.culinaryDelight.highlight3': 'Corso di cucina con chef locale',
       'packages.culinaryDelight.highlight4': 'Cena in un ristorante raccomandato Michelin',
+
+      // Proprietà Sorella - Villa Pomona
+      'sisterProperty.badge': 'Proprietà Sorella',
+      'sisterProperty.title': 'Scopri Villa Pomona',
+      'sisterProperty.subtitle': 'La nostra lussuosa villa boutique con piscina privata, giardino botanico e servizi personalizzati — a soli 3 minuti dal Lago di Bled.',
+      'sisterProperty.pool.title': 'Piscina Privata & Sauna',
+      'sisterProperty.pool.desc': 'Piscina esclusiva con pool house e sauna — la vostra oasi di benessere privata.',
+      'sisterProperty.garden.title': 'Giardino Botanico',
+      'sisterProperty.garden.desc': 'Un ampio giardino con alberi da frutto, perfetto per yoga, meditazione e relax.',
+      'sisterProperty.chef.title': 'Chef Privato & Concierge',
+      'sisterProperty.chef.desc': 'Esperienze culinarie personalizzate con uno chef privato che utilizza ingredienti locali e stagionali.',
+      'sisterProperty.cta': 'Esplora Villa Pomona',
     },
     fr: {
       // Navigation
@@ -2000,6 +2048,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'cta.title': 'Prêt pour un séjour inoubliable ?',
       'cta.subtitle': 'Réservez directement pour les meilleurs tarifs. Notre équipe de conciergerie veillera à chaque détail.',
       'cta.guarantee': 'Meilleur prix garanti · Annulation gratuite jusqu\'à 48h · Départ tardif disponible',
+
+      // Propriété Sœur - Villa Pomona
+      'sisterProperty.badge': 'Propriété Sœur',
+      'sisterProperty.title': 'Découvrez Villa Pomona',
+      'sisterProperty.subtitle': 'Notre villa boutique luxueuse avec piscine privée, jardin botanique et services personnalisés — à seulement 3 minutes du lac de Bled.',
+      'sisterProperty.pool.title': 'Piscine Privée & Sauna',
+      'sisterProperty.pool.desc': 'Piscine exclusive avec pool house et sauna — votre oasis de bien-être privée.',
+      'sisterProperty.garden.title': 'Jardin Botanique',
+      'sisterProperty.garden.desc': 'Un vaste jardin avec des arbres fruitiers, parfait pour le yoga, la méditation et la détente.',
+      'sisterProperty.chef.title': 'Chef Privé & Concierge',
+      'sisterProperty.chef.desc': 'Expériences culinaires personnalisées avec un chef privé utilisant des ingrédients locaux et de saison.',
+      'sisterProperty.cta': 'Explorer Villa Pomona',
     },
   }
 
