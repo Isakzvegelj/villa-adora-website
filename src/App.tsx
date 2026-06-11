@@ -17,6 +17,7 @@ import ErrorBoundary from './components/ui/ErrorBoundary';
 import SummerPromoBanner from './components/ui/SummerPromoBanner';
 import CookieConsent from './components/ui/CookieConsent';
 import RecentlyViewedSuites from './components/ui/RecentlyViewedSuites';
+import NewsletterPopup from './components/ui/NewsletterPopup';
 import './App.css';
 
 // Lazy-loaded pages for better code splitting
@@ -125,6 +126,7 @@ function App() {
                   <StickyBookNow />
                   <CookieConsent />
                   <RecentlyViewedSuites />
+                  <NewsletterPopup />
                 </div>
               </ErrorBoundary>
             </Router>

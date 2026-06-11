@@ -34,6 +34,7 @@ import SocialProofNotification from '../components/sections/SocialProofNotificat
 import SuiteComparison from '../components/sections/SuiteComparison'
 import SeasonalHighlights from '../components/sections/SeasonalHighlights'
 import SummerExperiences from '../components/sections/SummerExperiences'
+import SummerPackages from '../components/sections/SummerPackages'
 import ItineraryPlanner from '../components/sections/ItineraryPlanner'
 import LocalExperiences from '../components/sections/LocalExperiences'
 import WeatherWidget from '../components/ui/WeatherWidget'
@@ -195,6 +196,9 @@ const Home = () => {
 
       {/* Summer 2026 Experiences */}
       <SummerExperiences />
+
+      {/* Summer 2026 Curated Packages */}
+      <SummerPackages />
 
       {/* Seasonal Highlights */}
       <SeasonalHighlights />
