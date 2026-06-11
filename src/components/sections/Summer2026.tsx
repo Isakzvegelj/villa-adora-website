@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Sun, Umbrella, Music, Sparkles, ArrowRight, Calendar, Wine, Mountain, Heart, ChefHat } from 'lucide-react'
+import { Sun, Umbrella, Music, Sparkles, ArrowRight, Calendar, Wine, Mountain, Heart, ChefHat, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../contexts/LanguageContext'
 
@@ -17,6 +17,7 @@ const content = {
       { icon: Sparkles, name: 'Wellness Retreat', desc: '3 nights, daily yoga, 2 massages, healthy brunch', price: 'from €1,200' },
       { icon: Mountain, name: 'Adventure Package', desc: 'Vintgar Gorge, kayak, bicycle rental, packed lunch', price: 'from €850' },
       { icon: ChefHat, name: 'Culinary Experience', desc: '4-course tasting menu with wine, cooking class', price: 'from €1,050' },
+      { icon: Users, name: 'Family Getaway', desc: '2 nights in Superior/Island Suite, bike rental, lake picnic, children\'s gift', price: 'from €1,100' },
     ],
     events: [
       { icon: Wine, name: 'Sunset Aperitivo', schedule: 'Every evening on the terrace' },
@@ -36,6 +37,7 @@ const content = {
       { icon: Sparkles, name: 'Wellness umik', desc: '3 nočitve, dnevna joga, 2 masaži, zajtrk', price: 'od €1.200' },
       { icon: Mountain, name: 'Pustolovski paket', desc: 'Vintgar, kajak, izposoja koles, kosilo', price: 'od €850' },
       { icon: ChefHat, name: 'Kulinarno doživetje', desc: 'Degustacijski meni z vinom, kuharski tečaj', price: 'od €1.050' },
+      { icon: Users, name: 'Družinsko potovanje', desc: '2 nočitvi v Superior/Island suiti, izposoja koles, piknik, otroško darilo', price: 'od €1.100' },
     ],
     events: [
       { icon: Wine, name: 'Sunset Aperitivo', schedule: 'Vsak večer na terasi' },
@@ -55,6 +57,7 @@ const content = {
       { icon: Sparkles, name: 'Wellness-Retreat', desc: '3 Nächte, tägliches Yoga, 2 Massagen', price: 'ab €1.200' },
       { icon: Mountain, name: 'Abenteuer-Paket', desc: 'Vintgar, Kajak, Fahrrad, Lunchpaket', price: 'ab €850' },
       { icon: ChefHat, name: 'Kulinarisches Erlebnis', desc: '4-Gänge-Menü mit Wein, Kochkurs', price: 'ab €1.050' },
+      { icon: Users, name: 'Familienurlaub', desc: '2 Nächte Superior/Island Suite, Fahrrad, Picknick, Kindergeschenk', price: 'ab €1.100' },
     ],
     events: [
       { icon: Wine, name: 'Sunset Aperitivo', schedule: 'Jeden Abend auf der Terrasse' },
@@ -74,6 +77,7 @@ const content = {
       { icon: Sparkles, name: 'Ritiro Benessere', desc: '3 notti, yoga quotidiano, 2 massaggi', price: 'da €1.200' },
       { icon: Mountain, name: 'Pacchetto Avventura', desc: 'Vintgar, kayak, biciclette, pranzo', price: 'da €850' },
       { icon: ChefHat, name: 'Esperienza Culinaria', desc: 'Menu degustazione 4 portate con vini, corso cucina', price: 'da €1.050' },
+      { icon: Users, name: 'Vacanza in Famiglia', desc: '2 notti Superior/Island Suite, biciclette, picnic, regalo bambino', price: 'da €1.100' },
     ],
     events: [
       { icon: Wine, name: 'Sunset Aperitivo', schedule: 'Ogni sera sulla terrazza' },
@@ -93,6 +97,7 @@ const content = {
       { icon: Sparkles, name: 'Retraite Bien-être', desc: '3 nuits, yoga quotidien, 2 massages', price: 'dès €1 200' },
       { icon: Mountain, name: 'Forfait Aventure', desc: 'Vintgar, kayak, vélos, déjeuner', price: 'dès €850' },
       { icon: ChefHat, name: 'Expérience Culinaire', desc: 'Menu dégustation 4 plats avec vins, cours de cuisine', price: 'dès €1 050' },
+      { icon: Users, name: 'Séjour en Famille', desc: '2 nuits Superior/Island Suite, vélos, pique-nique, cadeau enfant', price: 'dès €1 100' },
     ],
     events: [
       { icon: Wine, name: 'Sunset Aperitivo', schedule: 'Chaque soir sur la terrasse' },
@@ -131,7 +136,7 @@ export default function Summer2026Section() {
         </motion.div>
 
         {/* Summer Packages */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-14">
           {t.packages.map((pkg, idx) => (
             <motion.div
               key={pkg.name}
