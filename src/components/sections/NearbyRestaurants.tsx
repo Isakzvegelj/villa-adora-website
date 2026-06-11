@@ -4,6 +4,9 @@ import { motion } from 'framer-motion'
 import { MapPin, Star, Clock, Phone, ExternalLink, Utensils } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 
+const getTranslation = (translations: Record<string, string>, lang: string): string =>
+  translations[lang] || translations.en
+
 const restaurants = [
   {
     name: 'Restavracija 1906',
@@ -224,7 +227,7 @@ export default function NearbyRestaurants() {
                   {restaurant.name}
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
-                  {restaurant.description[language] || restaurant.description.en}
+                  {getTranslation(restaurant.description, language)}
                 </p>
 
                 {/* Meta */}

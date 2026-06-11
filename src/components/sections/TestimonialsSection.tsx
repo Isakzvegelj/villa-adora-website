@@ -9,10 +9,13 @@ interface Testimonial {
   country: string;
   countryFlag: string;
   rating: number;
-  text: { en: string; sl: string; de: string; it: string };
+  text: Record<string, string>;
   date: string;
   suite: string;
 }
+
+const getTranslation = (translations: Record<string, string>, lang: string): string =>
+  translations[lang] || translations.en
 
 const testimonials: Testimonial[] = [
   {
@@ -205,7 +208,7 @@ const TestimonialsSection = () => {
 
                   {/* Quote */}
                   <blockquote className="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed mb-8 font-light italic">
-                    "{testimonial.text[language]}"
+                  {getTranslation(testimonial.text, language)}
                   </blockquote>
 
                   {/* Author */}

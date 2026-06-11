@@ -124,7 +124,7 @@ const NOTIFICATIONS: Notification[] = [
 ];
 
 interface SocialProofNotificationProps {
-  language: 'sl' | 'en' | 'de' | 'it';
+  language: 'sl' | 'en' | 'de' | 'it' | 'fr';
 }
 
 const SocialProofNotification = ({ language }: SocialProofNotificationProps) => {

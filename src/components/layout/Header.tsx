@@ -149,6 +149,18 @@ const Header = () => {
               >
                 IT
               </button>
+              <button
+                onClick={() => setLanguage('fr')}
+                className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                  language === 'fr'
+                    ? 'bg-indigo-600 text-white shadow-lg'
+                    : isScrolled
+                    ? 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                    : 'text-white hover:text-indigo-200 dark:text-slate-200 dark:hover:text-indigo-400'
+                }`}
+              >
+                FR
+              </button>
             </div>
 
             {/* Theme Toggle */}

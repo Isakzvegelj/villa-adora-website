@@ -35,6 +35,13 @@ const content = {
     cta: 'Inizia chat',
     features: ['Disponibile 24/7', 'Multilingue', 'Risposte immediate'],
   },
+  fr: {
+    badge: 'Concierge IA',
+    title: 'Des questions ? Demandez à notre concierge',
+    subtitle: 'Obtenez des réponses instantanées sur les suites, la disponibilité, les attractions locales, la restauration et plus encore — dans votre langue.',
+    cta: 'Démarrer le chat',
+    features: ['Disponible 24/7', 'Multilingue', 'Réponses instantanées'],
+  },
 }
 
 export default function ConciergeCTA() {
