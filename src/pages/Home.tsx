@@ -461,6 +461,9 @@ const Home = () => {
         </div>
       </motion.section>
 
+      {/* Sister Property - Villa Pomona */}
+      <SisterPropertyPomona />
+
       {/* Book Direct Benefits */}
       <BookDirectBenefits />
 
@@ -469,6 +472,74 @@ const Home = () => {
     </motion.div>
   );
 };
+
+// Sister Property - Villa Pomona section
+const SisterPropertyPomona = () => {
+  const { t } = useLanguage()
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
+        >
+          <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">
+            🌿 {t('sisterProperty.badge') || 'Sister Property'}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {t('sisterProperty.title') || 'Discover Villa Pomona'}
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('sisterProperty.subtitle') || 'Our luxurious boutique villa with private pool, botanical garden, and personalized services — just 3 minutes from Lake Bled.'}
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {[
+            { icon: '🏊', title: t('sisterProperty.pool.title') || 'Private Pool & Sauna', desc: t('sisterProperty.pool.desc') || 'Exclusive swimming pool with pool house and sauna — your private wellness oasis.' },
+            { icon: '🌳', title: t('sisterProperty.garden.title') || 'Botanical Garden', desc: t('sisterProperty.garden.desc') || 'A sprawling garden with fruit trees, perfect for yoga, meditation, and relaxation.' },
+            { icon: '👨‍🍳', title: t('sisterProperty.chef.title') || 'Private Chef & Concierge', desc: t('sisterProperty.chef.desc') || 'Personalized dining experiences with a private chef using local, seasonal ingredients.' },
+          ].map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-emerald-100 group hover:border-emerald-300 text-center"
+            >
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-center"
+        >
+          <a
+            href="https://villapomona.si"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            {t('sisterProperty.cta') || 'Explore Villa Pomona'}
+            <ArrowRightIcon className="w-5 h-5" />
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
 
 // Book Direct Benefits section
 const BookDirectBenefits = () => {
