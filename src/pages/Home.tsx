@@ -51,10 +51,24 @@ const HOME_FAQS_EN = [
   { question: 'Are pets allowed?', answer: 'Yes, pets are allowed on request. Please inform us in advance. An additional cleaning fee of €30 per stay applies.' },
   { question: 'Is breakfast included?', answer: 'Yes, a rich buffet breakfast is included in the room rate. Breakfast is served from 7:30 to 10:30 on the terrace with lake views. Vegan and gluten-free options are available.' },
   { question: 'How do I get from the airport to Villa Adora?', answer: 'Ljubljana Jože Pučnik Airport is 35 km away (approximately 30 minutes by car). We offer airport transfer on request (€40 one way). Klagenfurt Airport (Austria) is 70 km away.' },
-  { question: 'Is free WiFi available?', answer: 'Yes, free high-speed WiFi is available throughout the hotel and in all suites. The connection is reliable on the terrace and in the garden area.' },
-  { question: 'Do you have a wellness center?', answer: 'Yes, our wellness center includes a Finnish sauna, Turkish bath, and massage services. The wellness area is complimentary for all guests. Massages must be booked in advance.' },
-  { question: 'Do you offer transport or bicycle rental?', answer: 'Yes, we offer complimentary mountain bike rental for all guests. We also provide electric vehicle transport around Bled and the surrounding area. For longer excursions, we can arrange transport on request.' },
+  { question: 'Is free WiFi available?', answer: 'Yes, free high-speed WiFi (WiFi 6) is available throughout the hotel and in all suites. The connection is reliable on the terrace and in the garden area.' },
+  { question: 'Do you have a wellness center?', answer: 'Yes, our wellness center includes a Finnish sauna, cold plunge pool, and massage services. The wellness area is complimentary for all guests. Massages must be booked in advance.' },
+  { question: 'Do you offer transport or bicycle rental?', answer: 'Yes, we offer complimentary mountain bike and e-bike rental for all guests. We also provide electric vehicle transport around Bled. Airport transfer is available on request (€40 one way).' },
   { question: 'Does the suite have a minibar?', answer: 'Yes, all suites have a minibar with selected Slovenian wines, beverages, and snacks. Each suite also has coffee, tea, and hot chocolate making facilities.' },
+]
+
+// FAQ data for structured data (French)
+const HOME_FAQS_FR = [
+  { question: 'Quelles sont les heures d\'arrivée et de départ?', answer: 'L\'enregistrement est de 14h00 à 22h00. Le départ est à 11h00. L\'enregistrement anticipé et le départ tardif sont disponibles sur demande.' },
+  { question: 'Quelle est la politique d\'annulation?', answer: 'Annulation gratuite jusqu\'à 48 heures avant l\'arrivée. Les annulations dans les 48 heures sont facturées pour la première nuit. En haute saison (juillet-août), l\'annulation est requise 72 heures à l\'avance.' },
+  { question: 'Le parking est-il gratuit?', answer: 'Oui, un parking privé gratuit est disponible sur place pour tous les clients.' },
+  { question: 'Les animaux sont-ils acceptés?', answer: 'Oui, les animaux sont acceptés sur demande. Des frais de nettoyage de €30 par séjour s\'appliquent.' },
+  { question: 'Le petit-déjeuner est-il inclus?', answer: 'Oui, un petit-déjeuner buffet riche est inclus dans le tarif de la chambre. Servi de 7h30 à 10h30 sur la terrasse avec vue sur le lac.' },
+  { question: 'Comment venir de l\'aéroport?', answer: 'L\'aéroport Jože Pučnik de Ljubljana est à 35 km. Nous proposons un transfert aéroport sur demande (€40 aller simple).' },
+  { question: 'Le WiFi est-il gratuit?', answer: 'Oui, un WiFi haut débit gratuit (WiFi 6) est disponible dans tout l\'hôtel et dans toutes les suites.' },
+  { question: 'Avez-vous un centre de bien-être?', answer: 'Oui, notre centre de bien-être comprend un sauna finlandais, un bassin de plongée froide et des services de massage. L\'accès au centre est gratuit pour tous les clients.' },
+  { question: 'Proposez-vous des vélos?', answer: 'Oui, nous proposons la location gratuite de vélos de montagne et de vélos électriques pour tous les clients. Le transfert aéroport est disponible sur demande.' },
+  { question: 'La suite a-t-elle un minibar?', answer: 'Oui, toutes les suites disposent d\'un minibar avec des vins slovènes sélectionnés, des boissons et des collations.' },
 ]
 
 // FAQ data for structured data (Slovenian)
@@ -177,7 +191,7 @@ const Home = () => {
       <ReviewStructuredData reviews={HOME_REVIEWS} />
 
       {/* FAQ Structured Data for Google Rich Snippets */}
-      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : HOME_FAQS_EN} />
+      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : language === 'fr' ? HOME_FAQS_FR : HOME_FAQS_EN} />
 
       {/* HotelSchema: LodgingBusiness + Room Offers for Rich Snippets */}
       <HotelSchema />

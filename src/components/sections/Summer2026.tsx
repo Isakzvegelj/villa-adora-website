@@ -160,7 +160,7 @@ export default function Summer2026Section() {
           className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md border border-slate-100 dark:border-slate-700 mb-10"
         >
           <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 text-center">
-            {language === 'sl' ? '☀️ Poletni dogodki' : language === 'de' ? '☀️ Sommer-Events' : language === 'it' ? '☀️ Eventi estivi' : '☀️ Summer Events'}
+            {language === 'sl' ? '☀️ Poletni dogodki' : language === 'de' ? '☀️ Sommer-Events' : language === 'it' ? '☀️ Eventi estivi' : language === 'fr' ? '☀️ Événements d\'été' : '☀️ Summer Events'}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {t.events.map((event) => (
