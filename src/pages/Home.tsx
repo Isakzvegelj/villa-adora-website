@@ -202,7 +202,7 @@ const Home = () => {
       <ReviewStructuredData reviews={HOME_REVIEWS} />
 
       {/* FAQ Structured Data for Google Rich Snippets */}
-      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : HOME_FAQS_EN} />
+      <FAQPageStructuredData faqs={language === 'sl' ? HOME_FAQS_SL : language === 'fr' ? HOME_FAQS_FR : HOME_FAQS_EN} />
 
       {/* HotelSchema: LodgingBusiness + Room Offers for Rich Snippets */}
       <HotelSchema />
@@ -371,7 +371,7 @@ const Home = () => {
             transition={{ delay: 0.2 }}
             className="text-responsive-xl font-bold text-white mb-4"
           >
-            Ready for an Unforgettable Stay?
+            {t('cta.title')}
           </motion.h2>
           
           <motion.p
@@ -381,7 +381,7 @@ const Home = () => {
             transition={{ delay: 0.3 }}
             className="text-lg text-white/85 mb-4 max-w-2xl mx-auto"
           >
-            Book directly for the best rates. Our concierge team will ensure every detail of your stay is perfect.
+            {t('cta.subtitle')}
           </motion.p>
 
           <motion.p
@@ -391,7 +391,7 @@ const Home = () => {
             transition={{ delay: 0.4 }}
             className="text-sm text-white/60 mb-8"
           >
-            Best rate guarantee · Free cancellation up to 48h · Late check-out available
+            {t('cta.guarantee')}
           </motion.p>
 
           <motion.div

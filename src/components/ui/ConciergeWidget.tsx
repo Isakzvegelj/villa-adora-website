@@ -44,11 +44,11 @@ const BOT_API = 'https://villa-adora-bot-r00l.onrender.com/api/chat'
 function detectLanguage(): string {
   try {
     const stored = localStorage.getItem('villa-adora-language')
-    if (stored && ['en', 'sl', 'de', 'it'].includes(stored)) return stored
+    if (stored && ['en', 'sl', 'de', 'it', 'fr'].includes(stored)) return stored
   } catch { /* ignore */ }
   // Try browser language
   const browserLang = navigator.language?.slice(0, 2)
-  if (['en', 'sl', 'de', 'it'].includes(browserLang)) return browserLang
+  if (['en', 'sl', 'de', 'it', 'fr'].includes(browserLang)) return browserLang
   return 'en'
 }
 
@@ -58,6 +58,7 @@ const createWelcomeMessage = (lang: string = 'en'): Message => {
     sl: "Pozdravljeni! Sem Concierga Vile Adore. Vam lahko priporočam apartmaje, aktivnosti v Bledu, restavracije in še več. Kako vam lahko pomagam?",
     de: "Guten Tag! Ich bin der Concierge der Villa Adora. Wie kann ich Ihnen helfen? Ich kann Sie bei Zimmerbuchungen, lokalen Empfehlungen und Restaurantreservierungen unterstützen.",
     it: "Buongiorno! Sono il concierge di Villa Adora. Come posso aiutarla? Posso assisterla con prenotazioni, raccomandazioni locali e molto altro.",
+    fr: "Bonjour ! Je suis le concierge de Villa Adora. Comment puis-je vous aider ? Je peux vous assister avec les réservations, les recommandations locales et bien plus.",
   }
   const content = greetings[lang] || greetings['en']
   return {
@@ -74,6 +75,7 @@ const getSuggestions = (lang: string = 'en'): string[] => {
     sl: ['Poveste mi o apartmajih', 'Kdaj je najboljši čas za obisk Bleda?', 'Kako rezerviram?', 'Katere aktivnosti so v bližini?'],
     de: ['Erzählen Sie mir von den Suiten', 'Wann ist die beste Zeit für Bled?', 'Wie kann ich buchen?', 'Welche Aktivitäten gibt es?'],
     it: ['Parlami delle suite', 'Qual è il miglior periodo per visitare Bled?', 'Come prenoto?', 'Quali attività ci sono nelle vicinanze?'],
+    fr: ['Parlez-moi de vos suites', 'Quelle est la meilleure période pour visiter Bled ?', 'Comment réserver ?', 'Quelles activités sont à proximité ?'],
   }
   return all[lang] || all['en']
 }

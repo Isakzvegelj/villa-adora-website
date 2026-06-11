@@ -2,8 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 
 // Language Context
 interface LanguageContextType {
-  language: 'sl' | 'en' | 'de' | 'it'
-  setLanguage: (lang: 'sl' | 'en' | 'de' | 'it') => void
+  language: 'sl' | 'en' | 'de' | 'it' | 'fr'
+  setLanguage: (lang: 'sl' | 'en' | 'de' | 'it' | 'fr') => void
   t: (key: string) => string
 }
 
@@ -18,7 +18,7 @@ export const useLanguage = () => {
 }
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<'sl' | 'en' | 'de' | 'it'>('sl')
+  const [language, setLanguage] = useState<'sl' | 'en' | 'de' | 'it' | 'fr'>('sl')
 
   // Translation object
   const translations = {
@@ -361,7 +361,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'bookDirect.flexible.description': 'Brezplačna odpoved do 48 ur pred prihodom — bolj fleksibilno kot pri rezervacijah prek tretjih strani.',
       'bookDirect.cta': 'Preveri razpoložljivost',
 
-      // Trust Badges
+      // CTA Section
+      'cta.title': 'Pripravljeni za nepozabno bivanje?',
+      'cta.subtitle': 'Rezervirajte direktno za najboljše cene. Naša ekipa conciergov bo poskrbela za vsak detajl vašega bivanja.',
+      'cta.guarantee': 'Najboljša cena zagotovljena · Brezplačna odpoved do 48 ur · Pozen odhod na voljo',
       'trust.secureBooking': 'Varna rezervacija',
       'trust.noPrepayment': 'Brez predplačila',
       'trust.ssl': 'SSL šifriranje',
@@ -751,7 +754,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'bookDirect.flexible.description': 'Free cancellation up to 48 hours before arrival — more flexible than third-party booking sites.',
       'bookDirect.cta': 'Check Availability',
 
-      // Trust Badges
+      // CTA Section
+      'cta.title': 'Ready for an Unforgettable Stay?',
+      'cta.subtitle': 'Book directly for the best rates. Our concierge team will ensure every detail of your stay is perfect.',
+      'cta.guarantee': 'Best rate guarantee · Free cancellation up to 48h · Late check-out available',
       'trust.secureBooking': 'Secure Booking',
       'trust.noPrepayment': 'No Prepayment',
       'trust.ssl': 'SSL Encrypted',
@@ -1156,7 +1162,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'bookDirect.flexible.description': 'Kostenlose Stornierung bis 48 Stunden vor Anreise.',
       'bookDirect.cta': 'Verfügbarkeit prüfen',
 
-      // Trust Badges
+      // CTA Section
+      'cta.title': 'Bereit für einen unvergesslichen Aufenthalt?',
+      'cta.subtitle': 'Buchen Sie direkt für die besten Preise. Unser Concierge-Team sorgt für jedes Detail.',
+      'cta.guarantee': 'Bestpreis garantiert · Kostenlose Stornierung bis 48h · Später Check-out verfügbar',
       'trust.secureBooking': 'Sichere Buchung',
       'trust.noPrepayment': 'Keine Vorauszahlung',
       'trust.ssl': 'SSL-verschlüsselt',
@@ -1512,7 +1521,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'bookDirect.flexible.description': 'Cancellazione gratuita fino a 48 ore prima dell\'arrivo.',
       'bookDirect.cta': 'Verifica disponibilità',
 
-      // Trust Badges
+      // CTA Section
+      'cta.title': 'Pronto per un soggiorno indimenticabile?',
+      'cta.subtitle': 'Prenota direttamente per i migliori prezzi. Il nostro team di concierge curerà ogni dettaglio.',
+      'cta.guarantee': 'Miglior prezzo garantito · Cancellazione gratuita fino a 48h · Check-out tardivo disponibile',
       'trust.secureBooking': 'Prenotazione sicura',
       'trust.noPrepayment': 'Nessun pagamento anticipato',
       'trust.ssl': 'Crittografia SSL',
@@ -1561,6 +1573,434 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'packages.culinaryDelight.highlight3': 'Corso di cucina con chef locale',
       'packages.culinaryDelight.highlight4': 'Cena in un ristorante raccomandato Michelin',
     },
+    fr: {
+      // Navigation
+      'nav.home': 'Accueil',
+      'nav.about': 'À propos',
+      'nav.suites': 'Suites',
+      'nav.activities': 'Activités',
+      'nav.gallery': 'Galerie',
+      'nav.contact': 'Contact',
+      'nav.reservation': 'Réservation',
+      'nav.giftVoucher': 'Bon cadeau',
+      'nav.wellness': 'Wellness',
+      'nav.offers': 'Offres',
+      'nav.weddings': 'Mariages',
+      'nav.reviews': 'Avis',
+      'nav.writeReview': 'Écrire un avis',
+      'nav.admin': 'Admin',
+
+      // Gift Voucher
+      'giftVoucher.title': 'Bon cadeau',
+      'giftVoucher.subtitle': 'Offrez une expérience inoubliable au lac de Bled',
+      'giftVoucher.howItWorks': 'Comment ça marche',
+      'giftVoucher.step1': 'Choisissez le montant et le thème',
+      'giftVoucher.step2': 'Saisissez les coordonnées du destinataire',
+      'giftVoucher.step3': 'Vous recevez une confirmation, le bon est envoyé au destinataire',
+      'giftVoucher.step4': 'Le destinataire utilise le bon pour son séjour',
+      'giftVoucher.validity': 'Les bons cadeaux sont valables 12 mois à partir de l\'achat.',
+
+      // Hero section
+      'hero.title': 'Villa Adora',
+      'hero.subtitle': 'Hôtel de luxe au lac de Bled',
+      'hero.description': 'Vivez l\'expérience ultime de l\'élégance dans notre villa historique au bord du lac de Bled.',
+      'hero.book': 'Réserver',
+      'hero.learn': 'Découvrir',
+      
+      // About section
+      'about.title': 'À propos',
+      'about.subtitle': 'Villa Adora',
+      'about.description': 'Villa Adora est une villa historique protégée, construite en 1878, méticuleusement rénovée en un hôtel boutique de luxe. Située directement au bord du lac de Bled.',
+      
+      // Suites section
+      'suites.title': 'Nos suites de luxe',
+      'suites.princess.title': 'Suite Princesse',
+      'suites.princess.description': 'Suite très joliment meublée et décorée avec goût (55 m²) avec un salon, une chambre et une salle de bain. La petite tour surplombe le magnifique lac de Bled.',
+      'suites.luxury.title': 'Suite Luxe',
+      'suites.luxury.description': 'Conçue pour un confort et une élégance ultimes avec des vues inoubliables sur le lac.',
+      'suites.penthouse.title': 'Suite Penthouse',
+      'suites.penthouse.description': 'L\'espace le plus unique de notre maison, réparti sur deux étages (60 m²). Ambiance chaleureuse avec des vues à couper le souffle.',
+      'suites.swan.title': 'Suite Cygne',
+      'suites.swan.description': 'Une suite élégante et spacieuse offrant le sanctuaire parfait pour votre séjour.',
+      'suites.deluxe.title': 'Suite Deluxe',
+      'suites.deluxe.description': 'Une suite de luxe avec vue sur le lac, des meubles élégants, un coin salon spacieux et une télévision à écran plat.',
+      'suites.superior.title': 'Suite Supérieure',
+      'suites.superior.description': 'Une suite spacieuse de 2 chambres (65 m²) avec vue sur le lac et le château. Parfaite pour les familles ou les groupes (jusqu\'à 4 personnes).',
+      'suites.island.title': 'Suite Île',
+      'suites.island.description': 'Une suite de luxe élégante (65 m²) au premier étage. Offre une vue imprenable sur le lac et l\'île de Bled. Deux chambres et deux balcons.',
+      'suites.prestige.title': 'Suite Prestige',
+      'suites.prestige.description': 'Harmonie absolue entre décoration artistique et espace (72 m²). Située au rez-de-chaussée avec vue sur le lac depuis chaque fenêtre.',
+      
+      // Activities section
+      'activities.title': 'Activités et expériences',
+      'activities.lake.title': 'Activités lacustres',
+      'activities.lake.description': 'Aventures au lac de Bled : promenade en barque vers l\'île, kayak, stand-up paddle, pêche et pique-niques au bord du lac.',
+      'activities.mountain.title': 'Randonnée en montagne',
+      'activities.mountain.description': 'Explorez les magnifiques sentiers de montagne autour de Bled. Visitez Ojstrica, les refuges et profitez de vues panoramiques spectaculaires.',
+      'activities.culinary.title': 'Expériences culinaires',
+      'activities.culinary.description': 'Goûtez les spécialités locales dans notre hôtel ou visitez les restaurants traditionnels. Savourez la crème de Bled et les vins locaux.',
+      'activities.spa.title': 'Spa et détente',
+      'activities.spa.description': 'Détendez-vous dans notre centre de bien-être de luxe avec massages, sauna et vue sur le lac.',
+      'activities.culture.title': 'Patrimoine culturel',
+      'activities.culture.description': 'Visitez le château de Bled, l\'église de l\'île, les gorges de Vintgar et de nombreux musées.',
+      'activities.romantic.title': 'Expériences romantiques',
+      'activities.romantic.description': 'Dîner au coucher du soleil, promenade en barque vers l\'île, massage pour deux et crème de Bled avec musique de piano.',
+      'activities.winter.title': 'Activités hivernales',
+      'activities.winter.description': 'Ski à Krvavec et Voklo, saut à ski à Planica, luge, patinage sur le lac et le marché de Noël de Bled.',
+      'activities.adventure.title': 'Expériences d\'aventure',
+      'activities.adventure.description': 'Canyoning à Bohinn, rafting sur la Soča, tyrolienne au-dessus de Vintgar et VTT dans le parc national du Triglav.',
+      
+      // Gallery section
+      'gallery.title': 'Galerie photo',
+      'gallery.subtitle': 'Capturer l\'âme de Villa Adora',
+      'gallery.followUs': 'Suivez notre histoire sur Instagram',
+      'gallery.followDesc': 'Pour les meilleurs photos et moments de Villa Adora',
+      'gallery.filter.all': 'Tout',
+      'gallery.filter.exterior': 'Extérieur',
+      'gallery.filter.suites': 'Suites',
+      'gallery.filter.lake': 'Lac',
+      'gallery.filter.dining': 'Restauration',
+      
+      // Contact section
+      'contact.title': 'Localisation et contact',
+      'contact.address': 'Cesta svobode 35, 4260 Bled, Slovénie',
+      'contact.phone': '+386 51 603 858',
+      'contact.email': 'evita.vilebled@gmail.com',
+      'contact.hours': '7:00 - 22:00',
+      
+      // Reservation section
+      'reservation.title': 'Réservation',
+      'reservation.firstName': 'Prénom',
+      'reservation.lastName': 'Nom',
+      'reservation.email': 'E-mail',
+      'reservation.phone': 'Téléphone',
+      'reservation.checkIn': 'Date d\'arrivée',
+      'reservation.checkOut': 'Date de départ',
+      'reservation.adults': 'Nombre d\'adultes',
+      'reservation.roomType': 'Type de chambre',
+      'reservation.requests': 'Demandes spéciales',
+      'reservation.submit': 'Envoyer la réservation',
+      
+      // Nearby Attractions
+      'nearby.island.title': 'Île de Bled',
+      'nearby.island.description': 'L\'icône de la Slovénie — une petite île avec une église pittoresque, accessible par le traditionnel bateau en bois "pletna".',
+      'nearby.castle.title': 'Château de Bled',
+      'nearby.castle.description': 'Château médiéval sur une falaise avec vue panoramique sur le lac et les Alpes environnantes.',
+      'nearby.vintgar.title': 'Gorges de Vintgar',
+      'nearby.vintgar.description': 'Superbe gorge de 1,6 km avec passerelles, cascades et un pont ferroviaire historique.',
+      'nearby.triglav.title': 'Parc national du Triglav',
+      'nearby.triglav.description': 'L\'un des plus anciens parcs nationaux d\'Europe. Abrite le mont Triglav, le plus haut sommet de Slovénie.',
+      'nearby.ljubljana.title': 'Ljubljana',
+      'nearby.ljubljana.description': 'Charmante capitale de la Slovénie avec une architecture baroque et une scène culturelle dynamique.',
+      'nearby.planica.title': 'Planica',
+      'nearby.planica.description': 'Centre mondial de saut à ski et de ski nordique au cœur des Alpes juliennes.',
+      
+      // Seasonal Offers
+      'offers.spring.title': 'Forfait printemps',
+      'offers.spring.desc': '3 nuits + kayak sur le lac. À partir de 690 €.',
+      'offers.summer.title': 'Luxe estival',
+      'offers.summer.desc': '5 nuits, 2ème nuit gratuite. Valable juillet–août.',
+      'offers.autumn.title': 'Retraite automnale',
+      'offers.autumn.desc': '4 nuits + dégustation de vins. À partir de 890 €.',
+      'offers.winter.title': 'Merveille hivernale',
+      'offers.winter.desc': '3 nuits + forfait bien-être. À partir de 750 €.',
+
+      // Special Offers
+      'offers.earlyBird.title': 'Remise Early Bird',
+      'offers.earlyBird.description': 'Réservez 60+ jours à l\'avance et recevez 10% de réduction.',
+      'offers.earlyBird.price': '10% de réduction',
+      'offers.earlyBird.tag': 'Recommandé',
+      'offers.romantic.title': 'Forfait romantique',
+      'offers.romantic.description': '3 nuits + champagne + massage pour deux + dîner au coucher du soleil.',
+      'offers.romantic.price': 'À partir de 890 €',
+      'offers.romantic.tag': 'Romance',
+      'offers.wellness.title': 'Retraite bien-être',
+      'offers.wellness.description': '3 nuits + yoga quotidien + 2 massages + petit-déjeuner sain.',
+      'offers.wellness.price': 'À partir de 750 €',
+      'offers.wellness.tag': 'Bien-être',
+      'offers.stay5.title': '5 nuits, payez 4',
+      'offers.stay5.description': 'Réservez 5 nuits en haute saison (juil-août) et ne payez que 4.',
+      'offers.stay5.price': '1 nuit gratuite',
+      'offers.stay5.tag': 'Meilleure offre',
+      'offers.direct.title': 'Bonus de réservation directe',
+      'offers.direct.description': 'Réservez directement sur notre site et recevez une chambre supérieure gratuite + un verre de bienvenue.',
+      'offers.direct.price': 'Surclassement gratuit',
+      'offers.direct.tag': 'Exclusif',
+      'offers.lastMinute.title': 'Offre de dernière minute',
+      'offers.lastMinute.description': 'Réservez dans les 7 jours et obtenez 15% de réduction (sous réserve de disponibilité).',
+      'offers.lastMinute.price': '15% de réduction',
+      'offers.lastMinute.tag': 'Offre chaude',
+
+      // Offer Includes
+      'offers.includes.breakfast': 'Petit-déjeuner gourmet',
+      'offers.includes.wifi': 'WiFi premium',
+      'offers.includes.parking': 'Parking gratuit',
+      'offers.includes.latecheckout': 'Départ tardif',
+      'offers.includes.champagne': 'Champagne',
+      'offers.includes.massage': 'Massage pour deux',
+      'offers.includes.dinner': 'Dîner au coucher du soleil',
+      'offers.includes.sauna': 'Accès sauna',
+      'offers.includes.yoga': 'Yoga quotidien',
+      'offers.includes.tea': 'Thé de l\'après-midi',
+      'offers.includes.upgrade': 'Surclassement gratuit',
+      'offers.includes.welcome': 'Verre de bienvenue',
+      'offers.includes.bikes': 'Location de vélos',
+
+      // Common
+      'common.book': 'Réserver',
+      'common.learn': 'En savoir plus',
+      'common.close': 'Fermer',
+      'common.loading': 'Chargement...',
+      'common.error': 'Erreur',
+      'common.success': 'Succès',
+      'common.from': 'À partir de',
+      'common.perNight': 'par nuit',
+      
+      // Footer
+      'footer.description': 'Hôtel boutique de luxe au cœur de Bled. Une villa historique de 1878 transformée en sanctuaire d\'élégance.',
+      'footer.contact': 'Contact',
+      'footer.links': 'Liens rapides',
+      'footer.newsletter.title': 'Newsletter',
+      'footer.newsletter.desc': 'Abonnez-vous à notre newsletter pour des offres exclusives.',
+      'footer.newsletter.placeholder': 'Votre e-mail',
+      'footer.newsletter.button': 'S\'abonner',
+      'footer.rights': 'Tous droits réservés.',
+
+      // Why Choose Us
+      'whyChoose.badge': 'Pourquoi nous choisir',
+      'whyChoose.title': 'Pourquoi Villa Adora ?',
+      'whyChoose.subtitle': 'Découvrez ce qui nous distingue et pourquoi les voyageurs du monde entier reviennent.',
+      'whyChoose.bestPrice': 'Meilleur prix garanti',
+      'whyChoose.bestPriceDesc': 'Nous garantissons le meilleur tarif. Si vous trouvez un prix inférieur, nous le réduisons encore de 10%.',
+      'whyChoose.heritage': 'Patrimoine historique',
+      'whyChoose.heritageDesc': 'Une villa de 1878, rénovée avec amour du détail et respect de l\'histoire.',
+      'whyChoose.personalized': 'Service personnalisé',
+      'whyChoose.personalizedDesc': 'Chaque client est spécial pour nous. Nous personnalisons votre séjour jusque dans les moindres détails.',
+      'whyChoose.awards': 'Qualité primée',
+      'whyChoose.awardsDesc': 'Reconnu par les voyageurs et les experts comme l\'un des meilleurs hôtels boutique de Slovénie.',
+      'whyChoose.concierge': 'Concierge 24/7',
+      'whyChoose.conciergeDesc': 'Notre concierge numérique Luka est disponible 24 heures sur 24, 7 jours sur 7.',
+      'whyChoose.location': 'Emplacement privilégié',
+      'whyChoose.locationDesc': 'Directement au bord du lac de Bled, avec vue sur l\'île et le château. Le meilleur emplacement de Bled.',
+      'whyChoose.stat.rating': 'Note moyenne',
+      'whyChoose.stat.reviews': 'Avis clients',
+      'whyChoose.stat.established': 'Fondé',
+      'whyChoose.stat.returnGuests': 'Clients récurrents',
+
+      // Seasonal Highlights
+      'seasonal.badge': 'Offres saisonnières',
+      'seasonal.title': 'Cette saison à Villa Adora',
+      'seasonal.subtitle': 'Des forfaits exclusifs pour un séjour inoubliable. Réservez directement pour les meilleurs tarifs.',
+      'seasonal.spring.title': 'Éveil printanier',
+      'seasonal.spring.desc': '3 nuits + kayak sur le lac + promenade guidée. Cerisiers en fleurs et air alpin frais.',
+      'seasonal.spring.badge': 'Printemps',
+      'seasonal.summer.title': 'Évasion estivale de luxe',
+      'seasonal.summer.desc': '5 nuits avec 2ème nuit gratuite. Baignade, dîner en terrasse et croisières au coucher du soleil.',
+      'seasonal.summer.badge': 'Été',
+      'seasonal.wellness.title': 'Retraite bien-être',
+      'seasonal.wellness.desc': '3 nuits + yoga quotidien + 2 massages + petit-déjeuner sain. Ressourcez corps et âme.',
+      'seasonal.wellness.badge': 'Bien-être',
+      'seasonal.nights': 'nuits',
+      'seasonal.validUntil': 'Valable jusqu\'au',
+      'seasonal.bookNow': 'Réserver',
+      'seasonal.viewAllOffers': 'Toutes les offres',
+
+      // Bled Seasons
+      'seasons.title': 'Bled au fil des saisons',
+      'seasons.subtitle': 'Chaque saison apporte sa propre magie',
+      'seasons.spring.title': 'Printemps',
+      'seasons.spring.desc': 'Cerisiers en fleurs, journées chaudes et lac tranquille. Parfait pour le kayak et la randonnée.',
+      'seasons.summer.title': 'Été',
+      'seasons.summer.desc': 'Eau chaude pour nager, terrasses animées et longues soirées.',
+      'seasons.autumn.title': 'Automne',
+      'seasons.autumn.desc': 'Feuillage doré, vins fins et matins brumeux mystiques.',
+      'seasons.winter.title': 'Hiver',
+      'seasons.winter.desc': 'Enveloppé de neige, Bled devient un conte de fées. Marché de Noël, ski et boissons chaudes.',
+
+      // Culinary & Dining
+      'culinary.subtitle': 'Expériences culinaires',
+      'culinary.title': 'Saveurs de Bled',
+      'culinary.description': 'Découvrez la richesse des saveurs locales proposées dans notre hôtel. De la traditionnelle crème de Bled aux vins slovènes premium.',
+      'culinary.breakfast.title': 'Petit-déjeuner au lac',
+      'culinary.breakfast.description': 'Commencez votre journée avec un petit-déjeuner buffet somptueux sur la terrasse surplombant le lac.',
+      'culinary.restaurant.title': 'Restaurant 1878',
+      'culinary.restaurant.description': 'Notre restaurant offre une interprétation moderne de la cuisine slovène avec des ingrédients locaux.',
+      'culinary.terrace.title': 'Terrasse lacustre',
+      'culinary.terrace.description': 'Savourez un café ou un dîner sur notre terrasse exclusive directement au bord du lac.',
+      'culinary.experiences.title': 'Ateliers de cuisine',
+      'culinary.experiences.description': 'Rejoignez nos ateliers de cuisine — apprenez à préparer la crème de Bled, la potica traditionnelle ou dégustez les meilleurs vins slovènes.',
+      'culinary.cta': 'Réserver une table',
+
+      // Newsletter
+      'newsletter.title': 'Restez connecté',
+      'newsletter.description': 'Abonnez-vous à notre newsletter et recevez des offres exclusives, des forfaits saisonnières et des nouvelles de Villa Adora.',
+      'newsletter.placeholder': 'Votre adresse e-mail',
+      'newsletter.button': 'S\'abonner',
+      'newsletter.success': 'Merci de votre inscription !',
+      'newsletter.error': 'Veuillez saisir une adresse e-mail valide.',
+      'newsletter.privacy': 'Votre e-mail sera utilisé exclusivement pour notre newsletter.',
+
+      // FAQ
+      'faq.checkin.question': 'Quelles sont les heures d\'arrivée et de départ ?',
+      'faq.checkin.answer': 'L\'enregistrement est de 15h00 à 22h00. Le départ est à 11h00. Des horaires tardifs sont disponibles sur demande.',
+      'faq.cancellation.question': 'Quelle est la politique d\'annulation ?',
+      'faq.cancellation.answer': 'Annulation gratuite jusqu\'à 48 heures avant l\'arrivée. En haute saison (juillet-août), l\'annulation doit être effectuée 72 heures à l\'avance.',
+      'faq.parking.question': 'Le parking est-il gratuit ?',
+      'faq.parking.answer': 'Oui, un parking privé gratuit est disponible sur place pour tous les clients.',
+      'faq.pets.question': 'Les animaux sont-ils acceptés ?',
+      'faq.pets.answer': 'Oui, les animaux sont acceptés sur demande. Des frais de nettoyage de 30 € par séjour s\'appliquent.',
+      'faq.breakfast.question': 'Le petit-déjeuner est-il inclus ?',
+      'faq.breakfast.answer': 'Oui, un petit-déjeuner buffet riche est inclus dans le tarif de la chambre. Servi de 7h30 à 10h30 sur la terrasse avec vue sur le lac.',
+      'faq.airport.question': 'Comment venir de l\'aéroport ?',
+      'faq.airport.answer': 'L\'aéroport Jože Pučnik de Ljubljana est à 35 km. Nous proposons un transfert aéroport sur demande (40 € aller simple).',
+      'faq.wifi.question': 'Le WiFi est-il gratuit ?',
+      'faq.wifi.answer': 'Oui, un WiFi haut débit gratuit est disponible dans tout l\'hôtel et dans toutes les suites.',
+      'faq.spa.question': 'Avez-vous un centre de bien-être ?',
+      'faq.spa.answer': 'Oui, notre centre de bien-être comprend un sauna finlandais, un bain turc et des services de massage. L\'accès est gratuit pour tous les clients.',
+      'faq.transport.question': 'Proposez-vous des vélos ?',
+      'faq.transport.answer': 'Oui, nous proposons la location gratuite de vélos de montagne pour tous les clients.',
+      'faq.miniBar.question': 'La suite a-t-elle un minibar ?',
+      'faq.miniBar.answer': 'Oui, toutes les suites disposent d\'un minibar avec des vins slovènes sélectionnés, des boissons et des collations.',
+      'faq.wine.question': 'Quels vins slovènes recommandez-vous ?',
+      'faq.wine.answer': 'Nous recommandons le Šipon (Furmint) du Podravje pour un blanc sec, le Pinela pour quelque chose de léger et aromatique, et le Teran de la région du Karst pour un rouge corsé.',
+      'faq.dining.question': 'Y a-t-il de bons restaurants à proximité ?',
+      'faq.dining.answer': 'Oui ! Le Restaurant Adora sur place propose une cuisine créative slovène-française. À distance de marche : Pletna Restaurant, Gostilna Murka et Fizz. Fine dining à Vila Podvin (recommandé Michelin) et EK Bled.',
+      'faq.events.question': 'Quels événements ont lieu à Bled en été ?',
+      'faq.events.answer': 'L\'été à Bled propose le Festival de Bled (musique classique au château), la Regata internationale de aviron, le cinéma en plein air et le Festival de la crème de Bled en août.',
+      'faq.giftVoucher.question': 'Puis-je acheter un bon cadeau pour Villa Adora ?',
+      'faq.giftVoucher.answer': 'Oui ! Les bons cadeaux sont disponibles pour tout montant et constituent un cadeau parfait. Valables 12 mois, utilisables pour toute suite ou forfait.',
+
+      // Virtual Tour
+      'virtualTour.lobby.title': 'Hall et réception',
+      'virtualTour.lobby.description': 'Découvrez l\'entrée grandiose de Villa Adora avec son charme historique.',
+      'virtualTour.suite.title': 'Visite de suite de luxe',
+      'virtualTour.suite.description': 'Entrez dans nos suites signature et explorez chaque détail.',
+      'virtualTour.lake.title': 'Terrasse avec vue lac',
+      'virtualTour.lake.description': 'Profitez des vues panoramiques à couper le souffle sur le lac de Bled.',
+      'virtualTour.dining.title': 'Restaurant et gastronomie',
+      'virtualTour.dining.description': 'Découvrez notre restaurant élégant et l\'expérience culinaire au bord du lac.',
+
+      // Book Direct Benefits
+      'bookDirect.badge': 'Réservez directement et économisez',
+      'bookDirect.title': 'Pourquoi réserver directement chez nous ?',
+      'bookDirect.subtitle': 'Évitez les intermédiaires et obtenez la meilleure valeur.',
+      'bookDirect.bestPrice.title': 'Meilleur prix garanti',
+      'bookDirect.bestPrice.description': 'Si vous trouvez un prix inférieur, nous nous y alignons. Plus 5% de réduction supplémentaire.',
+      'bookDirect.freeBreakfast.title': 'Petit-déjeuner offert',
+      'bookDirect.freeBreakfast.description': 'Profitez d\'un petit-déjeuner gourmet avec vue sur le lac — inclus gratuitement.',
+      'bookDirect.freeWifi.title': 'WiFi premium',
+      'bookDirect.freeWifi.description': 'Internet haut débit dans tout l\'établissement.',
+      'bookDirect.upgrade.title': 'Surclassement gratuit',
+      'bookDirect.upgrade.description': 'Les réservations directes ont la priorité pour les surclassements gratuits.',
+      'bookDirect.directSupport.title': 'Support direct',
+      'bookDirect.directSupport.description': 'Parlez directement avec notre équipe pour un service personnalisé.',
+      'bookDirect.flexible.title': 'Annulation flexible',
+      'bookDirect.flexible.description': 'Annulation gratuite jusqu\'à 48 heures avant l\'arrivée.',
+      'bookDirect.cta': 'Vérifier la disponibilité',
+
+      // Trust Badges
+      'trust.secureBooking': 'Réservation sécurisée',
+      'trust.noPrepayment': 'Sans prépaiement',
+      'trust.ssl': 'Chiffrement SSL',
+      'trust.bestPrice': 'Meilleur prix',
+
+      // Wellness Preview
+      'wellness.sauna.title': 'Sauna finlandais',
+      'wellness.sauna.desc': 'Sauna chaud avec des arômes de bois et vue sur le lac.',
+      'wellness.turkish.title': 'Bain turc',
+      'wellness.turkish.desc': 'Bain turc traditionnel pour une détente complète.',
+      'wellness.massage.title': 'Massages',
+      'wellness.massage.desc': 'Massages professionnels — aromathérapie, sportifs et relaxation.',
+      'wellness.relaxation.title': 'Zone de détente',
+      'wellness.relaxation.desc': 'Un espace paisible pour lire, méditer et se détendre avec vue sur le lac.',
+      'wellness.infinity.title': 'Piscine infinity',
+      'wellness.infinity.desc': 'Piscine extérieure avec vue sur le lac. Eau chaude toute l\'année.',
+
+      // Summer Packages
+      'packages.lakeRetreat.title': 'Forfait Retraite Lacustre',
+      'packages.lakeRetreat.description': 'Une escapade sereine avec hébergement vue lac, petit-déjeuner quotidien et expériences lacustres.',
+      'packages.lakeRetreat.badge': 'Best-seller',
+      'packages.lakeRetreat.highlight1': '3 nuits dans une Suite Vue Lac',
+      'packages.lakeRetreat.highlight2': 'Petit-déjeuner gourmet quotidien sur la terrasse',
+      'packages.lakeRetreat.highlight3': 'Promenade privée en barque vers l\'île de Bled',
+      'packages.lakeRetreat.highlight4': 'Bouteille de bienvenue de vin slovène',
+      'packages.romanticEscape.title': 'Évasion Romantique',
+      'packages.romanticEscape.description': 'La retraite ultime pour couples avec champagne, soins spa et dîner privé.',
+      'packages.romanticEscape.badge': 'La plus populaire',
+      'packages.romanticEscape.highlight1': '3 nuits dans la Suite Princesse',
+      'packages.romanticEscape.highlight2': 'Champagne de bienvenue avec fraises enrobées de chocolat',
+      'packages.romanticEscape.highlight3': 'Massage pour deux au centre de bien-être',
+      'packages.romanticEscape.highlight4': 'Dîner privé aux chandelles sur la terrasse du lac',
+      'packages.romanticEscape.highlight5': 'Service de pétales de rose au coucher',
+      'packages.alpineAdventure.title': 'Aventure Alpine',
+      'packages.alpineAdventure.description': 'Explorez les Alpes juliennes avec des randonnées guidées, des excursions à vélo et une journée au Parc National du Triglav.',
+      'packages.alpineAdventure.badge': 'Aventure',
+      'packages.alpineAdventure.highlight1': '4 nuits dans une Suite Luxe',
+      'packages.alpineAdventure.highlight2': 'Randonnée guidée au point de vue d\'Ojstrica',
+      'packages.alpineAdventure.highlight3': 'Excursion d\'une journée au Parc National du Triglav',
+      'packages.alpineAdventure.highlight4': 'Location gratuite de VTT',
+      'packages.culinaryDelight.title': 'Délice Culinaire',
+      'packages.culinaryDelight.description': 'Un voyage gastronomique avec dégustation de vins, cours de cuisine et dîner dans un restaurant recommandé par Michelin.',
+      'packages.culinaryDelight.badge': 'Gourmet',
+      'packages.culinaryDelight.highlight1': '2 nuits dans une Suite Deluxe',
+      'packages.culinaryDelight.highlight2': 'Dégustation de vins slovènes',
+      'packages.culinaryDelight.highlight3': 'Cours de cuisine avec un chef local',
+      'packages.culinaryDelight.highlight4': 'Dîner dans un restaurant recommandé par Michelin',
+
+      // Workation
+      'workation.pageTitle': 'Workation',
+      'workation.pageDesc': 'Télétravaillez depuis Villa Adora Bled — WiFi haut débit, espaces de travail dédiés et vue sur le lac.',
+      'workation.badge': 'Télétravail et détente',
+      'workation.heroTitle': 'Travaillez depuis le paradis',
+      'workation.heroDesc': 'Alliez productivité et détente. Villa Adora offre une connexion fibre optique, des espaces de travail dans chaque suite et une vue inspirante sur le lac.',
+      'workation.cta': 'Réserver votre workation',
+      'workation.contactUs': 'Contactez-nous',
+      'workation.featuresTitle': 'Tout ce dont vous avez besoin',
+      'workation.featuresDesc': 'De l\'Internet haut débit aux espaces de travail en plein air, Villa Adora a tout pour une workation productive.',
+      'workation.fiber.title': 'Fibre optique',
+      'workation.fiber.desc': 'Internet fibre optique haut débit (jusqu\'à 300 Mbps) dans tout l\'établissement.',
+      'workation.workspace.title': 'Espace de travail dédié',
+      'workation.workspace.desc': 'Chaque suite dispose d\'un espace de travail avec chaise ergonomique et bureau.',
+      'workation.terrace.title': 'Espaces de travail extérieurs',
+      'workation.terrace.desc': 'Travaillez sur la terrasse ou dans le jardin avec une vue inspirante sur le lac.',
+      'workation.wellness.title': 'Pauses bien-être',
+      'workation.wellness.desc': 'Rechargez-vous avec une séance de sauna, un massage ou du yoga.',
+      'workation.flexible.title': 'Réservation flexible',
+      'workation.flexible.desc': 'Pas de séjour minimum. Arrivée anticipée et départ tardif disponibles.',
+      'workation.value.title': 'Rapport qualité-prix exceptionnel',
+      'workation.value.desc': 'Les forfaits workation incluent petit-déjeuner, bien-être, parking et transfert aéroport.',
+      'workation.packagesTitle': 'Forfaits workation',
+      'workation.packagesDesc': 'Choisissez le forfait adapté à vos besoins.',
+      'workation.bestValue': 'Meilleur rapport qualité-prix',
+      'workation.bookNow': 'Réserver',
+      'workation.stay5.name': '5 Nuits — Découverte',
+      'workation.stay5.price': '450 €/nuit',
+      'workation.stay5.perk1': 'WiFi fibre optique haut débit',
+      'workation.stay5.perk2': 'Espace de travail dédié',
+      'workation.stay5.perk3': 'Petit-déjeuner quotidien',
+      'workation.stay5.perk4': 'Accès bien-être',
+      'workation.stay7.name': '7 Nuits — Standard',
+      'workation.stay7.price': '380 €/nuit (15% de réduction)',
+      'workation.stay7.perk1': 'Tout le forfait 5 nuits',
+      'workation.stay7.perk2': 'Transfert aéroport inclus',
+      'workation.stay7.perk3': '1 massage offert',
+      'workation.stay7.perk4': 'Départ tardif',
+      'workation.stay7.perk5': 'Bouteille de vin slovène de bienvenue',
+      'workation.stay14.name': '14 Nuits — Extended',
+      'workation.stay14.price': '340 €/nuit (20% de réduction)',
+      'workation.stay14.perk1': 'Tout le forfait 7 nuits',
+      'workation.stay14.perk2': '2 massages offerts',
+      'workation.stay14.perk3': 'Atelier de cuisine',
+      'workation.stay14.perk4': 'Promenade privée en barque vers l\'île de Bled',
+      'workation.stay14.perk5': 'Accès salle de réunion (5 heures)',
+      'workation.ctaTitle': 'Prêt à travailler depuis Bled ?',
+      'workation.ctaDesc': 'Contactez notre équipe pour personnaliser votre forfait workation.',
+
+      // CTA Section
+      'cta.title': 'Prêt pour un séjour inoubliable ?',
+      'cta.subtitle': 'Réservez directement pour les meilleurs tarifs. Notre équipe de conciergerie veillera à chaque détail.',
+      'cta.guarantee': 'Meilleur prix garanti · Annulation gratuite jusqu\'à 48h · Départ tardif disponible',
+    },
   }
 
   const t = (key: string): string => {
@@ -1575,8 +2015,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   useEffect(() => {
     // Load language preference from localStorage
-    const savedLanguage = localStorage.getItem('villa-adora-language') as 'sl' | 'en' | 'de' | 'it'
-    if (savedLanguage && ['sl', 'en', 'de', 'it'].includes(savedLanguage)) {
+    const savedLanguage = localStorage.getItem('villa-adora-language') as 'sl' | 'en' | 'de' | 'it' | 'fr'
+    if (savedLanguage && ['sl', 'en', 'de', 'it', 'fr'].includes(savedLanguage)) {
       setLanguage(savedLanguage)
     }
   }, [])
