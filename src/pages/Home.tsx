@@ -37,6 +37,7 @@ import SummerExperiences from '../components/sections/SummerExperiences'
 import SummerPackages from '../components/sections/SummerPackages'
 import ItineraryPlanner from '../components/sections/ItineraryPlanner'
 import LocalExperiences from '../components/sections/LocalExperiences'
+import Summer2026 from '../components/sections/Summer2026'
 import WeatherWidget from '../components/ui/WeatherWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
@@ -202,6 +203,9 @@ const Home = () => {
 
       {/* Seasonal Highlights */}
       <SeasonalHighlights />
+
+      {/* Summer 2026 Events & Packages */}
+      <Summer2026 />
 
       {/* Itinerary Planner */}
       <ItineraryPlanner />
