@@ -55,6 +55,9 @@ const HOME_FAQS_EN = [
   { question: 'Do you have a wellness center?', answer: 'Yes, our wellness center includes a Finnish sauna, cold plunge pool, and massage services. The wellness area is complimentary for all guests. Massages must be booked in advance.' },
   { question: 'Do you offer transport or bicycle rental?', answer: 'Yes, we offer complimentary mountain bike and e-bike rental for all guests. We also provide electric vehicle transport around Bled. Airport transfer is available on request (€40 one way).' },
   { question: 'Does the suite have a minibar?', answer: 'Yes, all suites have a minibar with selected Slovenian wines, beverages, and snacks. Each suite also has coffee, tea, and hot chocolate making facilities.' },
+  { question: 'What Slovenian wines do you recommend?', answer: 'We recommend Šipon (Furmint) from Podravje for a crisp dry white, Pinela for something light and aromatic, and Teran from the Karst region for a bold red. Our bar stocks a curated selection — ask our sommelier for pairing recommendations with your meal.' },
+  { question: 'Are there good restaurants nearby?', answer: 'Yes! Restaurant Adora on-site serves creative Slovenian-French cuisine by Chef Domen Demšar. Within walking distance: Pletna Restaurant (traditional Slovenian), Gostilna Murka (hearty local food), and Fizz (craft beer). Fine dining at Vila Podvin (Michelin-recommended, 15 min drive) and EK Bled (8 min drive). Our concierge can make reservations.' },
+  { question: 'What events happen in Bled during summer?', answer: 'Summer in Bled features the Bled Festival (classical music at the castle), the International Rowing Regatta, open-air cinema by the lake, and the Bled Cream Cake Festival in August. The Christmas Market in December is magical. Ask our concierge for specific dates during your stay.' },
 ]
 
 // FAQ data for structured data (French)
@@ -69,6 +72,9 @@ const HOME_FAQS_FR = [
   { question: 'Avez-vous un centre de bien-être?', answer: 'Oui, notre centre de bien-être comprend un sauna finlandais, un bassin de plongée froide et des services de massage. L\'accès au centre est gratuit pour tous les clients.' },
   { question: 'Proposez-vous des vélos?', answer: 'Oui, nous proposons la location gratuite de vélos de montagne et de vélos électriques pour tous les clients. Le transfert aéroport est disponible sur demande.' },
   { question: 'La suite a-t-elle un minibar?', answer: 'Oui, toutes les suites disposent d\'un minibar avec des vins slovènes sélectionnés, des boissons et des collations.' },
+  { question: 'Quels vins slovènes recommandez-vous?', answer: 'Nous recommandons le Šipon (Furmint) du Podravje pour un blanc sec et vif, le Pinela pour quelque chose de léger et aromatique, et le Teran de la région du Karst pour un rouge corsé. Notre bar propose une sélection curatée.' },
+  { question: 'Y a-t-il de bons restaurants à proximité?', answer: 'Oui ! Le Restaurant Adora sur place propose une cuisine créative slovène-française. À distance de marche : Pletna Restaurant (traditionnel), Gostilna Murka (cuisine locale), et Fizz (bière artisanale). Gastronomie à Vila Podvin (recommandé par Michelin) et EK Bled.' },
+  { question: 'Quels événements ont lieu à Bled en été?', answer: 'L\'été à Bled propose le Festival de Bled (musique classique au château), le Régatta internationale de aviron, le cinéma en plein air au bord du lac, et le Festival de la crème de Bled en août. Le marché de Noël en décembre est magique.' },
 ]
 
 // FAQ data for structured data (Slovenian)
@@ -83,6 +89,9 @@ const HOME_FAQS_SL = [
   { question: 'Ali imate wellness center?', answer: 'Da, naš wellness center vključuje finsko savno, turško kopel in masažne storitve. Wellness je na voljo brezplačno vsem gostom.' },
   { question: 'Ali ponujate prevoz ali izposojo koles?', answer: 'Da, ponujamo brezplačno izposojo gorskih koles za vse goste. Ponujamo tudi prevoz z električnim vozilom po Bledu.' },
   { question: 'Ali ima suite minibar?', answer: 'Da, vsa suite imajo minibar z izbranimi slovenskimi vinami, pijačami in prigrizki.' },
+  { question: 'Katera slovenska vina priporočate?', answer: 'Priporočamo Šipon (Furmint) iz Podravja za suho belo vino, Pinelo za lahko in aromatično vino, ter Teran iz Krasa za močno rdeče vino. Naš bar ponuja kurirano izbiro — vprašajte someljera za priporočila.' },
+  { question: 'Ali so v bližini dobri restorani?', answer: 'Da! Restoran Adora v objektu ponuja kreativno slovensko-francosko kuhinjo. V bližini: Restoran Pletna (tradicionalna slovenska), Gostilna Murka (domača hrana) in Fizz (craft beer). Fine dining: Vila Podvin (Michelin, 15 min vožnje) in EK Bled (8 min). Naš concierge lahko rezervira mize.' },
+  { question: 'Kateri dogodki potekajo v Bledu poleti?', answer: 'Poleti v Bledu: Bled Festival (klasična glasba na gradu), Mednarodno veslačko regato, kinematograf na prostem in Festival kremšnite avgusta. Božični trg v decembru je čudežen. Vprašajte našega concierga za točne datume.' },
 ]
 const HOME_REVIEWS = [
   { author: 'Sarah & James Mitchell', datePublished: '2025-09-15', reviewRating: 5, reviewBody: 'Absolutely magical stay! The Princess Suite had the most incredible view of Lake Bled. Waking up to the sunrise over the lake was unforgettable.' },
