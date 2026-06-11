@@ -3,6 +3,9 @@
  * Sitemap generator for Villa Adora
  * Run: node scripts/generate-sitemap.js
  * Outputs: public/sitemap.xml
+ * 
+ * Generates a multilingual sitemap with hreflang annotations.
+ * Each page is listed once with alternates for all supported languages.
  */
 
 import { writeFileSync } from 'fs';
@@ -12,7 +15,9 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://villa-adora-bled.si';
 const LANGUAGES = ['en', 'sl', 'de', 'it'];
+const DEFAULT_LANG = 'en';
 
+// Page definitions with per-language path overrides (if different from default)
 const pages = [
   { path: '/', priority: 1.0, changefreq: 'weekly' },
   { path: '/about', priority: 0.8, changefreq: 'monthly' },
@@ -28,33 +33,55 @@ const pages = [
   { path: '/contact', priority: 0.8, changefreq: 'monthly' },
 ];
 
+/**
+ * Build the URL for a given page and language.
+ * Default language (en) uses the root path without prefix.
+ * Other languages use /{lang}/ prefix.
+ */
+function buildUrl(path, lang) {
+  if (lang === DEFAULT_LANG) {
+    return `${BASE_URL}${path}`;
+  }
+  return `${BASE_URL}/${lang}${path}`;
+}
+
 function generateSitemap() {
   const now = new Date().toISOString().split('T')[0];
+  const totalUrls = pages.length * LANGUAGES.length;
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n`;
   xml += `        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`;
 
   for (const page of pages) {
-    xml += `  <url>\n`;
-    xml += `    <loc>${BASE_URL}${page.path}</loc>\n`;
-    xml += `    <lastmod>${now}</lastmod>\n`;
-    xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
-    xml += `    <priority>${page.priority}</priority>\n`;
-
-    // Hreflang alternates
+    // For each page, emit one <url> block per language with alternates
     for (const lang of LANGUAGES) {
-      xml += `    <xhtml:link rel="alternate" hreflang="${lang}" href="${BASE_URL}${page.path}"/>\n`;
-    }
+      const loc = buildUrl(page.path, lang);
+      xml += `  <url>\n`;
+      xml += `    <loc>${loc}</loc>\n`;
+      xml += `    <lastmod>${now}</lastmod>\n`;
+      xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+      xml += `    <priority>${page.priority}</priority>\n`;
 
-    xml += `  </url>\n`;
+      // Hreflang alternates for all languages
+      for (const altLang of LANGUAGES) {
+        const altLoc = buildUrl(page.path, altLang);
+        xml += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altLoc}"/>\n`;
+      }
+
+      // x-default points to the default language
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${buildUrl(page.path, DEFAULT_LANG)}"/>\n`;
+
+      xml += `  </url>\n`;
+    }
   }
 
   xml += `</urlset>\n`;
 
   const outputPath = resolve(__dirname, '../public/sitemap.xml');
   writeFileSync(outputPath, xml, 'utf-8');
-  console.log(`✅ Sitemap generated: ${outputPath} (${pages.length} URLs)`);
+  console.log(`✅ Sitemap generated: ${outputPath}`);
+  console.log(`   Pages: ${pages.length} × ${LANGUAGES.length} languages = ${totalUrls} URLs`);
 }
 
 generateSitemap();
