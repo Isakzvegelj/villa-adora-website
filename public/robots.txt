@@ -1,0 +1,15 @@
+# robots.txt for Villa Adora Bled
+# https://villa-adora-bled.si
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /admin
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://villa-adora-bled.si/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
