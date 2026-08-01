@@ -50,7 +50,7 @@ const Suites = () => {
     {
       id: 'princess',
       price: '440',
-      image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/suite.jpg',
       titleKey: 'suites.princess.title',
       descKey: 'suites.princess.description',
       color: 'from-pink-500 to-rose-500',
@@ -66,7 +66,7 @@ const Suites = () => {
     {
       id: 'luxury',
       price: '480',
-      image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/hero-hotel.jpg',
       titleKey: 'suites.luxury.title',
       descKey: 'suites.luxury.description',
       color: 'from-blue-500 to-cyan-500',
@@ -82,7 +82,7 @@ const Suites = () => {
     {
       id: 'penthouse',
       price: '430',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
+      image: '/villa-adora-website/images/adora/lake-view.jpg',
       titleKey: 'suites.penthouse.title',
       descKey: 'suites.penthouse.description',
       color: 'from-indigo-500 to-purple-500',
@@ -98,7 +98,7 @@ const Suites = () => {
     {
       id: 'deluxe',
       price: '570',
-      image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=800&h=600&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/dining.jpg',
       titleKey: 'suites.deluxe.title',
       descKey: 'suites.deluxe.description',
       color: 'from-violet-500 to-fuchsia-500',
@@ -114,7 +114,7 @@ const Suites = () => {
     {
       id: 'superior',
       price: '570',
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
+      image: '/villa-adora-website/images/adora/exterior.jpg',
       titleKey: 'suites.superior.title',
       descKey: 'suites.superior.description',
       color: 'from-emerald-500 to-teal-500',
@@ -130,7 +130,7 @@ const Suites = () => {
     {
       id: 'island',
       price: '620',
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
+      image: '/villa-adora-website/images/adora/garden.jpg',
       titleKey: 'suites.island.title',
       descKey: 'suites.island.description',
       color: 'from-emerald-500 to-teal-500',
@@ -146,7 +146,7 @@ const Suites = () => {
     {
       id: 'prestige',
       price: '0',
-      image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&h=600&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/venue.jpg',
       titleKey: 'suites.prestige.title',
       descKey: 'suites.prestige.description',
       color: 'from-amber-500 to-orange-500',
@@ -192,7 +192,7 @@ const Suites = () => {
       <div className="relative h-[50vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
         <img
-          src="https://images.unsplash.com/photo-15660737771259-6a8506099945?w=1920&h=800&fit=crop&q=80"
+          src="/villa-adora-website/images/adora/rooms-banner.jpg"
           alt="Villa Adora Suites"
           className="w-full h-full object-cover"
         />

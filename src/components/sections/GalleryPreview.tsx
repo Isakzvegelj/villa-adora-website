@@ -6,10 +6,10 @@ const GalleryPreview = () => {
   const { t } = useLanguage()
 
   const images = [
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=300&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop&crop=center',
+    '/villa-adora-website/images/adora/hero-hotel.jpg',
+    '/villa-adora-website/images/adora/lake-view.jpg',
+    '/villa-adora-website/images/adora/dining.jpg',
+    '/villa-adora-website/images/adora/garden.jpg',
   ]
 
   return (

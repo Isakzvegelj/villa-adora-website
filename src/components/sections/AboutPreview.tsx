@@ -47,7 +47,7 @@ const AboutPreview = () => {
           >
             <div className="card-hover">
               <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&q=80"
+                src="/villa-adora-website/images/adora/exterior.jpg"
                 alt="Villa Adora - Historic Heritage Villa at Lake Bled"
                 className="w-full h-80 object-cover rounded-xl image-hover"
                 loading="lazy"

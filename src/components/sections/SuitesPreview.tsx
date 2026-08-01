@@ -21,7 +21,7 @@ const SuitesPreview = () => {
     {
       id: 'princess',
       price: '250',
-      image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=400&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/suite.jpg',
       titleKey: 'suites.princess.title',
       descKey: 'suites.princess.description',
       size: '55 m²',
@@ -31,7 +31,7 @@ const SuitesPreview = () => {
     {
       id: 'luxury',
       price: '270',
-      image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&h=400&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/hero-hotel.jpg',
       titleKey: 'suites.luxury.title',
       descKey: 'suites.luxury.description',
       size: '55 m²',
@@ -41,7 +41,7 @@ const SuitesPreview = () => {
     {
       id: 'penthouse',
       price: '300',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
+      image: '/villa-adora-website/images/adora/lake-view.jpg',
       titleKey: 'suites.penthouse.title',
       descKey: 'suites.penthouse.description',
       size: '60 m²',
@@ -51,7 +51,7 @@ const SuitesPreview = () => {
     {
       id: 'swan',
       price: '370',
-      image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=600&h=400&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/dining.jpg',
       titleKey: 'suites.swan.title',
       descKey: 'suites.swan.description',
       size: '58 m²',
@@ -61,7 +61,7 @@ const SuitesPreview = () => {
     {
       id: 'island',
       price: '380',
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=400&fit=crop',
+      image: '/villa-adora-website/images/adora/exterior.jpg',
       titleKey: 'suites.island.title',
       descKey: 'suites.island.description',
       size: '65 m²',
@@ -71,7 +71,7 @@ const SuitesPreview = () => {
     {
       id: 'prestige',
       price: '420',
-      image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&h=400&fit=crop&q=80',
+      image: '/villa-adora-website/images/adora/venue.jpg',
       titleKey: 'suites.prestige.title',
       descKey: 'suites.prestige.description',
       size: '72 m²',

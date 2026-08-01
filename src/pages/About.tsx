@@ -42,7 +42,7 @@ const About = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=1000&fit=crop" 
+                src="/villa-adora-website/images/adora/hero-hotel.jpg" 
                 alt="Villa Adora Heritage" 
                 className="rounded-3xl shadow-2xl relative z-10"
               />

@@ -6,40 +6,14 @@ import { PageSEO, JsonLd } from '../components/ui/PageSEO';
 import HeroSection from '../components/sections/HeroSection';
 import AboutPreview from '../components/sections/AboutPreview';
 import SuitesPreview from '../components/sections/SuitesPreview';
-import ActivitiesPreview from '../components/sections/ActivitiesPreview';
 import GalleryPreview from '../components/sections/GalleryPreview';
-import WellnessPreview from '../components/sections/WellnessPreview';
-import ReviewsPreview from '../components/sections/ReviewsPreview';
-import AwardsSection from '../components/sections/AwardsSection';
-import NearbyAttractions from '../components/sections/NearbyAttractions';
-import BledSeasons from '../components/sections/BledSeasons';
-import TestimonialsSection from '../components/sections/TestimonialsSection';
-import GuestStories from '../components/sections/GuestStories';
-import SpecialOffers from '../components/sections/SpecialOffers';
-import QuickPriceCalculator from '../components/sections/QuickPriceCalculator';
 import WhyChooseUs from '../components/sections/WhyChooseUs'
-import CulinarySection from '../components/sections/CulinarySection'
-import CulinaryExperience from '../components/sections/CulinaryExperience'
-import NearbyRestaurants from '../components/sections/NearbyRestaurants'
-import NewsletterSection from '../components/sections/NewsletterSection'
 import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
 import BestRateGuarantee from '../components/sections/BestRateGuarantee'
 import LocationMap from '../components/sections/LocationMap'
-import VirtualTourSection from '../components/sections/VirtualTourSection'
-import AvailabilityChecker from '../components/sections/AvailabilityChecker'
-import LiveAvailability from '../components/sections/LiveAvailability'
 import ConciergeCTA from '../components/sections/ConciergeCTA'
-import SocialProofNotification from '../components/sections/SocialProofNotification'
 import SuiteComparison from '../components/sections/SuiteComparison'
-import SeasonalHighlights from '../components/sections/SeasonalHighlights'
-import SummerExperiences from '../components/sections/SummerExperiences'
-import SummerPackages from '../components/sections/SummerPackages'
-import ItineraryPlanner from '../components/sections/ItineraryPlanner'
-import LocalExperiences from '../components/sections/LocalExperiences'
-import Summer2026 from '../components/sections/Summer2026'
-import Winter2026 from '../components/sections/Winter2026'
-import WeatherWidget from '../components/ui/WeatherWidget'
 import { ReviewStructuredData } from '../components/ui/ReviewStructuredData'
 import { FAQPageStructuredData } from '../components/ui/FAQStructuredData'
 import { HotelSchema, BreadcrumbSchema } from '../components/ui/HotelSchema'
@@ -256,23 +230,11 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Summer 2026 Experiences */}
-      <SummerExperiences />
 
-      {/* Summer 2026 Curated Packages */}
-      <SummerPackages />
 
-      {/* Seasonal Highlights */}
-      <SeasonalHighlights />
 
-      {/* Summer 2026 Events & Packages */}
-      <Summer2026 />
 
-      {/* Winter 2026/27 Season */}
-      <Winter2026 />
 
-      {/* Itinerary Planner */}
-      <ItineraryPlanner />
 
       {/* About Preview */}
       <AboutPreview />
@@ -286,74 +248,11 @@ const Home = () => {
       {/* Suite Comparison Tool */}
       <SuiteComparison />
 
-      {/* Activities Preview */}
-      <ActivitiesPreview />
-
       {/* Gallery Preview */}
       <GalleryPreview />
 
-      {/* Wellness & Spa Preview */}
-      <WellnessPreview />
-
-      {/* Virtual Tour */}
-      <VirtualTourSection />
-
-      {/* Live Weather Widget */}
-      <section className="py-8 px-4 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <WeatherWidget />
-            <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-3">
-                {language === 'sl' ? '🍽️ Dan prijaznih obrokov' : language === 'de' ? '🍽️ Tagesplan der Mahlzeiten' : language === 'it' ? '🍽️ Programma pasti del giorno' : '🍽️ Today\'s Meal Schedule'}
-              </h3>
-              <div className="space-y-3">
-                {[
-                  { time: '7:30 – 10:30', label: language === 'sl' ? 'Zajtrk' : language === 'de' ? 'Frühstück' : language === 'it' ? 'Colazione' : 'Breakfast', desc: language === 'sl' ? 'Samopostrežni zajtrk na terasi' : 'Buffet on the terrace', icon: '🌅' },
-                  { time: '12:00 – 14:00', label: language === 'sl' ? 'Kosilo' : language === 'de' ? 'Mittagessen' : language === 'it' ? 'Pranzo' : 'Lunch', desc: language === 'sl' ? 'Priporočila gostiln v bližini' : 'Nearby restaurant recommendations', icon: '☀️' },
-                  { time: '16:00 – 17:00', label: language === 'sl' ? 'Popoldanski čaj' : language === 'de' ? 'Nachmittagstee' : language === 'it' ? 'Tè del pomeriggio' : 'Afternoon Tea', desc: language === 'sl' ? 'Brezplačen čaj v vrtu' : 'Complimentary tea in the garden', icon: '🍵' },
-                  { time: '18:00 – 21:00', label: language === 'sl' ? 'Večerja' : language === 'de' ? 'Abendessen' : language === 'it' ? 'Cena' : 'Dinner', desc: language === 'sl' ? 'Reervacije restavracij na zahtevo' : 'Restaurant reservations on request', icon: '🌙' },
-                ].map((meal) => (
-                  <div key={meal.time} className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-xl">
-                    <span className="text-2xl">{meal.icon}</span>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{meal.time}</span>
-                        <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{meal.label}</span>
-                      </div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">{meal.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Availability Checker */}
-      <AvailabilityChecker />
-
-      {/* Live Room Availability */}
-      <LiveAvailability />
-
       {/* Concierge CTA */}
       <ConciergeCTA />
-
-      {/* Reviews Preview */}
-      <ReviewsPreview />
-
-      {/* Awards & Ratings */}
-      <AwardsSection />
-
-      {/* Bled Through the Seasons */}
-      <BledSeasons />
-
-      {/* Local Experiences & Day Trips */}
-      <LocalExperiences />
-
-      {/* Guest Testimonials */}
-      <TestimonialsSection />
 
       {/* Guest Reviews */}
       <GuestReviews />
@@ -361,32 +260,8 @@ const Home = () => {
       {/* Best Rate Guarantee */}
       <BestRateGuarantee />
 
-      {/* Guest Stories - Immersive Testimonials */}
-      <GuestStories />
-
-      {/* Special Offers */}
-      <SpecialOffers />
-
-      {/* Culinary & Dining */}
-      <CulinarySection />
-
-      {/* Culinary Experience - Immersive Dining */}
-      <CulinaryExperience />
-
-      {/* Nearby Restaurants */}
-      <NearbyRestaurants />
-
-      {/* Quick Price Calculator */}
-      <QuickPriceCalculator />
-
-      {/* Nearby Attractions */}
-      <NearbyAttractions />
-
       {/* Interactive Location Map */}
       <LocationMap />
-
-      {/* Newsletter */}
-      <NewsletterSection />
 
       {/* FAQ Section */}
       <FAQSection />
@@ -466,9 +341,6 @@ const Home = () => {
 
       {/* Book Direct Benefits */}
       <BookDirectBenefits />
-
-      {/* Social Proof - Live Booking Notifications */}
-      <SocialProofNotification language={language} />
     </motion.div>
   );
 };
