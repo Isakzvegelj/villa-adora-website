@@ -16,6 +16,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import PriceCalculator from '../components/ui/PriceCalculator';
+import BentralEmbed from '../components/ui/BentralEmbed';
 import { trackSuiteView } from '../components/ui/RecentlyViewedSuites';
 
 interface Amenity {
@@ -594,6 +595,85 @@ const Suites = () => {
               </motion.button>
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Rates & Real-time Availability (Bentral) */}
+      <section className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-950">
+        <div className="container-max">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-sm font-semibold rounded-full mb-4">
+              💶 {language === 'sl' ? 'Cene in razpoložljivost' : 'Rates & Availability'}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              {language === 'sl' ? 'Rezervirajte neposredno' : 'Book Directly with Live Availability'}
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              {language === 'sl'
+                ? 'Preverite razpoložljivost vsake suite in rezervirajte neposredno za najboljšo ceno — brez provizij.'
+                : 'Check real-time availability for each suite and book direct at the best rate — no booking fees.'}
+            </p>
+          </motion.div>
+
+          {/* Price List */}
+          <div className="mx-auto mb-16 max-w-4xl">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-xl p-6 lg:p-8 border border-slate-100 dark:border-slate-800">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">
+                {language === 'sl' ? 'Cenik' : 'Rate List'}
+              </h3>
+              <div className="bentral-widget bentral-pricelist">
+                <BentralEmbed src="//www.bentral.com/service/embed/price-list.js?id=5f444d354f415f4e&key=ef32fbc68fd13b8f9e5ba7a55520e061" />
+              </div>
+            </div>
+          </div>
+
+          {/* Per-suite calendars */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { uid: '5f5441314e44634d', label: language === 'sl' ? 'Suita 1' : 'Suite 1' },
+              { uid: '5f5441314e44674d', label: language === 'sl' ? 'Suita 2' : 'Suite 2' },
+              { uid: '5f5441314e446b4d', label: language === 'sl' ? 'Suita 3' : 'Suite 3' },
+              { uid: '5f5441314e54494d', label: language === 'sl' ? 'Suita 4' : 'Suite 4' },
+              { uid: '5f5441314e544d4d', label: language === 'sl' ? 'Suita 5' : 'Suite 5' },
+              { uid: '5f5441314e54414d', label: language === 'sl' ? 'Suita 6' : 'Suite 6' },
+              { uid: '5f5441314e54454d', label: language === 'sl' ? 'Suita 7' : 'Suite 7' },
+              { uid: '5f5441314e54514d', label: language === 'sl' ? 'Suita 8' : 'Suite 8' },
+            ].map((room) => (
+              <motion.div
+                key={room.uid}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-slate-900 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800 overflow-hidden"
+              >
+                <div className="px-6 pt-6">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                    {room.label}
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                    {language === 'sl' ? 'Razpoložljivost v realnem času' : 'Real-time availability'}
+                  </p>
+                </div>
+                <div className="bentral-widget bentral-calendar px-6 pb-4">
+                  <BentralEmbed src={`//www.bentral.com/service/embed/calendar.js?uid=${room.uid}&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061`} />
+                </div>
+                <div className="px-6 pb-6">
+                  <Link
+                    to={`/reservation`}
+                    className="block w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-center transition-colors"
+                  >
+                    {language === 'sl' ? 'Rezerviraj zdaj' : 'Book Now'}
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
