@@ -193,8 +193,8 @@ const GuestReviews = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {visibleReviews.map((review) => {
-              const sourceBadge = SOURCE_BADGES[review.source];
-              const stayLabel = STAY_TYPE_LABELS[review.stayType];
+              const sourceBadge = SOURCE_BADGES[(review.source || '').toLowerCase().replace('.com', '')] || SOURCE_BADGES.direct;
+              const stayLabel = STAY_TYPE_LABELS[review.stayType] || STAY_TYPE_LABELS.couple;
               return (
                 <motion.div
                   key={review.id}
