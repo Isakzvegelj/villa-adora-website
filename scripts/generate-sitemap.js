@@ -13,7 +13,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const BASE_URL = 'https://villa-adora-bled.si';
+const BASE_URL = 'https://isakzvegelj.github.io/villa-adora-website';
 const LANGUAGES = ['en', 'sl', 'de', 'it'];
 const DEFAULT_LANG = 'en';
 
