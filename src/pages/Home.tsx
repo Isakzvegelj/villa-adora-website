@@ -7,6 +7,7 @@ import HeroSection from '../components/sections/HeroSection';
 import AboutPreview from '../components/sections/AboutPreview';
 import SuitesPreview from '../components/sections/SuitesPreview';
 import GalleryPreview from '../components/sections/GalleryPreview';
+import CulinarySection from '../components/sections/CulinarySection';
 import WhyChooseUs from '../components/sections/WhyChooseUs'
 import FAQSection from '../components/sections/FAQSection'
 import GuestReviews from '../components/sections/GuestReviews'
@@ -250,6 +251,9 @@ const Home = () => {
 
       {/* Gallery Preview */}
       <GalleryPreview />
+
+      {/* Culinary / Restaurant Preview */}
+      <CulinarySection />
 
       {/* Concierge CTA */}
       <ConciergeCTA />

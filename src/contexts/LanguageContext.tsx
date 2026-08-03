@@ -38,6 +38,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.weddings': 'Poroke',
       'nav.reviews': 'Mnenja',
       'nav.writeReview': 'Napišite mnenje',
+      'nav.restaurant': 'Restavracija',
       // Gift Voucher
       'giftVoucher.title': 'Darilni bon',
       'giftVoucher.subtitle': 'Podarite nepozabno doživetje ob jezeru Bled',
@@ -440,6 +441,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.weddings': 'Weddings',
       'nav.reviews': 'Reviews',
       'nav.writeReview': 'Write Review',
+      'nav.restaurant': 'Restaurant',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -894,6 +896,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.weddings': 'Hochzeiten',
       'nav.reviews': 'Bewertungen',
       'nav.writeReview': 'Bewertung schreiben',
+      'nav.restaurant': 'Restaurant',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -1265,6 +1268,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.weddings': 'Matrimoni',
       'nav.reviews': 'Recensioni',
       'nav.writeReview': 'Scrivi una recensione',
+      'nav.restaurant': 'Ristorante',
       'nav.admin': 'Admin',
 
       // Gift Voucher
@@ -1636,6 +1640,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       'nav.weddings': 'Mariages',
       'nav.reviews': 'Avis',
       'nav.writeReview': 'Écrire un avis',
+      'nav.restaurant': 'Restaurant',
       'nav.admin': 'Admin',
 
       // Gift Voucher

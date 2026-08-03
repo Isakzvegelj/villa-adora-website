@@ -8,7 +8,7 @@ const GalleryPreview = () => {
   const images = [
     '/villa-adora-website/images/adora/hero-hotel.jpg',
     '/villa-adora-website/images/adora/lake-view.jpg',
-    '/villa-adora-website/images/adora/dining.jpg',
+    '/villa-adora-website/images/adora/real/restaurant-adora.jpg',
     '/villa-adora-website/images/adora/garden.jpg',
   ]
 

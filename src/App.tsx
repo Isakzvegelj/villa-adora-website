@@ -30,6 +30,7 @@ const Reservation = lazy(() => import('./pages/Reservation'))
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'))
 const GiftVoucher = lazy(() => import('./pages/GiftVoucher'))
 const Wellness = lazy(() => import('./pages/Wellness'))
+const Restaurant = lazy(() => import('./pages/Restaurant'))
 const Offers = lazy(() => import('./pages/Offers'))
 const Weddings = lazy(() => import('./pages/Weddings'))
 const Reviews = lazy(() => import('./pages/Reviews'))
@@ -53,6 +54,7 @@ function AnimatedRoutes() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/gift-voucher" element={<GiftVoucher />} />
           <Route path="/wellness" element={<Wellness />} />
+          <Route path="/restaurant" element={<Restaurant />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/weddings" element={<Weddings />} />
           <Route path="/reviews" element={<Reviews />} />

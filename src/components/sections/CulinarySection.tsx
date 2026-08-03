@@ -10,6 +10,8 @@ import {
   MapPinIcon,
 } from '@heroicons/react/24/outline';
 
+const IMG = '/villa-adora-website/images/adora/real';
+
 const CulinarySection = () => {
   const { t } = useLanguage();
 
@@ -18,25 +20,25 @@ const CulinarySection = () => {
       icon: <CakeIcon className="w-8 h-8" />,
       titleKey: 'culinary.breakfast.title',
       descKey: 'culinary.breakfast.description',
-      image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&h=400&fit=crop&q=80',
+      image: `${IMG}/breakfast-real.jpg`,
     },
     {
       icon: <FireIcon className="w-8 h-8" />,
       titleKey: 'culinary.restaurant.title',
       descKey: 'culinary.restaurant.description',
-      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop&q=80',
+      image: `${IMG}/restaurant-adora.jpg`,
     },
     {
       icon: <SunIcon className="w-8 h-8" />,
       titleKey: 'culinary.terrace.title',
       descKey: 'culinary.terrace.description',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop&q=80',
+      image: `${IMG}/hero-full.jpg`,
     },
     {
       icon: <SparklesIcon className="w-8 h-8" />,
       titleKey: 'culinary.experiences.title',
       descKey: 'culinary.experiences.description',
-      image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop&q=80',
+      image: `${IMG}/gallery-couple.jpg`,
     },
   ];
 
@@ -112,7 +114,7 @@ const CulinarySection = () => {
           className="text-center mt-12"
         >
           <Link
-            to="/contact"
+            to="/restaurant"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-indigo-500/25"
           >
             {t('culinary.cta')}

@@ -50,7 +50,7 @@ const Suites = () => {
     {
       id: 'princess',
       price: '440',
-      image: '/villa-adora-website/images/adora/suite.jpg',
+      image: '/villa-adora-website/images/adora/real/suite-classic.jpg',
       titleKey: 'suites.princess.title',
       descKey: 'suites.princess.description',
       color: 'from-pink-500 to-rose-500',
@@ -66,7 +66,7 @@ const Suites = () => {
     {
       id: 'luxury',
       price: '480',
-      image: '/villa-adora-website/images/adora/hero-hotel.jpg',
+      image: '/villa-adora-website/images/adora/real/suite-lake.jpg',
       titleKey: 'suites.luxury.title',
       descKey: 'suites.luxury.description',
       color: 'from-blue-500 to-cyan-500',
@@ -82,7 +82,7 @@ const Suites = () => {
     {
       id: 'penthouse',
       price: '430',
-      image: '/villa-adora-website/images/adora/lake-view.jpg',
+      image: '/villa-adora-website/images/adora/real/villa-detail.jpg',
       titleKey: 'suites.penthouse.title',
       descKey: 'suites.penthouse.description',
       color: 'from-indigo-500 to-purple-500',
@@ -98,7 +98,7 @@ const Suites = () => {
     {
       id: 'deluxe',
       price: '570',
-      image: '/villa-adora-website/images/adora/dining.jpg',
+      image: '/villa-adora-website/images/adora/real/suite-panorama.jpg',
       titleKey: 'suites.deluxe.title',
       descKey: 'suites.deluxe.description',
       color: 'from-violet-500 to-fuchsia-500',
@@ -114,7 +114,7 @@ const Suites = () => {
     {
       id: 'superior',
       price: '570',
-      image: '/villa-adora-website/images/adora/exterior.jpg',
+      image: '/villa-adora-website/images/adora/real/hero-full.jpg',
       titleKey: 'suites.superior.title',
       descKey: 'suites.superior.description',
       color: 'from-emerald-500 to-teal-500',
@@ -130,7 +130,7 @@ const Suites = () => {
     {
       id: 'island',
       price: '620',
-      image: '/villa-adora-website/images/adora/garden.jpg',
+      image: '/villa-adora-website/images/adora/real/suite-terrace.jpg',
       titleKey: 'suites.island.title',
       descKey: 'suites.island.description',
       color: 'from-emerald-500 to-teal-500',
@@ -146,7 +146,7 @@ const Suites = () => {
     {
       id: 'prestige',
       price: '0',
-      image: '/villa-adora-website/images/adora/venue.jpg',
+      image: '/villa-adora-website/images/adora/real/gallery-couple.jpg',
       titleKey: 'suites.prestige.title',
       descKey: 'suites.prestige.description',
       color: 'from-amber-500 to-orange-500',

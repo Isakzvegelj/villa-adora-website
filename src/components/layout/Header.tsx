@@ -32,6 +32,7 @@ const Header = () => {
     { name: t('nav.wellness'), href: '/wellness' },
     { name: t('nav.offers'), href: '/offers' },
     { name: t('nav.weddings'), href: '/weddings' },
+    { name: t('nav.restaurant'), href: '/restaurant' },
     { name: t('nav.reviews'), href: '/reviews' },
     { name: t('nav.writeReview') || 'Write Review', href: '/write-review', highlight: true },
   ]

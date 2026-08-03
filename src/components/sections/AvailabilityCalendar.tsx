@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronLeftIcon,
@@ -53,13 +53,20 @@ const DAY_NAMES_SL = ['Ned', 'Pon', 'Tor', 'Sre', 'Čet', 'Pet', 'Sob'];
 const MONTH_NAMES_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const MONTH_NAMES_SL = ['Januar', 'Februar', 'Marec', 'April', 'Maj', 'Junij', 'Julij', 'Avgust', 'September', 'Oktober', 'November', 'December'];
 
-export default function AvailabilityCalendar() {
+interface AvailabilityCalendarProps {
+  /** When provided, the calendar opens pre-filtered to this suite (e.g. from a room card's "Check availability" button). */
+  preselectedSuite?: string;
+  /** Compact spacing when embedded inside another section (e.g. below the home page suite carousel). */
+  embedded?: boolean;
+}
+
+export default function AvailabilityCalendar({ preselectedSuite, embedded = false }: AvailabilityCalendarProps) {
   const { t, language } = useLanguage();
   const [currentMonth, setCurrentMonth] = useState(() => {
     const now = new Date();
     return { year: now.getFullYear(), month: now.getMonth() };
   });
-  const [selectedSuite, setSelectedSuite] = useState<string>('all');
+  const [selectedSuite, setSelectedSuite] = useState<string>(preselectedSuite ?? 'all');
   const [selectedCheckIn, setSelectedCheckIn] = useState<string>('');
   const [selectedCheckOut, setSelectedCheckOut] = useState<string>('');
   const [showCheckInPicker, setShowCheckInPicker] = useState(true);
@@ -67,6 +74,16 @@ export default function AvailabilityCalendar() {
   const isSL = language === 'sl';
   const dayNames = isSL ? DAY_NAMES_SL : DAY_NAMES_EN;
   const monthNames = isSL ? MONTH_NAMES_SL : MONTH_NAMES_EN;
+
+  // Sync selection when a suite is picked from a room card (home page carousel)
+  useEffect(() => {
+    if (preselectedSuite) {
+      setSelectedSuite(preselectedSuite);
+      setSelectedCheckIn('');
+      setSelectedCheckOut('');
+      setShowCheckInPicker(true);
+    }
+  }, [preselectedSuite]);
 
   const { year, month } = currentMonth;
   const daysInMonth = getDaysInMonth(year, month);
@@ -138,7 +155,7 @@ export default function AvailabilityCalendar() {
   const isNavDisabled = month === new Date().getMonth() && year === new Date().getFullYear();
 
   return (
-    <section className="py-16 lg:py-24 bg-white dark:bg-slate-900">
+    <section className={embedded ? 'pt-2 pb-4' : 'py-16 lg:py-24 bg-white dark:bg-slate-900'}>
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
