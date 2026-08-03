@@ -486,6 +486,50 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://isakzvegelj.github.io/villa-adora-website/reservation"/>
   </url>
   <url>
+    <loc>https://isakzvegelj.github.io/villa-adora-website/restaurant</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://isakzvegelj.github.io/villa-adora-website/sl/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://isakzvegelj.github.io/villa-adora-website/de/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://isakzvegelj.github.io/villa-adora-website/it/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+  </url>
+  <url>
+    <loc>https://isakzvegelj.github.io/villa-adora-website/sl/restaurant</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://isakzvegelj.github.io/villa-adora-website/sl/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://isakzvegelj.github.io/villa-adora-website/de/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://isakzvegelj.github.io/villa-adora-website/it/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+  </url>
+  <url>
+    <loc>https://isakzvegelj.github.io/villa-adora-website/de/restaurant</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://isakzvegelj.github.io/villa-adora-website/sl/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://isakzvegelj.github.io/villa-adora-website/de/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://isakzvegelj.github.io/villa-adora-website/it/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+  </url>
+  <url>
+    <loc>https://isakzvegelj.github.io/villa-adora-website/it/restaurant</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://isakzvegelj.github.io/villa-adora-website/sl/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://isakzvegelj.github.io/villa-adora-website/de/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://isakzvegelj.github.io/villa-adora-website/it/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://isakzvegelj.github.io/villa-adora-website/restaurant"/>
+  </url>
+  <url>
     <loc>https://isakzvegelj.github.io/villa-adora-website/gift-voucher</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>

@@ -30,6 +30,7 @@ const pages = [
   { path: '/reviews', priority: 0.7, changefreq: 'weekly' },
   { path: '/write-review', priority: 0.6, changefreq: 'monthly' },
   { path: '/reservation', priority: 0.9, changefreq: 'monthly' },
+  { path: '/restaurant', priority: 0.8, changefreq: 'weekly' },
   { path: '/gift-voucher', priority: 0.6, changefreq: 'monthly' },
   { path: '/contact', priority: 0.8, changefreq: 'monthly' },
 ];
