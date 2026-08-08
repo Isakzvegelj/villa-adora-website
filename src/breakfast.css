@@ -1,0 +1,72 @@
+.breakfast-page {
+  --ink: #1f3735;
+  --cream: #f7f4ee;
+  --line: #ded7ca;
+  --gold: #b67e38;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+
+.breakfast-page h1,
+.breakfast-page h2,
+.breakfast-page h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+.breakfast-page a { color: inherit; }
+.breakfast-page svg { width: 1.05rem; height: 1.05rem; flex: 0 0 auto; }
+.breakfast-hero { position: relative; min-height: 680px; overflow: hidden; background: #213b38; color: white; }
+.breakfast-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 44%; }
+.breakfast-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,42,40,.9) 0%, rgba(17,42,40,.62) 48%, rgba(17,42,40,.08) 100%); }
+.breakfast-hero-content { position: relative; z-index: 1; max-width: 1200px; min-height: 680px; margin: 0 auto; padding: 150px 48px 72px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.breakfast-kicker { margin: 0 0 20px; color: #e9c27b; font-size: .72rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+.breakfast-kicker-dark { color: var(--gold); }
+.breakfast-hero h1 { margin: 0; font-size: clamp(4rem, 8vw, 7rem); line-height: .9; letter-spacing: -.045em; }
+.breakfast-hero h1 em, .breakfast-intro h2 em, .breakfast-menu-heading h2 em, .breakfast-reserve h2 em { color: #e9c27b; font-style: italic; }
+.breakfast-lead { max-width: 560px; margin: 34px 0 0; color: rgba(255,255,255,.86); font-size: 1.12rem; line-height: 1.8; }
+.breakfast-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.breakfast-button { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; font-size: .9rem; font-weight: 600; text-decoration: none; transition: .2s ease; }
+.breakfast-button-gold { background: #e9c27b; color: var(--ink) !important; }
+.breakfast-button-gold:hover { background: white; }
+.breakfast-button-ghost { border: 1px solid rgba(255,255,255,.55); color: white !important; }
+.breakfast-button-ghost:hover { background: rgba(255,255,255,.12); }
+.breakfast-meta { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 42px; color: rgba(255,255,255,.76); font-size: .83rem; }
+.breakfast-meta span, .breakfast-contact span { display: inline-flex; align-items: center; gap: 8px; }
+.breakfast-meta svg, .breakfast-contact svg { color: #e9c27b; }
+.breakfast-intro { max-width: 760px; margin: 0 auto; padding: 110px 24px 95px; text-align: center; }
+.breakfast-intro h2, .breakfast-menu-heading h2, .breakfast-reserve h2 { margin: 0; font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: .98; letter-spacing: -.035em; }
+.breakfast-intro h2 em, .breakfast-menu-heading h2 em { color: var(--gold); }
+.breakfast-copy { max-width: 610px; margin: 28px auto 0; color: #62706c; font-size: 1.03rem; line-height: 1.85; }
+.breakfast-menu-section { max-width: 1200px; margin: 0 auto; padding: 0 48px 115px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; align-items: start; }
+.breakfast-menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.breakfast-menu-card { min-height: 190px; padding: 24px; border-top: 1px solid var(--line); }
+.breakfast-menu-card span { color: var(--gold); font-size: .75rem; font-weight: 700; letter-spacing: .18em; }
+.breakfast-menu-card h3 { margin: 24px 0 10px; font-size: 1.7rem; }
+.breakfast-menu-card p { margin: 0; color: #62706c; font-size: .92rem; line-height: 1.7; }
+.breakfast-reserve { background: var(--ink); color: white; padding: 92px max(48px, calc((100vw - 1104px) / 2)); display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; }
+.breakfast-reserve h2 { font-size: clamp(2.8rem, 5vw, 4.7rem); }
+.breakfast-reserve-copy > p:not(.breakfast-kicker) { max-width: 430px; margin: 28px 0 0; color: rgba(255,255,255,.68); line-height: 1.75; }
+.breakfast-contact { display: grid; gap: 14px; margin-top: 32px; color: rgba(255,255,255,.82); font-size: .9rem; }
+.breakfast-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 30px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); }
+.breakfast-form label { color: rgba(255,255,255,.82); font-size: .78rem; font-weight: 600; letter-spacing: .04em; }
+.breakfast-form input, .breakfast-form select { display: block; width: 100%; margin-top: 8px; border: 1px solid rgba(255,255,255,.2); border-radius: 0; background: rgba(255,255,255,.08); color: white; padding: 13px 12px; font: inherit; outline: none; }
+.breakfast-form input::placeholder { color: rgba(255,255,255,.46); }
+.breakfast-form input:focus, .breakfast-form select:focus { border-color: #e9c27b; }
+.breakfast-form select option { color: var(--ink); }
+.breakfast-submit { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 999px; background: #e9c27b; color: var(--ink); padding: 14px 20px; font: inherit; font-weight: 700; cursor: pointer; }
+.breakfast-submit:hover { background: white; }
+.breakfast-form small { grid-column: 1 / -1; color: rgba(255,255,255,.5); text-align: center; font-size: .72rem; }
+@media (max-width: 800px) {
+  .breakfast-hero { min-height: 650px; }
+  .breakfast-hero > img { object-position: 62% center; }
+  .breakfast-hero-shade { background: linear-gradient(90deg, rgba(17,42,40,.88), rgba(17,42,40,.48)); }
+  .breakfast-hero-content { min-height: 650px; padding: 130px 24px 54px; }
+  .breakfast-meta { display: grid; gap: 12px; margin-top: 30px; }
+  .breakfast-menu-section, .breakfast-reserve { grid-template-columns: 1fr; gap: 38px; padding-left: 24px; padding-right: 24px; }
+  .breakfast-reserve { padding-top: 72px; padding-bottom: 72px; }
+}
+@media (max-width: 520px) {
+  .breakfast-actions, .breakfast-button { width: 100%; }
+  .breakfast-button { justify-content: center; }
+  .breakfast-menu-grid, .breakfast-form { grid-template-columns: 1fr; }
+  .breakfast-submit, .breakfast-form small { grid-column: auto; }
+  .breakfast-form { padding: 22px; }
+}

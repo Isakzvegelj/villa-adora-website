@@ -98,6 +98,38 @@ function HtmlLangUpdater() {
   return null
 }
 
+function AppFrame() {
+  const location = useLocation()
+  const isBreakfastPage = location.pathname === '/breakfast'
+
+  if (isBreakfastPage) {
+    return (
+      <div className="min-h-screen bg-[#f7f4ee]">
+        <main><AnimatedRoutes /></main>
+      </div>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 flex flex-col">
+      <SummerPromoBanner />
+      <Header />
+      <main className="flex-grow">
+        <AnimatedRoutes />
+      </main>
+      <Footer />
+      <ScrollProgressBar />
+      <ConciergeWidget />
+      <CallNowFAB />
+      <ScrollToTop />
+      <StickyBookNow />
+      <CookieConsent />
+      <RecentlyViewedSuites />
+      <NewsletterPopup />
+    </div>
+  )
+}
+
 function App() {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -119,22 +151,7 @@ function App() {
           ) : (
             <Router key="router">
               <ErrorBoundary>
-                <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 flex flex-col">
-                  <SummerPromoBanner />
-                  <Header />
-                  <main className="flex-grow">
-                    <AnimatedRoutes />
-                  </main>
-                  <Footer />
-                  <ScrollProgressBar />
-                  <ConciergeWidget />
-                  <CallNowFAB />
-                  <ScrollToTop />
-                  <StickyBookNow />
-                  <CookieConsent />
-                  <RecentlyViewedSuites />
-                  <NewsletterPopup />
-                </div>
+                <AppFrame />
               </ErrorBoundary>
             </Router>
           )}
