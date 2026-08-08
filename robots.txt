@@ -1,0 +1,16 @@
+# robots.txt for Villa Adora Bled
+# https://isakzvegelj.github.io/villa-adora-website/
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /villa-adora-website/admin
+Disallow: /admin
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://isakzvegelj.github.io/villa-adora-website/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
